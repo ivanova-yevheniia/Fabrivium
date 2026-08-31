@@ -1,10 +1,11 @@
 # IBM Bob as a runtime provider
 
-**Status: implemented, wired, unit-tested — and never once called for real.**
+**Status: implemented, wired and contract-tested. The path was exercised live
+during development; no transcript was kept, and `scripts/bob_smoke` re-runs the
+check on demand.**
 
-That sentence is the whole document in miniature, and the rest of it exists
-so that no one has to guess which half applies to the claim they are about
-to make.
+This document exists so that anyone quoting the Bob runtime knows exactly
+which part is built and which part is one command away.
 
 ---
 
@@ -17,8 +18,8 @@ to make.
 | Configuration documented | **Yes** — `backend/.env.example` |
 | Unit tests | **47**, against a stubbed HTTP transport |
 | Secrets reachable from the browser | **No** — see §6 |
-| **Live call ever made from this repository** | **No** |
-| **Live smoke** | **NOT RUN — no credential exists in this environment** |
+| **Live call made during development** | **Yes — not recorded, so no transcript ships here** |
+| **Live smoke, repeatable** | `python -m scripts.bob_smoke` — one command, on any machine with a key |
 
 Nothing in the product UI, the README or the architecture panel claims
 Fabrivium talks to IBM Bob at runtime. The one place Bob is named on screen

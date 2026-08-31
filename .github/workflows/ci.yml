@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  backend:
+    name: Backend — tests, audits, isolation
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        working-directory: backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # The language-model layer is off by default and the test configuration
+      # forces it off before the application is imported, so this job never
+      # reaches a provider and never bills an account.
+      - name: Test suite
+        working-directory: backend
+        run: python -m pytest -q
+
+      # Fails the build if any golden-run literal is executable in production
+      # code (class E) or any production branch is keyed on the demo (class F).
+      - name: Golden-run coupling audit
+        working-directory: backend
+        run: python -m scripts.fabrivium_coupling_audit
+
+      - name: Deterministic core isolation
+        working-directory: backend
+        run: python -m pytest tests/test_deterministic_core_isolation.py -q
+
+  frontend:
+    name: Frontend — tests, types, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Test suite
+        working-directory: frontend
+        run: npx vitest run
+
+      - name: Type check
+        working-directory: frontend
+        run: npx tsc --noEmit
+
+      - name: Production build
+        working-directory: frontend
+        run: npx vite build

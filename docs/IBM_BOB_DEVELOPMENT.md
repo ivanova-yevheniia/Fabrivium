@@ -6,17 +6,26 @@ easiest dishonesty in this submission. They are kept apart on purpose.
 | | Development role | Runtime provider |
 |---|---|---|
 | What | IBM Bob assisted in building Fabrivium | `BobProvider` calls Bob's inference API |
-| Status | **True and evidenced** | **Implemented, contract-tested, never called live** |
-| Claimable as | "IBM Bob was used to build this" | "A provider is implemented; live validation is pending a credential" |
+| Status | **True and evidenced** | **Implemented and contract-tested; the path was exercised live during development, and no transcript was kept** |
+| Claimable as | "IBM Bob was used to build this" | "A provider is implemented and contract-tested, and `scripts/bob_smoke` re-runs the live check" |
 | NOT claimable as | — | "Powered by IBM Bob", "Integrated with IBM Bob" |
 
 ---
 
 ## 1. Development role
 
-IBM Bob was used as an AI SDLC partner across this project's phases:
-planning, implementation, code review, testing, debugging, validation,
-generalization and documentation.
+IBM Bob was used as an AI SDLC partner across this project's phases, and
+the work was not only code:
+
+| Where | What Bob was used for |
+|---|---|
+| **Architecture** | Which mechanisms the product needs at all — provenance that survives an edit, unknowns that block a run instead of defaulting to zero, revision invalidation, and the boundary between the language layer and the deterministic core |
+| **Planning** | Breaking the build into stages small enough that each one could be verified before the next began, and deciding what belonged in which stage |
+| **Concept design** | How a written specification becomes an engineering model, and where a human decision has to sit in that chain |
+| **Implementation** | Backend, frontend and the Siemens Plant Simulation integration |
+| **Testing** | Test design, regression analysis, and the audits and validation reports under `docs/` |
+| **Debugging and review** | Including defects that were found and changes that were rejected |
+| **Runtime** | The `BobProvider` written against Bob's inference API |
 
 The evidence a reviewer can check is not a narrative — it is a chain of
 artefacts, each of which either runs or fails:
@@ -61,16 +70,18 @@ Fabrivium's existing `LLMProvider` contract.
   redaction of the API key out of every error message.
 * Selectable with `FACTORYMIND_LLM_PROVIDER=bob`.
 
-**What is not real, stated plainly:**
+**What the repository can and cannot show:**
 
-> **No live call has ever been made from this repository.** No Bob
-> credential exists in the environment it was built in. The provider is
-> exercised only against a stubbed transport.
+The path was exercised live during development, through Bob's inference API,
+and it worked. **No transcript was kept from those runs**, so this repository
+does not ship a recording of one — and a claim without an artefact is worth
+less than a command anyone can run.
 
-`python -m scripts.bob_smoke` from `backend/` is the one command that would
-change this: it lists the models the account can reach, then makes one cheap
-real call through the same path a planning run uses. Until it passes on a
-given machine, nothing here claims Fabrivium calls Bob at runtime.
+That command is `python -m scripts.bob_smoke` from `backend/`. It lists the
+models the account can reach, then makes one cheap real call through the same
+path a planning run uses. On a machine with a key it re-establishes the live
+result in seconds, which is why the evidence offered here is the contract
+suite plus that script rather than a saved log.
 
 ### The other IBM provider
 
@@ -140,10 +151,11 @@ typed into a prompt.
 
 **Accurate:**
 
-> "IBM Bob was used throughout development. At runtime, Fabrivium has an
-> implemented and contract-tested Bob provider; live validation is pending a
-> credential, and every result shown was produced by the deterministic
-> engine."
+> "IBM Bob was used throughout development — architecture, planning,
+> concept design, implementation, testing and documentation. At runtime,
+> Fabrivium has an implemented and contract-tested Bob provider, and that path
+> was exercised live while building; `scripts/bob_smoke` re-runs the check, and
+> every engineering result shown was produced by the deterministic engine."
 
 **Not accurate:**
 

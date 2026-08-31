@@ -58,16 +58,26 @@ The table below is the state **as audited**, before anything was changed.
 It is kept as the finding rather than rewritten, because an audit that
 reports the state after its own fixes is a press release.
 
-**State now, after §5 items 1-3:**
+**State now, after §5 items 1-3**, run against the published tree:
 
 ```
-$ cd backend && python -m scripts.fabrivium_coupling_audit ; echo $?
-  E PRODUCTION HARD-CODING            0
-  F HIDDEN GOLDEN-RUN COUPLING        0
-0
+$ cd backend && python -m scripts.fabrivium_coupling_audit ; echo "exit $?"
+scanned 496 files
+  A TEST FIXTURE                   1672
+  B EXAMPLE DATA                   4697
+  C COMPETITION COPY               386
+  D DOMAIN DEFAULT                 76
+exit 0
 ```
 
-658 files scanned, 8,299 occurrences classified.
+**Classes E and F print no line at all, because the script lists only classes
+that have hits.** Zero is shown by their absence and by the exit code: the
+script exits `1` if a single class E or F occurrence exists, and `0` here.
+
+The published tree is smaller than the tree that was audited — 496 files
+against 658 — because the recording, presentation and export directories are
+not part of the repository. The table below is the audited tree, at
+8,299 occurrences classified.
 
 | Class | Meaning | Count |
 |---|---|---:|
@@ -104,7 +114,7 @@ codebase. The tokens are clean; three structural couplings are not.
 
 | File | Lines | Coupling |
 |---|---|---|
-| `frontend/src/components/playback/DemoModeStrip.tsx` | 4, 6, 31, 59, 60, 66, 71, 85 | An eight-step guided presentation strip |
+| `frontend/src/components/playback/DemoModeStrip.tsx` *(since deleted)* | 4, 6, 31, 59, 60, 66, 71, 85 | An eight-step guided presentation strip |
 | `frontend/src/state/types.ts` | 282, 292, 519, 577 | `DemoStage` union, `DEMO_STAGES`, `AppState.demoStage` |
 | `frontend/src/state/appReducer.ts` | 16, 94, 262, 751 | `SET_DEMO_STAGE` action and its reducer arm |
 | `frontend/src/state/AppContext.tsx` | 26, 101, 488 | `setDemoStage` on the app context |
@@ -214,7 +224,7 @@ machine and one route step whose work content is the sum of the members',
 remaps boundary buffers and drops internal ones, and the grouped concept
 simulates. An ungrouped concept compiles exactly as it always did, which is
 asserted directly rather than assumed. See
-`FABRIVIUM_LIMITATIONS_AND_ROADMAP.md` §1.1 for what deliberately remains:
+[the roadmap](FABRIVIUM_ROADMAP.md), step 1, for what deliberately remains:
 Fabrivium proposes no groupings, and the only execution mode is
 `SEQUENTIAL`.
 

@@ -33,7 +33,7 @@ reachable.
 ## What actually happened, per domain
 
 Reported honestly, including where the routes are incomplete — the full
-account is in `docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md`.
+account is in [`docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md`](../docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md).
 
 **Electronics (CEC-120)** — the verified case study. 1,435 → 1,900/day,
 23 simulations, no new machines. `DEMO-VERIFIED`.

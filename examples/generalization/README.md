@@ -14,7 +14,8 @@ validation phase; kept so the claim can be re-checked rather than believed.
 | `case_d_dx4_lateral_flow_cassette.txt` | Medical device: no fasteners, ultrasonic welding, 3 x 7.5 h |
 | `case_e_bv2_bottled_beverage_line.txt` | Packaging: filling and capping have no family at all |
 | `results/case_{cec,a,b,c,d,e}.json` | Every request and response, step by step. `cec` is the CEC-120 control run |
-| `results/audit.json` | Provenance and leakage audit over all four |
+| `results/case_{m,p}.json`, `results/golden_cec120.json` | The same record for the mechanical and packaging domains, and for the CEC-120 golden journey |
+| `results/audit.json` | Provenance and leakage audit over cases A, B, C, D, E and the CEC-120 control |
 
 ## Re-running it
 
@@ -30,8 +31,11 @@ injects a simulation result, never reuses a CEC-120 fixture, and never calls
 the example-data endpoints — those would fill a new product's stations from the
 bundled electronics dataset, which is the leakage the audit tests for.
 
-Findings and verdict, cases A-C: `docs/GENERALIZATION_VALIDATION_REPORT.md`.
-Findings and verdict, cases D-E: `docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md`
+Findings and verdict, cases A-C:
+[`docs/GENERALIZATION_VALIDATION_REPORT.md`](../../docs/GENERALIZATION_VALIDATION_REPORT.md).
+Findings and verdict, cases D-E:
+[`docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md`](../../docs/FABRIVIUM_MULTI_DOMAIN_VALIDATION.md)
 — three production defects, two fixed.
-Code audit: `docs/GENERALIZATION_CODE_AUDIT.md`.
+Code audit:
+[`docs/GENERALIZATION_CODE_AUDIT.md`](../../docs/GENERALIZATION_CODE_AUDIT.md).
 Regression tests: `backend/tests/test_generalization.py`.

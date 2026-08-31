@@ -244,8 +244,8 @@ document for the roadmap items it points at.
    collating. That is a declared limit and it is narrow.
 3. **Operation ≡ station makes packaging unrepresentable anyway.** Even with
    every rule present, a continuous-motion monobloc performing fill, cap and
-   label as one resource has no representation — see
-   `FABRIVIUM_LIMITATIONS_AND_ROADMAP.md` §1.1.
+   label as one resource cannot be proposed — see
+   [the roadmap](FABRIVIUM_ROADMAP.md), step 1.
 4. **Provenance held up.** Every fabricated fact was visible *because* its
    citation contradicted it. The defect was in extraction; the mechanism
    that made it findable worked exactly as designed.
