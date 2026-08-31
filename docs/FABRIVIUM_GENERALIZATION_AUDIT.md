@@ -3,6 +3,11 @@
 **Gate A of the product generalization pass.** Audit only; no production
 behaviour was changed to produce this document.
 
+> **Historical audit with current disposition.** The checkpoint, initial hit
+> counts and findings below are preserved as the state that was audited. Items
+> fixed before the public release are marked **RESOLVED** rather than silently
+> removed. The current release gate is stated separately and is authoritative.
+
 **Baseline:** `HEAD = 5a9fe53` (`competition-strong-finalist-v1`), plus an
 uncommitted working tree of 198 modified and 144 new files carrying earlier
 phases' work. Both are captured in the checkpoint below.
@@ -58,7 +63,7 @@ The table below is the state **as audited**, before anything was changed.
 It is kept as the finding rather than rewritten, because an audit that
 reports the state after its own fixes is a press release.
 
-**State now, after §5 items 1-3:**
+**Current public release state:**
 
 ```
 $ cd backend && python -m scripts.fabrivium_coupling_audit ; echo $?
@@ -67,7 +72,19 @@ $ cd backend && python -m scripts.fabrivium_coupling_audit ; echo $?
 0
 ```
 
-658 files scanned, 8,299 occurrences classified.
+489 files scanned by the current release gate:
+
+| Class | Current count |
+|---|---:|
+| **A** TEST FIXTURE | 1,672 |
+| **B** EXAMPLE DATA | 4,707 |
+| **C** COMPETITION COPY | 210 |
+| **D** DOMAIN DEFAULT | 76 |
+| **E** PRODUCTION HARD-CODING | **0** |
+| **F** HIDDEN GOLDEN-RUN COUPLING | **0** |
+
+The following table is the preserved **initial checkpoint**, before the
+release fixes:
 
 | Class | Meaning | Count |
 |---|---|---:|
@@ -98,7 +115,7 @@ codebase. The tokens are clean; three structural couplings are not.
 
 ---
 
-## 1. Class E — production hard-coding (22)
+## 1. Historical Class E findings (22) — RESOLVED
 
 ### E-1 Demo Mode scaffolding, carried in production state (19 occurrences)
 
@@ -120,11 +137,10 @@ The component being unshipped is the right call. Keeping its *state* is not:
 it, and the context exposes a setter — an eight-stage presentation script
 sitting in the application's core state shape, serving nothing.
 
-**Required action:** delete the component, the `DemoStage` type,
-`DEMO_STAGES`, `AppState.demoStage`, the `SET_DEMO_STAGE` action, the
-context method, the CSS block, and the tests whose only subject is those.
-This is Phase 30 (*remove demo magic*) and it is the whole of it in the
-frontend.
+**Resolution:** the component, `DemoStage`, `DEMO_STAGES`,
+`AppState.demoStage`, the `SET_DEMO_STAGE` action, the context method, the CSS
+block and their dedicated tests were removed before release. The current audit
+reports class E = 0.
 
 ### E-2 Golden figures inside three Pydantic field descriptions (3)
 
@@ -144,8 +160,8 @@ Nothing branches on them and no value is derived from them; the cost of the
 finding is that `18000.0` is the exact figure the demo reports, offered to a
 model as the example of what this field looks like.
 
-**Required action:** reword to a neutral example. One-line change, no
-behaviour.
+**Resolution:** the field descriptions were reworded to neutral examples before
+release. The current audit reports class E = 0.
 
 ---
 
@@ -243,7 +259,7 @@ Phase 13, and it is a precondition for Phase 14: a demand of "1,900" cannot
 be re-expressed against a different period while the period is part of the
 attribute's name.
 
-### S-4 · The process-family vocabulary is hardcoded in the UI, twice, inconsistently — **real defect**
+### S-4 · The process-family vocabulary was hardcoded in the UI — **RESOLVED**
 
 The canonical vocabulary is `concept_builder._STAGE_VOCABULARY`: **twelve**
 families — assembly, screwdriving, inspection, packaging, welding,
@@ -276,9 +292,9 @@ The component's own comment states the list exists so that "the list says
 what is actually supported rather than accepting free text that quietly
 degrades". Two of its six entries do exactly what it says it prevents.
 
-**Required action:** serve the canonical vocabulary from the backend and
-render both selects from it. Phases 9 and 10 (*UI renders from contracts*),
-and independently a bug fix.
+**Resolution:** `GET /process/families` now serves the canonical twelve-family
+catalog and both UI selects render from that contract. Regression tests reject
+the former `labeling` family and the `testing` alias as selectable families.
 
 ### S-5 · No domain / project-context abstraction
 
@@ -304,34 +320,25 @@ produced at; staleness is computed, transitively, from that. Moving a
 station does not invalidate a throughput result and changing a cycle time
 does. Phase 18 is, in substance, already done and done well.
 
-### S-7 · IBM Bob is a claim, not an integration
+### S-7 · IBM Bob runtime boundary — **IMPLEMENTED, LIVE VALIDATION PENDING**
 
-`ArchitecturePanel.tsx:211` renders "IBM Bob · development", and the
-component's own comment (line 28) states Bob is "deliberately NOT a
-pipeline" participant. That is currently accurate and honest.
+The initial audit found only development-time attribution and no resolvable
+runtime contract. Since then, `backend/app/llm/bob_provider.py` has implemented
+the provider behind the existing language-model abstraction, and
+`backend/.env.example` documents the Bob configuration surface. Request
+construction, parsing, retry behaviour, error mapping and key redaction are
+contract-tested against a stubbed transport.
 
-For Phase 5 the position is: **no Bob API contract is resolvable from this
-environment.** There is no `BOB_*` variable in `backend/.env`, none in the
-process environment, no Bob endpoint, key, team id or SDK anywhere in the
-repository, and no vendor documentation in the tree. The only configured
-language provider is watsonx (`FACTORYMIND_LLM_PROVIDER=watsonx`), itself
-externally blocked by the account's Lite-plan token quota.
+No live Bob call was available in the release environment, so the public claim
+remains bounded: the provider is implemented and contract-tested, not
+live-validated. See `FABRIVIUM_IBM_BOB_RUNTIME.md` and the binding wording in
+`FABRIVIUM_CLAIM_MATRIX.md` §5.
 
-Per the brief's own instruction — *"If the exact Bob API contract cannot be
-resolved: create the provider interface and adapter boundary, but STOP
-before inventing HTTP details"* — this is reported as a blocker. See
-`FABRIVIUM_IBM_BOB_RUNTIME.md` for what exists and exactly what is needed to
-finish it.
+### S-8 · Public repository surface — **RESOLVED**
 
-The good news is that the boundary Phase 5 asks for is already built:
-`app/llm/provider.py` is a template-method base where a provider implements
-one method, `_generate_raw`, and inherits bounded retry, JSON parsing and
-mandatory Pydantic validation. Adding a real Bob transport is one file.
-
-### S-8 · Public repository surface is empty
-
-`README.md` is **0 bytes**. `.env.example` documents watsonx only. Phases 31
-and 35.
+The public release now includes a full README, reproducible run instructions,
+evidence links, limitations, Bob configuration in `backend/.env.example`, and
+third-party notices.
 
 ---
 
@@ -346,9 +353,9 @@ Stated positively, so the next phase does not re-litigate it:
 * **`concept_example_data`** — the one function that can write CEC-120's
   measured numbers into another product's concept — runs only on an explicit
   user action, tags every value `ValueSource.EXAMPLE_DATA`, and is never
-  reached from the product path. The three-case generalization run
-  (`GENERALIZATION_VALIDATION_REPORT.md`) asserts no case's concept contains
-  a single `EXAMPLE_DATA` value, and found none.
+  reached from the product path. The recorded audit in
+  `examples/generalization/results/audit.json` covers every `case_*.json`
+  result and found no `EXAMPLE_DATA` leakage into completed non-CEC concepts.
 * **Provenance and unknown-handling are real** and are the strongest part of
   the system. `SourcedFloat`/`SourcedInt` make "unknown" a first-class state
   that cannot be confused with zero, and `concept_to_factory` refuses to
@@ -357,29 +364,26 @@ Stated positively, so the next phase does not re-litigate it:
 
 ---
 
-## 5. Required actions, in dependency order
+## 5. Release disposition
 
-| # | Action | Phase | Blocking |
-|---|---|---|---|
-| 1 | Serve the canonical process-family vocabulary; render both selects from it | 9, 10 | — |
-| 2 | Delete the Demo Mode scaffolding | 30 | — |
-| 3 | Reword three Pydantic field descriptions | 30 | — |
-| 4 | Add `ManufacturingDomain` / `ProjectContext` with a `GENERIC_MANUFACTURING` fallback | 4 | 22, 23 |
-| 5 | Introduce typed units; make period and currency explicit | 13 | 14, 20 |
-| 6 | Represent production architecture; break operation ≡ station | 2, 15, 16 | 17, 25 |
-| 7 | Model the lifecycle as stages with status and evidence | 8 | 34 |
-| 8 | Bob provider — boundary only, pending an API contract | 5 | **blocked** |
-| 9 | README, `.env.example`, public repository surface | 31, 35 | — |
-
-Items 1-3 are defect fixes and are cheap. Item 6 is the one that decides
-whether Fabrivium is a line planner or a production-system planner.
+| Initial action | Release disposition |
+|---|---|
+| Serve the canonical process-family vocabulary; render both selects from it | **RESOLVED** |
+| Delete the Demo Mode scaffolding | **RESOLVED** |
+| Reword the three Pydantic field descriptions | **RESOLVED** |
+| Add `ManufacturingDomain` / `ProjectContext` | **ROADMAP** |
+| Introduce typed units; make period and currency explicit | **ROADMAP** |
+| Break operation ≡ station | **PARTIALLY RESOLVED** — engineer-defined sequential grouping exists; automatic architecture synthesis is roadmap |
+| Model lifecycle stages with status and evidence | **ROADMAP** |
+| IBM Bob provider | **IMPLEMENTED AND CONTRACT-TESTED**; live validation pending |
+| README, `.env.example`, public repository surface | **RESOLVED** |
 
 ---
 
 ## 6. Golden-run parity, measured rather than asserted
 
-The changes made after this audit (§5 items 1-3, plus the Bob provider and
-the core-isolation test) were checked against the checkpoint by **running
+The resolved release changes above, plus the Bob provider and the
+core-isolation test, were checked against the checkpoint by **running
 the same golden journey against both code states and comparing the output**,
 rather than by reasoning about which modules were touched.
 
@@ -457,6 +461,7 @@ Stated so the numbers are read for what they are.
   the recorded demo run and the presentation sources, which are example data
   by location. Whether any of it is reachable from a production import is
   §4's `concept_example_data` question, answered there.
-* **The scan reads the working tree, not `HEAD`.** It therefore covers the
-  uncommitted work of earlier phases, which is the code that would actually
-  ship.
+* **The original checkpoint scan read the working tree, not `HEAD`.** That is
+  why the historical baseline includes the uncommitted work described at the
+  top of this document. The current release gate scans the committed public
+  tree and is reported separately.

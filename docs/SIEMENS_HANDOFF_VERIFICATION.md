@@ -257,10 +257,9 @@ Consequence, stated in advance rather than discovered after a mismatch: where
 the workforce constraint is not binding, the two engines agree to within one
 unit per day; where it **is** binding they diverge, and the generated model
 cannot reproduce the workforce-constrained figure by any configuration of the
-objects it contains. See [cross-simulator semantics](CROSS_SIMULATOR_SEMANTICS.md)
-for the measured semantic mapping, and
-[the validation report](CROSS_SIMULATOR_VALIDATION_REPORT.md) for the executed
-comparison.
+objects it contains. See
+[cross-simulator semantics](CROSS_SIMULATOR_SEMANTICS.md) for the measured
+semantic mapping and executed comparison.
 
 **Only the German locale has been exercised live.** English identifiers are
 implemented and unit-tested; the live proof is German.

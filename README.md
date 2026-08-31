@@ -57,13 +57,7 @@ A compact electronics controller. The line as specified falls short of the custo
 | New machines | **0** |
 | Added known OPEX | €18,000/day |
 
-<!-- MANUAL PLACEHOLDER — REPLACE BEFORE PUBLISHING
-Capture the canonical CEC-120 result from the running application
-(1,435 baseline · 1,900 verified · 23 simulations · 3 strategies), save it
-as docs/assets/cec120-verified-result.png, then replace this comment block with:
-
 ![The CEC-120 project in Fabrivium after verification: a 1,435 units per day baseline raised to a verified 1,900 units per day, reached by comparing 3 strategies across 23 deterministic simulations](docs/assets/cec120-verified-result.png)
--->
 
 The constraint is the two cable connections at 40.0 s — an engineer's override of Fabrivium's 38.5 s estimate. The selected plan buys nothing: the limiting station has headroom the shift pattern is not using, and the cost of using it is a shift rather than a machine. The OPEX is a **commercial figure the engineer supplied**, not something Fabrivium estimated.
 
