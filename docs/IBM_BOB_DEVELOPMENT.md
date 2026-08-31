@@ -18,12 +18,24 @@ IBM Bob was used as an AI SDLC partner across this project's phases:
 planning, implementation, code review, testing, debugging, validation,
 generalization and documentation.
 
-The evidence a reviewer can check is the repository itself — the phase
-reports, audits and validation records under `docs/` and the repository
-root are the written trail of that work, and they are unusually specific
-about what was measured, what failed, and what was left undone. That
-specificity is the point: it is what makes the claims checkable rather than
-assertable.
+The evidence a reviewer can check is not a narrative — it is a chain of
+artefacts, each of which either runs or fails:
+
+| Artefact | What a reviewer can do with it |
+|---|---|
+| `backend/app/llm/bob_provider.py` | Read the provider written against Bob's inference API |
+| `backend/tests/test_bob_provider.py` | Run 47 tests over request construction, response parsing, the HTTP error taxonomy, bounded retry and key redaction |
+| `backend/tests/test_deterministic_core_isolation.py` | Assert that no engineering-core module can reach the provider layer, transitively |
+| `python -m scripts.fabrivium_coupling_audit` | Confirm 0 production hard-codings and 0 hidden golden-run couplings |
+| `python -m scripts.golden_journey_run` | Reproduce the CEC-120 case end to end from the source document |
+| `docs/FABRIVIUM_CLAIM_MATRIX.md` | Check every public sentence against the claim it is allowed to make |
+| `docs/SIEMENS_HANDOFF_VERIFICATION.md` | Check the Plant Simulation handoff against read-back evidence |
+
+Each was produced by the same loop: an engineering objective, a Bob-assisted
+implementation or test design, an automated gate, and an engineering review
+that could reject the result and send it back. The artefacts are specific
+about what was measured, what failed, and what was left undone — which is
+what makes the claims checkable rather than assertable.
 
 This is a statement about **how the code was written**. It says nothing
 about what the running system does, and it is not evidence for the runtime
@@ -72,8 +84,8 @@ exactly one call is made with no retry storm, the deterministic backend
 takes over, and provenance records that the fallback ran.
 
 **So Fabrivium's demonstrated behaviour is its deterministic path.** Every
-result in this repository — the CEC-120 case, all seven generalization
-cases, the browser QA — was produced with `FACTORYMIND_LLM_ENABLED=false`.
+result in this repository — the CEC-120 case, the mechanical and packaging
+domains, the browser QA — was produced with `FACTORYMIND_LLM_ENABLED=false`.
 That is a strength worth stating rather than hiding: the engineering claims
 do not depend on a model being reachable.
 

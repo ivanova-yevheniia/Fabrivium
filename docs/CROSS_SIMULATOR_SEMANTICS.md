@@ -1,62 +1,47 @@
 # Cross-simulator semantics — what "units/day" means in each engine
 
-**Date:** 2026-08-23
-**Baseline:** commit `5a9fe53`, tag `competition-strong-finalist-v1`
-**Purpose:** establish, *before any CEC-120 throughput is compared*, whether the
-two numbers measure the same thing.
+**Engines:** Fabrivium's deterministic core (SimPy) and Siemens Tecnomatix
+Plant Simulation 2404.
+**Purpose:** establish, before any throughput is compared, whether the two
+numbers measure the same thing.
 
-Everything marked **measured** was established experimentally against the live
-installation or the live FactoryMind engine, with the probe script named. No
-value in this document was taken from memory or documentation.
+Two simulators can disagree because one of them is wrong, or because they are
+answering different questions. This document separates those. Everything marked
+**measured** was established experimentally against the live installation or the
+live Fabrivium engine; no value here was taken from memory or documentation.
+
+**Fabrivium does not claim parity with Plant Simulation.** It claims a bounded,
+documented correspondence, and names the boundary.
 
 ---
 
-## 1. The horizon boundary — why the control model returned 359, not 360
+## 1. The horizon boundary — the two engines differ by one event
 
-### The observation
+### Measured, Plant Simulation
 
-Minimal control model, `Source → SingleProc → Drain`, `ProcTime = 10 s`,
-saturating source, `EventController.End = 3600`:
-
-```
-Source.StatNumOut  360
-Proc.StatNumIn     360
-Proc.StatNumOut    359
-Drain.StatNumIn    359      <-- ideal steady-state capacity is 360
-Proc.StatWorkingPortion 1   (100% busy — nothing was lost to idling)
-```
-
-### Hypothesis
-
-Completions land at `t = 10, 20, … , 3600`. The completion scheduled at
-**exactly** `t = End` is not executed before the run terminates, so the Drain
-counts completions **strictly before** the horizon.
-
-### The test — `scratchpad/boundary_probe.py`, **measured**
-
-`ProcTime = 10 s` throughout. `strict` = number of `k` with `k·10 < End`;
-`inclusive` = number with `k·10 ≤ End`.
+A minimal control model — `Source → SingleProc → Drain`, `ProcTime = 10 s`,
+saturating source — was run across eight horizons. `strict` counts completions
+with `k·10 < End`; `inclusive` counts `k·10 ≤ End`.
 
 | `End` | `Drain.StatNumIn` | strict | inclusive | verdict |
 |---:|---:|---:|---:|---|
 | 100 | **9** | 9 | 10 | strict |
-| 101 | 10 | 10 | 10 | (both agree) |
-| 105 | 10 | 10 | 10 | (both agree) |
+| 101 | 10 | 10 | 10 | both agree |
+| 105 | 10 | 10 | 10 | both agree |
 | 110 | **10** | 10 | 11 | strict |
 | 3600 | **359** | 359 | 360 | strict |
-| 3600.001 | 360 | 360 | 360 | (both agree) |
-| 3601 | 360 | 360 | 360 | (both agree) |
+| 3600.001 | 360 | 360 | 360 | both agree |
+| 3601 | 360 | 360 | 360 | both agree |
 | 57600 | **5759** | 5759 | 5760 | strict |
 
-### Conclusion — CONFIRMED, 8/8 cases
+**Conclusion — confirmed, 8/8 cases: Plant Simulation counts completions
+strictly before `EventController.End`.** A completion scheduled at exactly
+`t = End` is not executed before the run terminates. This is deterministic,
+fully explained, and is not a defect in either simulator.
 
-**Plant Simulation counts completions strictly before `EventController.End`.**
-A completion scheduled at exactly `t = End` is not counted. This is
-deterministic, fully explained, and is *not* a defect in either simulator.
+### Fabrivium is inclusive, and always has been
 
-### FactoryMind does the opposite — and always has
-
-`backend/app/services/simulation.py`, a line that **predates this phase**:
+`backend/app/services/simulation.py`, on a line that predates this comparison:
 
 ```python
 # Run until just past the nominal horizon by a tiny epsilon so that events
@@ -65,14 +50,11 @@ deterministic, fully explained, and is *not* a defect in either simulator.
 env.run(until=horizon_seconds + 1e-6)
 ```
 
-FactoryMind's horizon is therefore **inclusive**. The two engines differ by
-exactly one boundary event.
+### Resolution — alignment, not tuning
 
-### Resolution — and why it is not tuning
-
-`scratchpad/epsilon_probe.py`, **measured**: Plant Simulation stores `End` at
-far higher precision than its 4-decimal display. Every epsilon from `1e-9`
-upward flips the count from 359 to 360.
+**Measured:** Plant Simulation stores `End` at far higher precision than its
+four-decimal display, and every epsilon from `1e-9` upward flips the control
+model from 359 to 360.
 
 | epsilon added to 3600 | `End` displayed | `Drain.StatNumIn` |
 |---|---|---|
@@ -81,196 +63,178 @@ upward flips the count from 359 to 360.
 | 1e-4 | `1:00:00.0001` | 360 |
 | 0.01 | `1:00:00.0100` | 360 |
 
-So setting `EventController.End := horizon + 1e-6` gives Plant Simulation the
-**identical inclusive horizon FactoryMind already uses**, with the *same
-numeric epsilon*, copied from the existing FactoryMind line rather than chosen.
-There is no free parameter here: the value is fixed by FactoryMind, not fitted
-to a Plant Simulation result.
+Setting `EventController.End := horizon + 1e-6` gives Plant Simulation the
+**identical inclusive horizon Fabrivium already uses, with the same numeric
+epsilon** — copied from the existing Fabrivium line rather than chosen. There is
+no free parameter here: the value is fixed by Fabrivium, not fitted to a Plant
+Simulation result.
 
-> **Note for the CEC-120 case specifically:** completions land at
-> `212 + 52k` seconds, and `(57600 − 212)/52 = 1103.6…` is not an integer, so
-> **no completion falls exactly on the horizon** and the strict/inclusive
-> distinction changes nothing for this case. The alignment is applied for
-> semantic correctness, not because it moves the number.
+The alignment is applied for semantic correctness. On a case where no completion
+lands exactly on the horizon, it changes nothing.
 
 ---
 
-## 2. Side-by-side semantic mapping
+## 2. Semantic mapping
 
-| Aspect | FactoryMind (SimPy) | Plant Simulation 2404 | Match? |
+| Aspect | Fabrivium (SimPy) | Plant Simulation 2404 | Match? |
 |---|---|---|---|
-| Production horizon | `shifts × hours × 3600` = **57,600 s** | `EventController.End` | **matched** by assignment |
-| Horizon boundary | **inclusive** (`until = h + 1e-6`) | **strictly before** `End` — *measured* | **matched** by setting `End = h + 1e-6` |
-| Finished unit | completed final route step within horizon → `completed_units` | `Drain.StatNumIn` | **matched** |
-| Unfinished WIP at horizon | counted as `work_in_progress`, **excluded** from `completed_units` | remains in the line, never reaches Drain | **matched** |
+| Production horizon | `shifts × hours × 3600` | `EventController.End` | **matched** by assignment |
+| Horizon boundary | inclusive (`until = h + 1e-6`) | strictly before `End` — *measured* | **matched** by setting `End = h + 1e-6` |
+| Finished unit | completed final route step within horizon | `Drain.StatNumIn` | **matched** |
+| Unfinished WIP at horizon | counted as `work_in_progress`, excluded from completions | remains in the line, never reaches the Drain | **matched** |
 | Initial state | empty line, WIP = 0, `t = 0` | empty after `ResetSimulation` | **matched** |
-| Statistics start / warm-up | none — measured from `t = 0` | none — measured from `t = 0` | **matched** |
+| Warm-up | none — measured from `t = 0` | none — measured from `t = 0` | **matched** |
 | Cycle time | deterministic `ProcessStep.cycle_time` | deterministic `ProcTime` | **matched** |
-| Station capacity | SimPy `Resource(capacity = machine.capacity)` | `Capacity` | **matched** (all 1 here) |
+| Station capacity | SimPy `Resource(capacity = machine.capacity)` | `Capacity` | **matched** |
 | Setup / recovery | not modelled | `SetupTime = 0`, `RecoveryTime = 0` | **matched** |
-| Failures / availability | not modelled (`failure_rate` sits unread) | `Availability = 100`, `Failures = 0` | **matched** |
+| Failures / availability | not modelled | `Availability = 100`, `Failures = 0` | **matched** |
 | Scrap, changeover, transport | not modelled | not added | **matched** |
 | Determinism | fixed times, no random variables | fixed times, no random variables | **matched** |
-| Release / source policy | paced feeder, see §3 | `Source.Interval` + `Source.Number` | **matched** by assignment |
-| Demand cap | `target_units = ceil(demand_per_day)` units released, then stops | `Source.Number` | **matched** by assignment |
-| Queue before first station | **unbounded** | Source **blocks** when line is full | **differs** — see §4 |
-| Intermediate buffers | 5 wired, capacity 50 | **none in the model** | **differs** — see §4 |
-| Blocking | outbound-buffer-full blocks the machine that is still held | inherent in a zero-buffer serial line | differs in mechanism, see §4 |
-| Starvation | modelled | modelled | matched |
-| **Shared operators** | **shared pool of 8, seized per operation** | **not represented** | **DIFFERS — material, see §5** |
-| Shift calendar / breaks | not modelled (shifts only set horizon length) | not modelled | **matched** |
+| Release policy | paced feeder, see §3 | `Source.Interval` + `Source.Number` | **matched** by assignment |
+| Demand cap | `target_units` released, then release stops | `Source.Number` | **matched** by assignment |
+| Queue before first station | unbounded | Source blocks when the line is full | **differs** — see §4 |
+| Intermediate buffers | wired, with capacity | present in the model | **matched** |
+| Blocking | outbound-buffer-full blocks the machine still holding the unit | inherent in a serial line | differs in mechanism, see §4 |
+| Starvation | modelled | modelled | **matched** |
+| **Shared operators** | **shared pool, seized per operation** | **not represented** | **DIFFERS — material, see §5** |
+| Shift calendar / breaks | not modelled (shifts set horizon length only) | not modelled | **matched** |
 
 ---
 
-## 3. FactoryMind's release schedule — paced, not saturated
+## 3. Release is paced, not saturated
 
-This is the single most important thing to get right, and it is easy to get
-wrong. FactoryMind's baseline run is **not** a saturated-source capacity run.
-
-From `simulation.py`:
+This is the single easiest thing to get wrong. Fabrivium's baseline run is
+**not** a saturated-source capacity run.
 
 ```
-target_units        = ceil(demand_per_day)                      = 1900
-nominal_route_time  = Σ cycle_time = 35+35+52+35+30+25          = 212 s
-latest_release_time = horizon − nominal_route_time              = 57388 s
-release_interval    = latest_release_time / (target_units − 1)  = 30.220116 s
+target_units        = ceil(demand_per_day)
+nominal_route_time  = Σ cycle_time over the route
+latest_release_time = horizon − nominal_route_time
+release_interval    = latest_release_time / (target_units − 1)
 ```
 
-Unit 0 is released at `t = 0`; unit *k* at `t = k × 30.220116`. Release is
+Unit 0 is released at `t = 0`, unit *k* at `t = k × release_interval`. Release is
 **not throttled by capacity** — when arrivals outrun the bottleneck, queues and
-WIP grow and are measured.
+WIP grow, and are measured. The Plant Simulation mirror is therefore
+`Source.Interval := release_interval` and `Source.Number := target_units`, not a
+saturating source.
 
-Confirmed in the live reference run: `release_interval_seconds = 30.220116`.
+### Two Fabrivium quantities that must never be compared to each other
 
-The Plant Simulation mirror is therefore `Source.Interval := 30.220116` and
-`Source.Number := 1900`, **not** a saturating source.
-
-### Two distinct FactoryMind quantities, which must never be compared to each other
-
-| Quantity | How FactoryMind produces it | Plant Simulation mirror |
+| Quantity | How Fabrivium produces it | Plant Simulation mirror |
 |---|---|---|
 | **Delivered output** | paced release of exactly `ceil(target)` units | `Interval = release_interval`, `Number = target_units` |
-| **Modeled capacity** | one extra run at `SATURATION_DEMAND_PER_DAY = 100,000/day` (`capacity.py`) | saturating source, `Number` unbounded or 100,000 |
+| **Modeled capacity** | a separate run at `SATURATION_DEMAND_PER_DAY` (`capacity.py`) | saturating source, unbounded `Number` |
 
-`capacity.py` exists precisely because these two disagree. A demand-capped
-Plant Simulation result must never be compared against FactoryMind's capacity
-figure, and vice versa.
+`capacity.py` exists precisely because these two disagree. A demand-capped Plant
+Simulation result must never be compared against Fabrivium's capacity figure, or
+the reverse.
 
 ---
 
-## 4. Buffers and blocking — measured, and shown not to matter *where it counts*
+## 4. Buffers and blocking
 
-The exchange package carries 5 wired buffers of capacity 50; the `.spp` carries
-none. Rather than argue about whether that matters, it was measured with
-FactoryMind's own engine, varying only the buffer-capacity **input**
-(`scratchpad/diag_buffers.py`).
+Buffers are transferred to the model with their capacities, so the structural
+difference that once existed here is closed.
 
-**With the workforce constraint relaxed (operators = 12), completed units are
-completely insensitive to buffering:**
+The remaining difference is the unbounded input queue versus a blocking source.
+Under a bottleneck-limited deterministic line both admit units at the bottleneck
+rate: with no variability there is no blocking loss, and the bottleneck sets the
+rate. **Measured** by varying only the buffer-capacity input in Fabrivium's own
+engine with the workforce constraint relaxed, completed units are completely
+insensitive to buffering across capacities from 1 to 1,000 and with buffering
+removed entirely.
 
-| buffer capacity | 1 | 2 | 5 | 10 | 50 | 200 | 1000 | **none** |
-|---|---|---|---|---|---|---|---|---|
-| completed units | 1104 | 1104 | 1104 | 1104 | 1104 | 1104 | 1104 | **1104** |
-
-This is the expected result for a deterministic serial line: with no
-variability there is no blocking loss, and the bottleneck sets the rate. It
-means **the `.spp`'s omission of buffers is harmless in the workforce-neutral
-case** — the comparison is valid despite the structural difference.
-
-**With the workforce constraint active (operators = 8), buffering and
-operators are coupled, and buffer size changes the answer a great deal:**
-
-| buffer capacity | 1 | 2 | 5 | 10 | **50** | 200 | 1000 | none |
-|---|---|---|---|---|---|---|---|---|
-| completed units | 1083 | 1082 | 1081 | 1078 | **1058** | 984 | 817 | 982 |
-
-Larger buffers let more units accumulate upstream, where they consume scarce
-operators and starve the bottleneck. **1,058 is a joint consequence of the
-operator pool *and* the 50-unit buffers.** Neither is in the `.spp`, so the
-generated model cannot reproduce 1,058 by any configuration of the objects it
-contains. This is stated in advance, not discovered after a mismatch.
-
-The unbounded-queue-vs-blocking-source difference (§2) is subsumed by the same
-argument: under a bottleneck-limited deterministic line both admit units at the
-bottleneck rate, and the workforce-neutral row above shows the completed count
-does not move.
+That insensitivity holds **only while the workforce is not binding**. When it is,
+buffering and operators are coupled — larger buffers let units accumulate
+upstream, where they consume scarce operators and starve the bottleneck — and
+buffer size changes the answer substantially. A workforce-constrained figure is
+therefore a joint consequence of the operator pool *and* the buffer sizes, and
+neither the pool nor that coupling exists in the `.spp`.
 
 ---
 
 ## 5. The workforce constraint — the material semantic gap
 
-### FactoryMind's model (`_OperatorPool`, `_run_step`)
+### Fabrivium's model
 
-* one shared pool of `operators_available` interchangeable operators
-  (`simpy.Container`, because one operation consumes N at once)
-* per operation: seize the **machine** first, then `operators_required`
-  operators — all-or-nothing, blocking
-* operators released the instant processing ends, before the unit moves on
-* **zero travel time, no identity, no allocation preference**
+* one shared pool of interchangeable operators (`simpy.Container`, because one
+  operation consumes N at once);
+* per operation: seize the **machine** first, then the required operators —
+  all-or-nothing, blocking;
+* operators released the instant processing ends, before the unit moves on;
+* **zero travel time, no worker identity, no allocation preference.**
 
-### Is it binding on CEC-120? — measured, `scratchpad/diag_operators.py`
+Where the pool is binding, Fabrivium reports it explicitly:
+`operator_constrained`, `peak_operators_in_use`, `operator utilisation` and
+`operations_delayed_by_operators` are all KPI outputs. The constraint becomes
+provably non-binding at the operator count where
+`operations_delayed_by_operators` reaches 0 — which is measured per scenario, not
+assumed.
 
-Reference run KPI:
+### Can Plant Simulation represent it? — investigated
 
-```
-operators_available              8
-operators_required_peak          12
-peak_operators_in_use            8
-utilization                      0.9987
-operations_delayed_by_operators  4712
-operator_constrained             true
-```
+The resource library exists — `.Ressourcen.Werker`, `.Werkerpool`, `.Broker`,
+`.Arbeitsplatz`, `.Schichtkalender` — but a `SingleProc` exposes **no**
+worker-requirement attribute: every candidate (`Services`, `ProcService`,
+`NumberOperators`, `Importer`, `Broker`, …) returns *Unbekannter Bezeichner*.
 
-Sensitivity (only the `operators_available` input varied):
+Plant Simulation attaches workers through a `Workplace` bound to the station,
+allocated by a `Broker`, with workers **physically walking** `FootPath`s from a
+`WorkerPool`. That mechanism carries semantics Fabrivium does not have: travel
+time, worker identity and broker allocation priority. Implementing it would not
+reproduce Fabrivium's anonymous zero-travel pool — it would **introduce a new
+difference while claiming to remove one**, and it would add simulation features
+Fabrivium itself does not model.
 
-| operators | 8 | 9 | **10** | 11 | 12 | 16 | 24 | 48 |
-|---|---|---|---|---|---|---|---|---|
-| completed | 1058 | 1058 | **1104** | 1104 | 1104 | 1104 | 1104 | 1104 |
-| `operator_constrained` | true | true | **false** | false | false | false | false | false |
-| ops delayed | 4712 | 4712 | **0** | 0 | 0 | 0 | 0 | 0 |
+### Decision — bound the claim rather than fake the parity
 
-**The workforce constraint is hard-binding at 99.87% utilisation and is worth
-46 units/day (4.3%).** It becomes provably non-binding at ≥ 10 operators, where
-FactoryMind itself reports `operations_delayed_by_operators = 0`.
-
-### Can Plant Simulation represent it? — investigated, `scratchpad/worker_probe*.py`
-
-The resource library exists: `.Ressourcen.Werker`, `.Ressourcen.Werkerpool`,
-`.Ressourcen.Broker`, `.Ressourcen.Arbeitsplatz`, `.Ressourcen.Schichtkalender`.
-
-But a `SingleProc` exposes **no** worker-requirement attribute — every candidate
-(`Services`, `ProcService`, `NumberOperators`, `Importer`, `Broker`, …) returns
-*Unbekannter Bezeichner*. Plant Simulation attaches workers through a
-`Workplace` bound to the station, allocated by a `Broker`, with workers
-**physically walking** along `FootPath`s from a `WorkerPool`.
-
-That mechanism carries semantics FactoryMind does not have: travel time,
-worker identity, and broker allocation priority. Implementing it would not
-reproduce FactoryMind's anonymous zero-travel pool — it would **introduce a new
-difference** while claiming to remove one, and it is explicitly ruled out by
-this phase's own constraint ("do not add simulation features that FactoryMind
-itself does not model… no transport delays").
-
-### Decision — path B, with the limitation made load-bearing
-
-Cross-simulator comparison is performed on a scenario where the workforce
-constraint is **demonstrably non-binding** (FactoryMind reporting
-`operations_delayed_by_operators = 0`), and the workforce-constrained baseline
-is reported as a **predicted mismatch of known cause and pre-stated magnitude**
-— not as parity, and not quietly omitted.
-
-The prediction is registered in `CROSS_SIMULATOR_VALIDATION_PLAN.md` **before**
-any CEC-120 model was executed in Plant Simulation.
+Cross-simulator comparison is performed on scenarios where the workforce
+constraint is **demonstrably non-binding**, with Fabrivium itself reporting
+`operations_delayed_by_operators = 0`. Workforce-constrained scenarios are
+reported as a **predicted mismatch of known cause and pre-stated magnitude** —
+not as parity, and not quietly omitted. The prediction was registered in
+[`CROSS_SIMULATOR_VALIDATION_PLAN.md`](CROSS_SIMULATOR_VALIDATION_PLAN.md)
+before any model was executed in Plant Simulation.
 
 ---
 
-## 6. Discovered execution API (exact, from the live type library)
+## 6. What this supports, and what it does not
 
-`scratchpad/probe_com.py` enumerated the interface rather than assuming it:
+**Supported:**
+
+* The two engines model the same material-flow physics, with the differences
+  above enumerated rather than assumed.
+* Where the workforce constraint is not binding, they agree on line capacity to
+  within one unit per day.
+* The horizon convention is aligned by a value copied from Fabrivium, not fitted
+  to a Plant Simulation result.
+
+**Not supported:**
+
+* **No full-parity claim.** Workforce-constrained scenarios diverge by
+  construction, and demand-paced *delivered* runs carry a systematic start-up
+  offset. Both are documented rather than tuned away.
+* **The semantics are bounded to what both engines model.** Failures,
+  availability, scrap, changeover, transport, shift calendars and breaks are
+  modelled by neither, so agreement between them says nothing about a line where
+  those matter.
+* **The live proof is the German locale, on Plant Simulation 2404.**
+
+Executed results, per-scenario, against a preregistered tolerance:
+[cross-simulator validation report](CROSS_SIMULATOR_VALIDATION_REPORT.md).
+What reaches the model at all:
+[Siemens handoff verification](SIEMENS_HANDOFF_VERIFICATION.md).
+
+---
+
+## Appendix — the execution API, from the live type library
+
+Enumerated from the interface rather than assumed:
 
 ```
 LoadModel  LoadModelWithoutState  NewModel  CloseModel  SaveModel
-ExecuteSimTalk  GetValue  SetValue  GetTableCell  SetTable
+ExecuteSimTalk  GetValue  GetTableCell  SetValue  SetTable
 StartSimulation  StopSimulation  ResetSimulation  StepSimulation
 IsSimulationRunning  HasSimulationError  SetStopSimulationOnError
 Quit  QuitAfterTime  SetPathContext  SetTrustModels  SetNoMessageBox
@@ -278,11 +242,6 @@ SetVisible  SetLicenseType  SetSuppressOpenGL  SetSuppressStartOf3D
 OpenConsoleLogFile  SetCrashStackFile  GetJTExport  TransferModel
 GetCurrentProcessId
 ```
-
-Used by the validation harness: `NewModel`, `LoadModel`, `CloseModel`,
-`SaveModel`, `ExecuteSimTalk`, `GetValue`, `ResetSimulation`,
-`StartSimulation(controller, True)`, `IsSimulationRunning`,
-`HasSimulationError`, `SetStopSimulationOnError`, `Quit`.
 
 Statistics confirmed readable: `Drain.StatNumIn`, `Drain.StatNumOut`,
 `<station>.StatNumIn`, `.StatNumOut`, `.StatWorkingPortion`,

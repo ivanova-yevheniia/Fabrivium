@@ -1,266 +1,100 @@
-# Siemens Plant Simulation handoff — what is actually verified
+# Siemens Plant Simulation handoff — verification report
 
-**Date:** 2026-08-21 (geometry, route and traversal verification added 2026-08-24)
-**Installation:** Siemens Tecnomatix Plant Simulation 2404, German locale,
-`Tecnomatix.PlantSimulation.RemoteControl` (COM/ActiveX, pywin32).
+**Product:** Siemens Tecnomatix Plant Simulation 2404
+**Interface:** `Tecnomatix.PlantSimulation.RemoteControl` (COM/ActiveX, pywin32)
+**Live proof locale:** German
+**Scope of this document:** what the handoff transfers, how each claim is
+verified, and what does not transfer.
 
-This document exists because the question "does a real, usable `.spp` actually
-come out of this?" deserves an answer backed by evidence rather than by a
-green panel in the UI. **The UI success state was not trusted.** Every claim
-below was checked against the filesystem or against Plant Simulation itself.
+Fabrivium's own success panel is not evidence. Every figure below was read back
+**out of the saved `.spp` file** after it had been closed and reopened, by code
+that asks Plant Simulation what the model contains rather than counting its own
+writes.
 
 ---
 
-## Verdict
-
-### REAL AND VERIFIED
+## 1. Verdict
 
 A genuine Plant Simulation model file is produced, written to a persistent
-project directory, and independently confirmed to contain the correct
-topology and cycle times when reopened by Plant Simulation.
+project directory, and independently confirmed — after a save/close/reopen round
+trip — to contain the correct topology, geometry, cycle times and material flow,
+and to pass units through the line.
+
+| Verified by read-back from the reopened file | Result |
+|---|---:|
+| Stations transferred | **6/6** |
+| Cycle times | **6/6** |
+| Buffers | **5/5** |
+| Layout positions | **13/13** |
+| Flow connections | **12/12** |
+| Equipment metadata | **1/1** |
+| Route reaches the drain | **true** |
+| Overlapping objects | **none** |
+| Disconnected objects | **none** |
+| Saved model reverified | **true** |
 
 ---
 
-## Evidence
-
-### 1. The file exists and is a real Plant Simulation model
+## 2. The artefact is a real Plant Simulation model
 
 ```
-path   : C:\...\factorymind\exports\siemens\electronics_assembly_line.spp
-exists : True   size: 3,747,840 bytes
-header : b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1'   (D0CF11E0 = OLE compound file)
+file   : exports/siemens/<factory>.spp
+size   : 3,747,840 bytes
+header : d0 cf 11 e0 a1 b1 1a e1      (OLE compound file)
 ```
 
 `D0CF11E0` is the OLE compound-file magic number. `.spp` is an OLE compound
-file; a stub, a JSON dump, or an empty file would not carry it.
+file; a stub, a JSON dump or an empty file would not carry it.
 
-### 2. Plant Simulation reopens it and the contents match
+Exports are written to `exports/siemens/<factory>.spp` beside the project —
+never to the system temp directory, which the operating system may clear without
+warning. The destination is overridable through the `FACTORYMIND_EXPORT_DIR`
+environment variable, which is how the test suite keeps stub files out of the
+directory holding real deliverables.
 
-Read back by a script that **imports no FactoryMind code**, so the endpoint
-cannot attest to its own success:
-
-```
-Plant Simulation 2404 opened the file.
-
-CYCLE TIMES READ OUT OF THE FILE
-   Assembly_Station           35.00 s   expected   35.00   OK
-   Screwdriving_Station       52.00 s   expected   52.00   OK
-   Inspection_Station         30.00 s   expected   30.00   OK
-   Packaging_Station          25.00 s   expected   25.00   OK
-
-MATERIAL FLOW WALKED FROM THE SOURCE
-   Source                   -> Assembly_Station
-   Assembly_Station         -> Screwdriving_Station
-   Screwdriving_Station     -> Inspection_Station
-   Inspection_Station       -> Packaging_Station
-   Packaging_Station        -> Drain
-
-stations matched : 4/4
-links walked     : 5
-```
-
-A six-stage concept was exported separately and produced 6 stations and 7
-connections, with all six cycle times confirmed by the same independent
-read-back. The counts follow the concept.
-
-### 3. The counts in the UI are read-back counts
-
-`_verify` does not count successful writes. It issues
-`GetValue("<path>.Name")`, `GetValue("<path>.ProcTime")` and
-`ExecuteSimTalk("-> string; return <path>.succ.Name")` — i.e. it asks Plant
-Simulation what the model contains. A write that silently did nothing cannot
-inflate the number.
+The release that wrote the file is recorded. RemoteControl exposes no version
+property and no SimTalk equivalent — both were probed against the live
+installation and neither exists — so `product_version` is read from the COM type
+library's own description (`Plant Simulation 2404`) and shown beside the file.
+When it cannot be determined it is `None` and the interface says the compatible
+releases are unknown rather than guessing.
 
 ---
 
-## What was wrong, and what changed
+## 3. What is verified, and what each check asks the model
 
-Two genuine gaps were found. Both allowed a green success state that the
-evidence did not support.
+`fully_verified` is granted only when **all** of the following hold, in the
+reopened file:
 
-### Gap 1 — "saved" was inferred from a COM call not raising
+| Check | What it asks Plant Simulation |
+|---|---|
+| File written | The path exists and is at least 100 KB (real models are ~3.7 MB) |
+| Round trip | The file is closed, reloaded and re-read — the live session is not the deliverable |
+| Station names | `GetValue("<path>.Name")` for every station |
+| Cycle times | `GetValue("<path>.ProcTime")` equals the concept value |
+| Capacity | `Capacity` equals the concept value |
+| Buffers | Every wired buffer exists, with its capacity |
+| Position read-back | `XPos`/`YPos` equal the coordinates given — this is what catches a silent clamp |
+| No overlap | Every pair of icon centres at least 41 units apart (Chebyshev; icons are axis-aligned squares) |
+| Unique positions | No two objects on the same point |
+| Complete route | The model is **walked** `Source.succ → … → Drain`, and the walk must equal the chain that was built |
+| No disconnected objects | Anything created but not on that walk is named, and fails the handoff |
+| Equipment metadata | `FM_Manufacturer` / `FM_Model` survive save and reload |
+| **Traversal** | The model is **run**, and `Drain.StatNumIn` must be ≥ 1 |
 
-`SaveModel(path)` was called; if it did not throw, `model_path` was set and
-the handoff reported COMPLETE. Nothing ever looked at the filesystem. A save
-that returned while writing nothing — or writing a truncated file — reported
-success with a path pointing at nothing.
+Counts are read-back counts, not write counts: `GetValue` and
+`ExecuteSimTalk("-> string; return <path>.succ.Name")` ask the product what the
+model contains, so a write that silently did nothing cannot inflate a number.
 
-**Now:** after `SaveModel`, the adapter checks the file exists and is at least
-`_MIN_PLAUSIBLE_MODEL_BYTES` (100 KB; real models are ~3.7 MB). Failing either
-check appends an error and leaves `model_path` unset, so the handoff cannot
-report COMPLETE.
-
-### Gap 2 — verification ran against the session, not the file
-
-`_verify` ran *before* `SaveModel`, so it described the live Plant Simulation
-session. The artefact the engineer receives is the file, and nothing had ever
-read the file.
-
-**Now:** after a verified save, the adapter calls `CloseModel()` (Plant
-Simulation refuses `LoadModel` over an open model — "Model already loaded"),
-reloads the saved file, and re-reads every station and connection **out of the
-reloaded file**. `saved_model_verified` is:
-
-* `True` — every station and link found again in the file;
-* `False` — the file could not be reopened, or its contents disagreed;
-* `None` — no file was written, so no round trip was possible. **`None` is not
-  a pass**, and the UI does not render it as one.
-
-`fully_verified` now requires the round trip whenever a save was requested.
-
-Live result after the fix:
-
-```
-status                       COMPLETE
-model_path                   ...\exports\siemens\electronics_assembly_line.spp
-model_bytes                  3747840
-saved_model_verified         True
-saved_stations_verified      4
-saved_connections_verified   5
-product_version              Plant Simulation 2404
-errors                       []
-```
-
-### Gap 3 — the only usable artefact was written to Temp
-
-Exports went to `tempfile.gettempdir()`. The operating system may delete
-anything there without warning; a handoff artefact that disappears on reboot
-is not a handoff.
-
-**Now:** `exports/siemens/<factory>.spp` beside the project, overridable with
-`FACTORYMIND_EXPORT_DIR` (which is how the test suite keeps its stub files out
-of the directory that holds real deliverables).
-
-### Gap 4 — the release that wrote the file was not recorded
-
-An `.spp` is version-bound. RemoteControl exposes no version property and no
-SimTalk equivalent — both were probed against the live installation and
-neither exists. What Siemens *does* expose is the COM type library's own
-description.
-
-**Now:** `product_version` is read from the type library ("Plant Simulation
-2404") and shown beside the file. When it cannot be determined it is `None`
-and the UI says the compatible releases are unknown, rather than guessing.
+`saved_model_verified` has three states and only one of them is a pass:
+`True` — every object found again in the file; `False` — the file could not be
+reopened, or its contents disagreed; `None` — no file was written, so no round
+trip was possible. **`None` is not a pass**, and the interface does not render it
+as one.
 
 ---
 
-## Gap 5 — the model was structurally right and geometrically unusable
-
-> **Found 2026-08-24, by opening the generated `.spp` by hand in Plant
-> Simulation 2404.** The panel reported 6/6 stations, 6/6 cycle times, 12/12
-> flow connections and a verified round trip. The model opened as a heap:
-> station representations stacked at nearly the same position, and MUs piling
-> into a growing vertical tower instead of travelling a line. Every count was
-> true. None of them was about geometry, so none of them could see it.
-
-### Root cause, measured
-
-FactoryMind's layout coordinates are **metres on a factory floor**. They were
-passed straight into `createObject(frame, x, y)`, whose coordinates are
-**frame units** — a different system, a different unit, a different origin,
-and a Y axis that runs the other way. Measured against the live installation:
-
-| Probe | Result |
-|---|---|
-| `obj.getIconSize(w, h)` on Source / SingleProc / ParallelProc / Buffer / Drain | **41 × 41** frame units, all five, and unchanged by `XDim := 6` |
-| `createObject(frame, 4.25, 2.667)` then read `XPos`, `YPos` | **20, 20** |
-| Same for x = 9.75, 15.25 | **20, 20** — identical |
-| Same for x = 31.75 | 31, 20 |
-| `XPos := 4.7` then read back | `4` — coordinates are truncated to integers |
-| `createObject(frame, 32000, 100)` | refused: *"Das Objekt würde sich außerhalb des Netzwerks befinden."* (30 000 is accepted) |
-
-So a frame unit is about 1/41 of an object, and **anything below 20 is
-silently clamped to 20** — 20 being `floor(41 / 2)`, which also says the
-anchor is the icon centre. `concept_builder` lays a six-stage line out on a
-5.5 m pitch, so the whole line spanned **16 frame units inside a 41-unit
-icon**, with four stations below the clamp boundary landing on one point.
-
-Rebuilding the reported case exactly as the old exporter built it, and asking
-the product where everything went:
-
-```
-  Source                 asked (1, 6)           -> got (20, 20)
-  Part_presentation      asked (4.25, 2.667)    -> got (20, 20)
-  Housing_loading        asked (9.75, 2.667)    -> got (20, 20)
-  Screw_fastening        asked (15.25, 2.667)   -> got (20, 20)
-  Torque_verification    asked (20.75, 2.667)   -> got (20, 20)
-  Visual_inspection      asked (26.25, 2.667)   -> got (26, 20)
-  Label_application      asked (31.75, 2.667)   -> got (31, 20)
-  Drain                  asked (36, 6)          -> got (36, 20)
-  Buf0..Buf2             asked (6, 12) (11, 12) (16, 12) -> got (20, 20) ×3
-
-  distinct positions: 5 of 13
-  8 objects share (20, 20)
-  closest pair: Buf0 / Buf1 at 0 units (an icon is 41)
-```
-
-Two further contributors, both real:
-
-* **Buffers were placed by a scheme of their own** (`6 + i × 5, 12`), unrelated
-  to the stations they sit between, so they landed on the stations as well.
-* **The connector chain and the layout were built separately**, so nothing
-  forced the drawn route and the placement to agree.
-
-### Second defect, found by the new verification run
-
-Adding "prove a unit reaches the drain" to the verification immediately failed
-on the fixed-geometry model. A capacity-N stage was built as a **ParallelProc
-with `XDim := N`**, chosen originally on a *saturated* throughput measurement
-where it matched N servers exactly. Re-measured at **low load** it is not N
-servers at all — it is a batch of N that does not begin processing until all N
-places are occupied:
-
-| Construction | 3 MUs released into a 6-place stage | Saturated, 1 h (ideal 720) |
-|---|---|---|
-| `ParallelProc`, `XDim = 6` | **0 reach the drain** — the run stops with all three held inside | 714 |
-| `Buffer`, `Capacity = 6`, `ProcTime = T` | **3 of 3**, at t = 30/35/40 | 714 |
-| `SingleProc` (reference, capacity 1) | 3 of 3 | 119 (ideal 120) |
-
-Saturation hid it because a saturated batch always refills. A multi-capacity
-stage is now built as a Buffer with `Capacity = N` and `ProcTime` = the cycle
-time: the same throughput where the old class was right, and correct where it
-was not. The UI states the construction rather than leaving it implicit.
-
-### The fix
-
-`app/integrations/plant_simulation/layout.py` — a pure, tested transform from
-conceptual coordinates to frame coordinates:
-
-* Measured constants, not chosen ones: `ICON_UNITS = 41`, `MIN_ANCHOR = 20`,
-  `MAX_COORDINATE = 30_000`.
-* **Preferred path:** the conceptual arrangement is *normalised* — one uniform
-  scale plus a Y flip, so relative positions survive — sized so the tightest
-  conceptual pair opens to a 90-unit pitch, and accepted **only if a collision
-  check passes**.
-* **Fallback:** a generated engineering line down the route order, serpentine
-  wrapping at 12 per row, collision-free by construction. Used when the concept
-  cannot be normalised safely (coincident stations, missing coordinates, an
-  extent that will not fit), and the reason is reported, never hidden.
-* Source, Drain and buffers are placed from the route neighbours they sit
-  between — the only honest place for them, since FactoryMind never places them.
-* One chain drives both the placement and the connectors, so the two cannot
-  disagree again.
-
-### The verification that would have caught it
-
-`fully_verified` now additionally requires all of:
-
-| Check | What it asks the model |
-|---|---|
-| Position read-back | `XPos`/`YPos` of every object equals the position it was given — this is what catches a silent clamp |
-| No overlap | every pair of icon centres at least `ICON_UNITS` apart (Chebyshev; the icons are axis-aligned squares) |
-| Unique positions | no two objects on the same point |
-| Complete route | the model is **walked** `Source.succ → … → Drain`, and the walk must equal the chain that was built |
-| No disconnected objects | anything created but not on that walk is named and fails the handoff |
-| Counts | stations, buffers and connections, as before |
-| Cycle-time and capacity read-back | as before |
-| Equipment metadata read-back | `FM_Manufacturer` / `FM_Model` on the station |
-| **Traversal** | the model is RUN and `Drain.StatNumIn` must be ≥ 1 |
-
-Geometry is re-checked in the **reopened file** as well, so a layout that only
-holds in the live session is not a deliverable.
-
-### Live result, same case
+## 4. Live result — the canonical case
 
 ```
 layout mode: normalised-concept   min separation: 90
@@ -277,6 +111,8 @@ traversal_units                    3
 traversal_verified                 True
 equipment_verified                 1/1
 saved_model_verified               True
+product_version                    Plant Simulation 2404
+model_bytes                        3747840
 errors                             []
 
 route walked: Source -> Part_presentation -> Buffer_0 -> Housing_loading ->
@@ -284,74 +120,147 @@ route walked: Source -> Part_presentation -> Buffer_0 -> Housing_loading ->
               Buffer_3 -> Visual_inspection -> Buffer_4 -> Label_application -> Drain
 ```
 
-Read independently out of the saved `.spp`: 13 of 13 distinct positions,
-closest pair 90 units against a 41-unit icon, and a 20-unit release run
-delivering **20 of 20 units to the drain** with every station showing equal
-in/out.
-
-### Equipment under consideration
-
-The selected machine now reaches the model, as metadata and nothing else.
-`FM_Manufacturer`, `FM_Model`, `FM_SourceURL` and `FM_ParameterSource` are
-user-defined attributes on the station object (verified to survive a save and
-reload), read back like every other transferred value. Read out of the file:
-
-```
-  FM_Manufacturer / FM_Model : WEBER Schraubautomaten GmbH / SER Series 30
-  ProcTime / Capacity        : 30.0000 s, capacity 6     <- the VERIFIED concept values
-  FM_ParameterSource         : FactoryMind verified concept — manufacturer
-                               figures are NOT applied
-```
-
-No manufacturer figure is written into `ProcTime`, `Capacity` or any other
-value the simulation reads. Adopting one remains a separate, explicit decision
-made in the review panel.
+Read independently out of the saved `.spp`: 13 of 13 distinct positions, closest
+pair 90 units against a 41-unit icon, and a 20-unit release run delivering
+**20 of 20 units to the drain**, every station showing equal in and out.
 
 ---
 
-## Failure modes covered by tests
+## 5. Geometry — measured constants, not chosen ones
 
-All run without Siemens installed, against a fake that behaves like the real
-product's German locale:
+A model can be structurally correct and geometrically unusable, and counts
+cannot see the difference. Fabrivium's layout coordinates are **metres on a
+factory floor**; `createObject(frame, x, y)` takes **frame units** — a different
+system, a different unit, a different origin and an inverted Y axis. Passing one
+into the other stacks the line into a heap while every count still reports
+success.
 
-| Failure | Test | Asserted outcome |
+The transform in `app/integrations/plant_simulation/layout.py` is therefore
+built on constants measured against the live installation, not assumed:
+
+| Probe | Result |
+|---|---|
+| `getIconSize` on Source / SingleProc / ParallelProc / Buffer / Drain | **41 × 41** frame units, all five, unchanged by `XDim := 6` |
+| `createObject` below x = 20 or y = 20, then read `XPos`/`YPos` | Silently **clamped to 20** — `floor(41 / 2)`, so the anchor is the icon centre |
+| `XPos := 4.7`, read back | `4` — coordinates truncate to integers |
+| `createObject(frame, 32000, 100)` | Refused; 30,000 is accepted |
+
+So `ICON_UNITS = 41`, `MIN_ANCHOR = 20`, `MAX_COORDINATE = 30_000`.
+
+**Preferred path.** The conceptual arrangement is *normalised* — one uniform
+scale plus a Y flip, so relative positions survive — sized so the tightest
+conceptual pair opens to a 90-unit pitch, and accepted **only if a collision
+check passes**.
+
+**Fallback.** A generated engineering line down the route order, serpentine
+wrapping at 12 per row, collision-free by construction. Used when the concept
+cannot be normalised safely — coincident stations, missing coordinates, an
+extent that will not fit — and the reason is reported, never hidden.
+
+Source, Drain and buffers are placed from the route neighbours they sit between,
+since Fabrivium never places them itself. **One chain drives both the placement
+and the connectors**, so the drawn route and the geometry cannot disagree.
+
+Geometry is re-checked in the reopened file as well: a layout that only holds in
+the live session is not a deliverable.
+
+---
+
+## 6. How a multi-capacity stage is built
+
+A capacity-*N* stage is built as a **Buffer with `Capacity = N` and `ProcTime` =
+the cycle time**, not as a `ParallelProc` with `XDim := N`.
+
+The two agree under saturation and disagree at low load, which is the case that
+matters for a deliverable model:
+
+| Construction | 3 MUs released into a 6-place stage | Saturated, 1 h (ideal 720) |
 |---|---|---|
-| `SaveModel` raises | `fail_on="save"` | not complete, error reported |
-| `SaveModel` returns, no file appears | `test_a_save_that_produces_no_file_is_not_complete` | not complete, `model_path is None` |
-| File written but truncated | `test_a_truncated_save_is_not_complete` | not complete, "too small" |
-| Save silently drops a station | `test_a_save_that_silently_loses_a_station_is_not_complete` | session verifies, **file does not**, not complete |
-| File cannot be reopened | `test_a_file_that_cannot_be_reopened_is_not_complete` | not complete |
-| Object creation fails | `fail_on="create"` | partial model reported as partial |
-| Unknown localisation | locale probe | stops rather than guessing |
-| Plant Simulation absent | dispatch raises | `UNAVAILABLE`, distinct from failure |
-| A position is silently clamped | `fail_on="verify_position"` | not complete, "geometrically wrong" |
-| Objects overlap | `collisions()` over the read-back positions | not complete, the pair named |
-| The route does not reach the drain | `fail_on="connect"` | `route_complete` false, not complete |
-| An object is created but off the route | route walk | named in `disconnected`, not complete |
-| No unit traverses the route | `fail_on="drain_empty"` | `traversal_verified` false, not complete |
-| Equipment metadata does not survive | `fail_on="verify_equipment"` | not complete |
+| `ParallelProc`, `XDim = 6` | **0 reach the drain** — the run stops with all three held inside | 714 |
+| `Buffer`, `Capacity = 6`, `ProcTime = T` | **3 of 3**, at t = 30/35/40 | 714 |
+| `SingleProc` (reference, capacity 1) | 3 of 3 | 119 (ideal 120) |
 
-None of these produce a green success state.
+`ParallelProc` with `XDim = N` is a **batch of N** that does not begin processing
+until all N places are occupied — saturation hides this, because a saturated
+batch always refills. The Buffer construction gives the same throughput where
+the other class was right, and correct behaviour where it was not. The interface
+states the construction rather than leaving it implicit.
 
 ---
 
-## What is still NOT verified
+## 7. Equipment under consideration
 
-> **Superseded in part, 2026-08-23.** The model is now genuinely EXECUTED in
-> Plant Simulation and its throughput compared against FactoryMind's. See
-> `CROSS_SIMULATOR_VALIDATION_REPORT.md` for the results, the preregistered
-> tolerance and the remaining limitations. Two defects described there —
-> station capacity was written but never read back, and buffers did not
-> transfer — were found and fixed after this document was written, so the
-> "4/4 stations, 5 links" counts above belong to the pre-fix model. Buffers are
-> now transferred and verified too.
+The selected machine reaches the model **as metadata and nothing else**.
+`FM_Manufacturer`, `FM_Model`, `FM_SourceURL` and `FM_ParameterSource` are
+user-defined attributes on the station object, verified to survive a save and
+reload, and read back like every other transferred value:
 
-* **Plant Simulation does not reproduce the competition baseline of 1,058
-  units/day.** It returns 1,104, because FactoryMind's shared-workforce
-  constraint does not transfer and is binding on that case. Where the
-  workforce is not binding the two engines agree to within one unit per day.
-* **Operator demand, shifts and provenance do not transfer.** Station names,
-  positions, cycle times, capacities, wired buffers and the flow chain reach
-  the model; the workforce does not. The UI lists both sets separately.
-* **Only the German locale has been exercised live.** English identifiers are
-  implemented and unit-tested; the live proof is German.
+```
+FM_Manufacturer / FM_Model : WEBER Schraubautomaten GmbH / SER Series 30
+ProcTime / Capacity        : 30.0000 s, capacity 6    <- the VERIFIED concept values
+FM_ParameterSource         : Fabrivium verified concept — manufacturer
+                             figures are NOT applied
+```
+
+No manufacturer figure is written into `ProcTime`, `Capacity` or any other value
+the simulation reads. Adopting one remains a separate, explicit engineering
+decision made in the review panel.
+
+---
+
+## 8. Failure modes covered by tests
+
+All run **without Siemens installed**, against a fake that behaves like the real
+product's German locale. None of them produces a green success state.
+
+| Failure | Asserted outcome |
+|---|---|
+| `SaveModel` raises | Not complete, error reported |
+| `SaveModel` returns but no file appears | Not complete, `model_path is None` |
+| File written but truncated | Not complete, "too small" |
+| Save silently drops a station | Session verifies, **the file does not** — not complete |
+| File cannot be reopened | Not complete |
+| Object creation fails | Partial model reported as partial |
+| A position is silently clamped | Not complete, "geometrically wrong" |
+| Objects overlap | Not complete, the offending pair named |
+| The route does not reach the drain | `route_complete` false, not complete |
+| An object is created but off the route | Named in `disconnected`, not complete |
+| No unit traverses the route | `traversal_verified` false, not complete |
+| Equipment metadata does not survive | Not complete |
+| Unknown localisation | Stops rather than guessing |
+| Plant Simulation absent | `UNAVAILABLE` — a distinct state from failure |
+
+---
+
+## 9. What does not transfer
+
+The transferred model is the **baseline engineering concept**, and its scope is
+bounded on purpose.
+
+**Transfers:** station names, layout positions, cycle times, capacities, wired
+buffers, the material-flow chain, and equipment metadata.
+
+**Does not transfer:**
+
+* **Operator demand and the shared-workforce constraint.** Plant Simulation
+  attaches workers through a `Workplace` bound to the station, allocated by a
+  `Broker`, with workers physically walking `FootPath`s from a `WorkerPool` —
+  semantics carrying travel time, worker identity and allocation priority that
+  Fabrivium's anonymous zero-travel pool does not have. Implementing it would
+  introduce a new difference while claiming to remove one.
+* **Shift pattern.** Shifts set the horizon length in Fabrivium; no shift
+  calendar is written.
+* **Provenance.** Whether a value was measured, estimated or set by an engineer
+  is Fabrivium state, and has no representation in the model.
+
+Consequence, stated in advance rather than discovered after a mismatch: where
+the workforce constraint is not binding, the two engines agree to within one
+unit per day; where it **is** binding they diverge, and the generated model
+cannot reproduce the workforce-constrained figure by any configuration of the
+objects it contains. See [cross-simulator semantics](CROSS_SIMULATOR_SEMANTICS.md)
+for the measured semantic mapping, and
+[the validation report](CROSS_SIMULATOR_VALIDATION_REPORT.md) for the executed
+comparison.
+
+**Only the German locale has been exercised live.** English identifiers are
+implemented and unit-tested; the live proof is German.
