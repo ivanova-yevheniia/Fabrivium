@@ -1,0 +1,58 @@
+LT-8 GEARBOX HOUSING ASSEMBLY — PRODUCT SPECIFICATION
+Synthetic case document written for FactoryMind generalization validation.
+Document status: SYNTHETIC CASE DOCUMENT. Not a customer document.
+
+1. PRODUCT
+
+The LT-8 is a sealed single-stage gearbox housing supplied as a finished
+sub-assembly to a conveyor builder. It is an industrial-duty metal product
+mounted on a driven roller frame.
+
+Overall dimensions of the assembled unit are 310 x 240 x 180 mm.
+
+2. MATERIALS
+
+The housing body and the cover plate are cast in aluminium. The input shaft
+and the retaining bolts are steel. No plastic parts are used anywhere on
+the assembly.
+
+3. COMPONENTS
+
+Each assembly contains:
+
+- one cast housing body
+- one machined cover plate
+- one input shaft
+- two ball bearings
+- one paper gasket
+- one drain plug
+
+4. PREPARATION
+
+Both castings are washed and degreased before assembly. The machined bores
+are blown dry with filtered air and the sealing faces are wiped with
+solvent.
+
+5. INTERNAL WORK
+
+The two ball bearings are pressed into the housing bores on an arbor press.
+The input shaft is fitted through the bearings and seated against the inner
+race. The paper gasket is laid onto the sealing face by hand.
+
+6. FASTENING
+
+The cover plate is retained by twelve bolts tightened to 24 Nm in a
+diagonal sequence. The drain plug is fitted with a copper washer and
+tightened separately.
+
+7. QUALITY REQUIREMENTS
+
+Each completed assembly is pressure tested for leaks at 0.5 bar. Shaft
+rotation is verified by hand before the unit leaves the cell. Assemblies
+that fail are set aside for rework.
+
+8. PACKAGING
+
+Finished assemblies are wrapped in oiled paper and packed into a returnable
+steel crate with a foam insert. Each crate holds four assemblies and is
+closed with a lid strap.

@@ -1,0 +1,65 @@
+BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION
+Synthetic case document written for Fabrivium generalization validation.
+Document status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.
+
+This specification describes a filled and packed bottled product. It is
+deliberately a PROCESS-DOMINATED product: it has almost no assembly content
+and almost no fasteners, which is the opposite shape to the discrete
+assembly cases.
+
+1. PRODUCT
+
+The BV-2 is a 500 ml still beverage in a PET bottle with a screw closure.
+The finished saleable unit is one filled, capped and labelled bottle.
+
+The bottle is 62 mm in diameter and 215 mm tall.
+
+2. MATERIALS
+
+Bottles are supplied blow-moulded and arrive on tipped pallets. Closures
+are supplied loose in bulk. The product liquid is delivered to the line
+from an upstream batching tank that is outside the scope of this line.
+
+3. COMPONENTS
+
+Each saleable unit consists of:
+
+- one PET bottle
+- one screw closure
+- one wrap-around body label
+
+There are no sub-assemblies and no fasteners.
+
+4. PROCESS
+
+Bottles are fed from the depalletiser to the filler. Each bottle is filled
+to 500 ml by volume, then capped with a screw closure and torque-checked.
+A wrap-around label is applied to the bottle body.
+
+Filling, capping and labelling are performed on a continuous-motion
+monobloc.
+
+5. QUALITY REQUIREMENTS
+
+Every bottle passes a fill-level inspection after filling. Bottles outside
+the fill tolerance are rejected from the line automatically.
+
+The applied closure torque is verified.
+
+6. PACKAGING
+
+Bottles are collated and shrink-wrapped into trays of twelve. Trays are
+then stacked onto pallets for despatch.
+
+7. PRODUCTION REQUIREMENTS
+
+The line shall produce 18,000 bottles per day across 2 shifts of 8 hours.
+4 operators are available; the line is substantially automated and the
+operators supervise rather than handle each unit.
+
+The available floor area is 45 by 20 metres.
+
+8. OPEN ITEMS
+
+No cycle time is stated for any operation. The monobloc has not been
+selected and no equipment cost is available.

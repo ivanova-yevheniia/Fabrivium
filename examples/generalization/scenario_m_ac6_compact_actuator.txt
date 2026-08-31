@@ -1,0 +1,59 @@
+AC-6 COMPACT ELECTROMECHANICAL ACTUATOR — PRODUCT SPECIFICATION
+Synthetic case document written for Fabrivium multi-domain validation.
+Document status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.
+
+1. PRODUCT
+
+The AC-6 is a compact electromechanical actuator for a linear positioning
+duty. It is supplied assembled, lubricated and functionally checked.
+
+The assembled unit measures 96 by 54 by 48 mm.
+
+2. MATERIALS
+
+The housing and the cover are machined from aluminium. The shaft is
+hardened steel.
+
+3. COMPONENTS
+
+Each actuator contains:
+
+- one aluminium housing
+- one shaft
+- one bearing
+- one cover
+- one identification label
+
+4. ASSEMBLY
+
+The bearing is pressed into the housing bore. The shaft is then inserted
+through the bearing and seated against the shoulder.
+
+The cover is secured with four screws.
+
+5. LUBRICATION
+
+The bearing seat is greased before the shaft is inserted.
+
+6. QUALITY REQUIREMENTS
+
+Every actuator is inspected for free shaft movement before release. The
+inspection is a functional movement check, not a dimensional measurement.
+
+7. IDENTIFICATION
+
+An identification label is applied to the housing.
+
+8. PACKAGING
+
+Each actuator is packed individually into a carton.
+
+9. PRODUCTION REQUIREMENTS
+
+The line shall produce 420 units per day on 1 shift of 8 hours. 5 operators
+are available.
+
+10. OPEN ITEMS
+
+No operation cycle time has been established. No equipment has been selected
+and no equipment price is available. No capital budget has been set.

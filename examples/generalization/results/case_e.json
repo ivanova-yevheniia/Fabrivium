@@ -1,0 +1,3928 @@
+{
+  "case": "E",
+  "product_name": "BV-2 Bottled Beverage",
+  "steps": {
+    "describe": {
+      "status": 200,
+      "body": {
+        "understanding": {
+          "product_name": "BV-2 Bottled Beverage",
+          "description": "BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION\nSynthetic case document written for Fabrivium generalization validation.\nDocument status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.\n\nThis specification describes a filled and packed bottled product. It is\ndeliberately a PROCESS-DOMINATED product: it has almost no assembly content\nand almost no fasteners, which is the opposite shape to the discrete\nassembly cases.\n\n1. PRODUCT\n\nThe BV-2 is a 500 ml still beverage in a PET bottle with a screw closure.\nThe finished saleable unit is one filled, capped and labelled bottle.\n\nThe bottle is 62 mm in diameter and 215 mm tall.\n\n2. MATERIALS\n\nBottles are supplied blow-moulded and arrive on tipped pallets. Closures\nare supplied loose in bulk. The product liquid is delivered to the line\nfrom an upstream batching tank that is outside the scope of this line.\n\n3. COMPONENTS\n\nEach saleable unit consists of:\n\n- one PET bottle\n- one screw closure\n- one wrap-around body label\n\nThere are no sub-assemblies and no fasteners.\n\n4. PROCESS\n\nBottles are fed from the depalletiser to the filler. Each bottle is filled\nto 500 ml by volume, then capped with a screw closure and torque-checked.\nA wrap-around label is applied to the bottle body.\n\nFilling, capping and labelling are performed on a continuous-motion\nmonobloc.\n\n5. QUALITY REQUIREMENTS\n\nEvery bottle passes a fill-level inspection after filling. Bottles outside\nthe fill tolerance are rejected from the line automatically.\n\nThe applied closure torque is verified.\n\n6. PACKAGING\n\nBottles are collated and shrink-wrapped into trays of twelve. Trays are\nthen stacked onto pallets for despatch.\n\n7. PRODUCTION REQUIREMENTS\n\nThe line shall produce 18,000 bottles per day across 2 shifts of 8 hours.\n4 operators are available; the line is substantially automated and the\noperators supervise rather than handle each unit.\n\nThe available floor area is 45 by 20 metres.\n\n8. OPEN ITEMS\n\nNo cycle time is stated for any operation. The monobloc has not been\nselected and no equipment cost is available.\n",
+          "facts": [
+            {
+              "key": "component.label",
+              "category": "component",
+              "label": "Label",
+              "value": "present",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "HIGH",
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The finished saleable unit is one filled, capped and labelled bottle."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "A wrap-around label is applied to the bottle body."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "Filling, capping and labelling are performed on a continuous-motion"
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "- one wrap-around body label"
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "fastener.screw.count",
+              "category": "quantity",
+              "label": "Screws",
+              "value": "1",
+              "quantity": 1.0,
+              "unit": "units",
+              "status": "EXTRACTED",
+              "confidence": "HIGH",
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The BV-2 is a 500 ml still beverage in a PET bottle with a screw closure."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "to 500 ml by volume, then capped with a screw closure and torque-checked."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "- one screw closure"
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "requirement.inspection",
+              "category": "requirement",
+              "label": "Inspection required",
+              "value": "stated",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "MEDIUM",
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The applied closure torque is verified."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "Every bottle passes a fill-level inspection after filling."
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "requirement.packaging",
+              "category": "requirement",
+              "label": "Packaging required",
+              "value": "stated",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "MEDIUM",
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "This specification describes a filled and packed bottled product."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION"
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "PACKAGING"
+                }
+              ],
+              "alternatives": []
+            }
+          ],
+          "source_documents": [
+            {
+              "document_id": "89a90571aefae72b",
+              "name": "Product description",
+              "media_type": "text/plain",
+              "pages": null,
+              "ingested_on": "2026-08-30",
+              "pages_without_text": [],
+              "notes": []
+            }
+          ],
+          "information_gaps": [
+            {
+              "key": "fastener.screw.drive_torque",
+              "label": "Screw thread size, drive type and fastening torque",
+              "severity": "LIMITS_EQUIPMENT_VALIDATION",
+              "reason": "A screwdriving station is validated against thread size, drive type and fastening torque. The source does not state them."
+            },
+            {
+              "key": "dimensions.overall",
+              "label": "Overall product dimensions",
+              "severity": "BLOCKS_DETAILED_ENGINEERING",
+              "reason": "Fixture and handling design need the part envelope. Concept simulation does not."
+            },
+            {
+              "key": "material.enclosure",
+              "label": "Enclosure material",
+              "severity": "BLOCKS_EQUIPMENT_SELECTION",
+              "reason": "Material determines which fastening and handling equipment is suitable."
+            }
+          ],
+          "unresolved_statements": [
+            {
+              "statement": "Bottles are supplied blow-moulded and arrive on tipped pallets.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Bottles are supplied blow-moulded and arrive on tipped pallets."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Closures are supplied loose in bulk.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Closures are supplied loose in bulk."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "The product liquid is delivered to the line from an upstream batching tank that is outside the scope of this line.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The product liquid is delivered to the line from an upstream batching tank that is outside the scope of this line."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Bottles outside the fill tolerance are rejected from the line automatically.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Bottles outside the fill tolerance are rejected from the line automatically."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Bottles are collated and shrink-wrapped into trays of twelve.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Bottles are collated and shrink-wrapped into trays of twelve."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "4 operators are available; the line is substantially automated and the operators supervise rather than handle each unit.",
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "4 operators are available; the line is substantially automated and the operators supervise rather than handle each unit."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            }
+          ],
+          "source_production_requirements": [
+            {
+              "key": "production.target_per_day",
+              "label": "Required production volume",
+              "value": "18000 units/day",
+              "quantity": 18000.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The line shall produce 18,000 bottles per day across 2 shifts of 8 hours."
+              }
+            },
+            {
+              "key": "production.floor_area",
+              "label": "Available production area",
+              "value": "45 × 20 m",
+              "quantity": 45.0,
+              "quantity_secondary": 20.0,
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The available floor area is 45 by 20 metres."
+              }
+            },
+            {
+              "key": "production.operators",
+              "label": "Available production workforce",
+              "value": "4 operators",
+              "quantity": 4.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "4 operators are available; the line is substantially automated and the"
+              }
+            },
+            {
+              "key": "production.shifts_per_day",
+              "label": "Shifts per day",
+              "value": "2 shifts/day",
+              "quantity": 2.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The line shall produce 18,000 bottles per day across 2 shifts of 8 hours."
+              }
+            },
+            {
+              "key": "production.hours_per_shift",
+              "label": "Hours per shift",
+              "value": "8 h",
+              "quantity": 8.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "89a90571aefae72b",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The line shall produce 18,000 bottles per day across 2 shifts of 8 hours."
+              }
+            }
+          ],
+          "interpretation_method": "DOCUMENT_EXTRACTION",
+          "model_name": null
+        },
+        "model_used": false,
+        "provider_note": null
+      }
+    },
+    "plan_process": {
+      "status": 200,
+      "body": {
+        "draft": {
+          "product_name": "BV-2 Bottled Beverage",
+          "operations": [
+            {
+              "id": "op-1-screwdriving",
+              "process_type": "screwdriving",
+              "name": "Screw fastening ×1",
+              "description": "Screw fastening, 1 times per unit, implied by screws.",
+              "repeated_operations": 1,
+              "basis": "The product information states 1 × screws.",
+              "source_fact_keys": [
+                "fastener.screw.count"
+              ],
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The BV-2 is a 500 ml still beverage in a PET bottle with a screw closure."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "to 500 ml by volume, then capped with a screw closure and torque-checked."
+                }
+              ],
+              "fact_status": "RULE_DERIVED",
+              "confidence": "HIGH",
+              "status": "PROPOSED"
+            },
+            {
+              "id": "op-2-labelling",
+              "process_type": "labelling",
+              "name": "Product labelling",
+              "description": "Product labelling, implied by label.",
+              "repeated_operations": null,
+              "basis": "The product information states label.",
+              "source_fact_keys": [
+                "component.label"
+              ],
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The finished saleable unit is one filled, capped and labelled bottle."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "A wrap-around label is applied to the bottle body."
+                }
+              ],
+              "fact_status": "RULE_DERIVED",
+              "confidence": "HIGH",
+              "status": "PROPOSED"
+            },
+            {
+              "id": "op-3-inspection",
+              "process_type": "inspection",
+              "name": "Visual inspection",
+              "description": "Visual inspection, implied by inspection required.",
+              "repeated_operations": null,
+              "basis": "The product information states inspection required.",
+              "source_fact_keys": [
+                "requirement.inspection"
+              ],
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The applied closure torque is verified."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "Every bottle passes a fill-level inspection after filling."
+                }
+              ],
+              "fact_status": "RULE_DERIVED",
+              "confidence": "HIGH",
+              "status": "PROPOSED"
+            },
+            {
+              "id": "op-4-packaging",
+              "process_type": "packaging",
+              "name": "Packaging",
+              "description": "Packaging, implied by packaging required.",
+              "repeated_operations": null,
+              "basis": "The product information states packaging required.",
+              "source_fact_keys": [
+                "requirement.packaging"
+              ],
+              "evidence": [
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "This specification describes a filled and packed bottled product."
+                },
+                {
+                  "document_id": "89a90571aefae72b",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION"
+                }
+              ],
+              "fact_status": "RULE_DERIVED",
+              "confidence": "HIGH",
+              "status": "PROPOSED"
+            }
+          ],
+          "planner": "PROCESS_PLANNING_SKILL",
+          "method": "LOCAL_RULES",
+          "model_name": null,
+          "open_questions": []
+        }
+      }
+    },
+    "coverage_before_review": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "fact_key": "component.label",
+            "label": "Label",
+            "value": "present",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Product labelling"
+            ],
+            "quotes": [
+              "The finished saleable unit is one filled, capped and labelled bottle.",
+              "A wrap-around label is applied to the bottle body.",
+              "Filling, capping and labelling are performed on a continuous-motion",
+              "- one wrap-around body label"
+            ]
+          },
+          {
+            "fact_key": "fastener.screw.count",
+            "label": "Screws",
+            "value": "1",
+            "status": "ADDRESSED",
+            "severity": "EXPECTED",
+            "addressed_by": [
+              "Screw fastening ×1"
+            ],
+            "quotes": [
+              "The BV-2 is a 500 ml still beverage in a PET bottle with a screw closure.",
+              "to 500 ml by volume, then capped with a screw closure and torque-checked.",
+              "- one screw closure"
+            ]
+          },
+          {
+            "fact_key": "requirement.inspection",
+            "label": "Inspection required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Visual inspection"
+            ],
+            "quotes": [
+              "The applied closure torque is verified.",
+              "Every bottle passes a fill-level inspection after filling."
+            ]
+          },
+          {
+            "fact_key": "requirement.packaging",
+            "label": "Packaging required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Packaging"
+            ],
+            "quotes": [
+              "This specification describes a filled and packed bottled product.",
+              "BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION",
+              "PACKAGING"
+            ]
+          }
+        ],
+        "summary": "All 4 extracted manufacturing requirements are addressed.",
+        "complete": true,
+        "approval_blocked": false,
+        "unresolved_count": 0,
+        "critical_unresolved_count": 0
+      }
+    },
+    "requirement_links": [],
+    "coverage_after_review": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "fact_key": "component.label",
+            "label": "Label",
+            "value": "present",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Product labelling"
+            ],
+            "quotes": [
+              "The finished saleable unit is one filled, capped and labelled bottle.",
+              "A wrap-around label is applied to the bottle body.",
+              "Filling, capping and labelling are performed on a continuous-motion",
+              "- one wrap-around body label"
+            ]
+          },
+          {
+            "fact_key": "fastener.screw.count",
+            "label": "Screws",
+            "value": "1",
+            "status": "ADDRESSED",
+            "severity": "EXPECTED",
+            "addressed_by": [
+              "Screw fastening ×1"
+            ],
+            "quotes": [
+              "The BV-2 is a 500 ml still beverage in a PET bottle with a screw closure.",
+              "to 500 ml by volume, then capped with a screw closure and torque-checked.",
+              "- one screw closure"
+            ]
+          },
+          {
+            "fact_key": "requirement.inspection",
+            "label": "Inspection required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Visual inspection"
+            ],
+            "quotes": [
+              "The applied closure torque is verified.",
+              "Every bottle passes a fill-level inspection after filling."
+            ]
+          },
+          {
+            "fact_key": "requirement.packaging",
+            "label": "Packaging required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Packaging"
+            ],
+            "quotes": [
+              "This specification describes a filled and packed bottled product.",
+              "BV-2 BOTTLED BEVERAGE PACKING LINE — PRODUCT SPECIFICATION",
+              "PACKAGING"
+            ]
+          }
+        ],
+        "summary": "All 4 extracted manufacturing requirements are addressed.",
+        "complete": true,
+        "approval_blocked": false,
+        "unresolved_count": 0,
+        "critical_unresolved_count": 0
+      }
+    },
+    "build_concept": {
+      "status": 200,
+      "body": {
+        "draft": {
+          "name": "BV-2 Bottled Beverage",
+          "customer_brief": "We need 18,000 bottles per day across 2 shifts of 8 hours. Four operators supervise the line. The available floor area is 45 by 20 meters. The monobloc has not been selected and no equipment cost is available.",
+          "production_target": {
+            "value": 18000.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "product_name": "BV-2 Bottled Beverage",
+          "stages": [
+            {
+              "id": "m-screwdriving",
+              "name": "Screw fastening ×1",
+              "process_type": "screwdriving",
+              "cycle_time": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "capacity": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "operators_required": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "width": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "length": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "purchase_cost": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "cycle_time_estimate": null,
+              "revisions": [],
+              "source_operation_id": "op-1-screwdriving"
+            },
+            {
+              "id": "m-labelling",
+              "name": "Product labelling",
+              "process_type": "labelling",
+              "cycle_time": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "capacity": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "operators_required": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "width": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "length": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "purchase_cost": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "cycle_time_estimate": null,
+              "revisions": [],
+              "source_operation_id": "op-2-labelling"
+            },
+            {
+              "id": "m-inspection",
+              "name": "Visual inspection",
+              "process_type": "inspection",
+              "cycle_time": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "capacity": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "operators_required": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "width": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "length": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "purchase_cost": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "cycle_time_estimate": null,
+              "revisions": [],
+              "source_operation_id": "op-3-inspection"
+            },
+            {
+              "id": "m-packaging",
+              "name": "Packaging",
+              "process_type": "packaging",
+              "cycle_time": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "capacity": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "operators_required": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "width": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "length": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "purchase_cost": {
+                "value": null,
+                "source": "UNKNOWN",
+                "detail": null
+              },
+              "cycle_time_estimate": null,
+              "revisions": [],
+              "source_operation_id": "op-4-packaging"
+            }
+          ],
+          "buffers": [
+            {
+              "id": "buf-m-screwdriving-m-labelling",
+              "name": "Screw fastening ×1 → Product labelling",
+              "upstream_stage_id": "m-screwdriving",
+              "downstream_stage_id": "m-labelling",
+              "capacity": {
+                "value": 50,
+                "source": "CATALOG_DEFAULT",
+                "detail": "Fabrivium planning default"
+              }
+            },
+            {
+              "id": "buf-m-labelling-m-inspection",
+              "name": "Product labelling → Visual inspection",
+              "upstream_stage_id": "m-labelling",
+              "downstream_stage_id": "m-inspection",
+              "capacity": {
+                "value": 50,
+                "source": "CATALOG_DEFAULT",
+                "detail": "Fabrivium planning default"
+              }
+            },
+            {
+              "id": "buf-m-inspection-m-packaging",
+              "name": "Visual inspection → Packaging",
+              "upstream_stage_id": "m-inspection",
+              "downstream_stage_id": "m-packaging",
+              "capacity": {
+                "value": 50,
+                "source": "CATALOG_DEFAULT",
+                "detail": "Fabrivium planning default"
+              }
+            }
+          ],
+          "shifts_per_day": {
+            "value": 2,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "hours_per_shift": {
+            "value": 8.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "operators_available": {
+            "value": 4,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "floor_width": {
+            "value": 45.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "floor_length": {
+            "value": 20.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description"
+          },
+          "budget": {
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null
+          },
+          "prefer_no_new_machines": true
+        },
+        "validation": {
+          "simulation_ready": false,
+          "blocking_gaps": [
+            {
+              "key": "stage.m-screwdriving.cycle_time",
+              "label": "Screw fastening ×1 cycle time",
+              "severity": "REQUIRED",
+              "reason": "Processing time per unit is the core physical property of a stage.",
+              "stage_id": "m-screwdriving"
+            },
+            {
+              "key": "stage.m-screwdriving.operators_required",
+              "label": "Screw fastening ×1 operators required",
+              "severity": "REQUIRED",
+              "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+              "stage_id": "m-screwdriving"
+            },
+            {
+              "key": "stage.m-labelling.cycle_time",
+              "label": "Product labelling cycle time",
+              "severity": "REQUIRED",
+              "reason": "Processing time per unit is the core physical property of a stage.",
+              "stage_id": "m-labelling"
+            },
+            {
+              "key": "stage.m-labelling.operators_required",
+              "label": "Product labelling operators required",
+              "severity": "REQUIRED",
+              "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+              "stage_id": "m-labelling"
+            },
+            {
+              "key": "stage.m-inspection.cycle_time",
+              "label": "Visual inspection cycle time",
+              "severity": "REQUIRED",
+              "reason": "Processing time per unit is the core physical property of a stage.",
+              "stage_id": "m-inspection"
+            },
+            {
+              "key": "stage.m-inspection.operators_required",
+              "label": "Visual inspection operators required",
+              "severity": "REQUIRED",
+              "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+              "stage_id": "m-inspection"
+            },
+            {
+              "key": "stage.m-packaging.cycle_time",
+              "label": "Packaging cycle time",
+              "severity": "REQUIRED",
+              "reason": "Processing time per unit is the core physical property of a stage.",
+              "stage_id": "m-packaging"
+            },
+            {
+              "key": "stage.m-packaging.operators_required",
+              "label": "Packaging operators required",
+              "severity": "REQUIRED",
+              "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+              "stage_id": "m-packaging"
+            }
+          ],
+          "optional_gaps": [
+            {
+              "key": "stage.m-screwdriving.purchase_cost",
+              "label": "Screw fastening ×1 equipment cost",
+              "severity": "OPTIONAL",
+              "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+              "stage_id": "m-screwdriving"
+            },
+            {
+              "key": "stage.m-labelling.purchase_cost",
+              "label": "Product labelling equipment cost",
+              "severity": "OPTIONAL",
+              "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+              "stage_id": "m-labelling"
+            },
+            {
+              "key": "stage.m-inspection.purchase_cost",
+              "label": "Visual inspection equipment cost",
+              "severity": "OPTIONAL",
+              "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+              "stage_id": "m-inspection"
+            },
+            {
+              "key": "stage.m-packaging.purchase_cost",
+              "label": "Packaging equipment cost",
+              "severity": "OPTIONAL",
+              "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+              "stage_id": "m-packaging"
+            },
+            {
+              "key": "budget",
+              "label": "Capital budget",
+              "severity": "OPTIONAL",
+              "reason": "Commercial only. Used to constrain options later, never to compute output.",
+              "stage_id": null
+            }
+          ],
+          "errors": []
+        },
+        "station_context": {
+          "m-screwdriving": {
+            "product_name": "BV-2 Bottled Beverage",
+            "operation_id": "op-1-screwdriving",
+            "operation": "Screw fastening ×1",
+            "operation_description": "Screw fastening, 1 times per unit, implied by screws.",
+            "why_this_station_exists": "The product information states 1 × screws.",
+            "repeated_operations": 1,
+            "estimator_description": "Screw fastening, 1 times per unit, implied by screws. Product: BV-2 Bottled Beverage."
+          },
+          "m-labelling": {
+            "product_name": "BV-2 Bottled Beverage",
+            "operation_id": "op-2-labelling",
+            "operation": "Product labelling",
+            "operation_description": "Product labelling, implied by label.",
+            "why_this_station_exists": "The product information states label.",
+            "estimator_description": "Product labelling, implied by label. Product: BV-2 Bottled Beverage."
+          },
+          "m-inspection": {
+            "product_name": "BV-2 Bottled Beverage",
+            "operation_id": "op-3-inspection",
+            "operation": "Visual inspection",
+            "operation_description": "Visual inspection, implied by inspection required.",
+            "why_this_station_exists": "The product information states inspection required.",
+            "estimator_description": "Visual inspection, implied by inspection required. Product: BV-2 Bottled Beverage."
+          },
+          "m-packaging": {
+            "product_name": "BV-2 Bottled Beverage",
+            "operation_id": "op-4-packaging",
+            "operation": "Packaging",
+            "operation_description": "Packaging, implied by packaging required.",
+            "why_this_station_exists": "The product information states packaging required.",
+            "estimator_description": "Packaging, implied by packaging required. Product: BV-2 Bottled Beverage."
+          }
+        }
+      }
+    },
+    "readiness_before": {
+      "status": 200,
+      "body": {
+        "counts": {
+          "customer_facts": 6,
+          "manufacturer_facts": 0,
+          "engineering_estimates": 0,
+          "example_data": 0,
+          "derived": 0,
+          "planning_defaults": 3,
+          "unknown": 25,
+          "engineer_decisions": 0,
+          "documents": 0,
+          "measured": 0,
+          "external_data": 0,
+          "simulated": 0
+        },
+        "simulation_ready": false,
+        "verdict": "NOT YET SIMULATION READY",
+        "unknown_critical": 8,
+        "unknown_commercial": 5,
+        "missing": [
+          "Screw fastening ×1 cycle time",
+          "Screw fastening ×1 operators required",
+          "Product labelling cycle time",
+          "Product labelling operators required",
+          "Visual inspection cycle time",
+          "Visual inspection operators required",
+          "Packaging cycle time",
+          "Packaging operators required"
+        ],
+        "takt_seconds": {
+          "value": 3.2,
+          "source": "CALCULATED",
+          "detail": "57,600 s of production time ÷ 18,000 units/day"
+        }
+      }
+    },
+    "plan_before": {
+      "status": 200,
+      "body": {
+        "inputs": [
+          {
+            "key": "production_target",
+            "label": "Daily production target",
+            "unit": "units/day",
+            "value": 18000.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The demand every result is measured against.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "shifts_per_day",
+            "label": "Shifts per day",
+            "unit": null,
+            "value": 2.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "hours_per_shift",
+            "label": "Hours per shift",
+            "unit": "h",
+            "value": 8.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "operators_available",
+            "label": "Operators available",
+            "unit": "people",
+            "value": 4.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The shared pool the simulation allocates from. This is the whole factory's workforce, not one station's demand.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.cycle_time",
+            "label": "Screw fastening ×1 — cycle time",
+            "unit": "s",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.capacity",
+            "label": "Screw fastening ×1 — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.operators_required",
+            "label": "Screw fastening ×1 — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.purchase_cost",
+            "label": "Screw fastening ×1 — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.width",
+            "label": "Screw fastening ×1 — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.length",
+            "label": "Screw fastening ×1 — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.cycle_time",
+            "label": "Product labelling — cycle time",
+            "unit": "s",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.capacity",
+            "label": "Product labelling — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.operators_required",
+            "label": "Product labelling — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.purchase_cost",
+            "label": "Product labelling — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.width",
+            "label": "Product labelling — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.length",
+            "label": "Product labelling — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.cycle_time",
+            "label": "Visual inspection — cycle time",
+            "unit": "s",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.capacity",
+            "label": "Visual inspection — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.operators_required",
+            "label": "Visual inspection — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.purchase_cost",
+            "label": "Visual inspection — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.width",
+            "label": "Visual inspection — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.length",
+            "label": "Visual inspection — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.cycle_time",
+            "label": "Packaging — cycle time",
+            "unit": "s",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.capacity",
+            "label": "Packaging — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.operators_required",
+            "label": "Packaging — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.purchase_cost",
+            "label": "Packaging — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.width",
+            "label": "Packaging — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.length",
+            "label": "Packaging — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-screwdriving-m-labelling.capacity",
+            "label": "Screw fastening ×1 → Product labelling — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-labelling-m-inspection.capacity",
+            "label": "Product labelling → Visual inspection — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-inspection-m-packaging.capacity",
+            "label": "Visual inspection → Packaging — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "budget",
+            "label": "Capital budget",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "A commercial constraint the customer or the engineer sets. Nothing in the factory model implies it, so Fabrivium never proposes a figure.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_width",
+            "label": "Floor width",
+            "unit": "m",
+            "value": 45.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_length",
+            "label": "Floor length",
+            "unit": "m",
+            "value": 20.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          }
+        ],
+        "computed": [
+          {
+            "key": "available_production_time",
+            "label": "Available production time",
+            "unit": "s/day",
+            "value": 57600.0,
+            "formula": "2 shifts × 8 h × 3600 s",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "required_takt",
+            "label": "Required takt",
+            "unit": "s/unit",
+            "value": 3.2,
+            "formula": "57,600 s ÷ 18,000 units",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "route_processing_time",
+            "label": "Processing time per unit along the route",
+            "unit": "s",
+            "value": null,
+            "formula": "sum of stage cycle times",
+            "blocked_by": "at least one stage cycle time",
+            "source": "CALCULATED"
+          },
+          {
+            "key": "slowest_stage_cycle_time",
+            "label": "Slowest stage cycle time",
+            "unit": "s",
+            "value": null,
+            "formula": "max of stage cycle times",
+            "blocked_by": "at least one stage cycle time",
+            "source": "CALCULATED"
+          }
+        ],
+        "blocking_unresolved": 8,
+        "ready_to_simulate": false
+      }
+    },
+    "estimates": [
+      {
+        "stage_id": "m-screwdriving",
+        "description": "Screw fastening, 1 times per unit, implied by screws. Product: BV-2 Bottled Beverage.",
+        "status": 200,
+        "body": {
+          "estimate": {
+            "low": 7.4,
+            "working_value": 12.4,
+            "high": 17.4,
+            "unit": "s",
+            "confidence": "MEDIUM",
+            "method": "LOCAL_HEURISTIC",
+            "basis": "Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+            "model_name": null,
+            "operations_per_unit": 1
+          },
+          "proposal": {
+            "stage_id": "m-screwdriving",
+            "stage_name": "Screw fastening ×1",
+            "cycle_time": {
+              "low": 7.4,
+              "working_value": 12.4,
+              "high": 17.4,
+              "unit": "s",
+              "confidence": "MEDIUM",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "capacity": null,
+            "operators": null,
+            "fell_back": false,
+            "provider_note": null
+          },
+          "needs_information": null,
+          "contradiction": null,
+          "fell_back": false,
+          "provider_note": null,
+          "takt_seconds": {
+            "value": 3.2,
+            "source": "CALCULATED",
+            "detail": "57,600 s of production time ÷ 18,000 units/day"
+          }
+        },
+        "accepted_fields": [
+          "cycle_time"
+        ],
+        "accept_status": 200,
+        "applied": [
+          "cycle_time"
+        ]
+      },
+      {
+        "stage_id": "m-labelling",
+        "description": "Product labelling, implied by label. Product: BV-2 Bottled Beverage.",
+        "status": 200,
+        "body": {
+          "estimate": {
+            "low": 8.1,
+            "working_value": 14.2,
+            "high": 20.4,
+            "unit": "s",
+            "confidence": "LOW",
+            "method": "LOCAL_HEURISTIC",
+            "basis": "Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+            "model_name": null,
+            "operations_per_unit": 1
+          },
+          "proposal": {
+            "stage_id": "m-labelling",
+            "stage_name": "Product labelling",
+            "cycle_time": {
+              "low": 8.1,
+              "working_value": 14.2,
+              "high": 20.4,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "capacity": null,
+            "operators": null,
+            "fell_back": false,
+            "provider_note": null
+          },
+          "needs_information": null,
+          "contradiction": null,
+          "fell_back": false,
+          "provider_note": null,
+          "takt_seconds": {
+            "value": 3.2,
+            "source": "CALCULATED",
+            "detail": "57,600 s of production time ÷ 18,000 units/day"
+          }
+        },
+        "accepted_fields": [
+          "cycle_time"
+        ],
+        "accept_status": 200,
+        "applied": [
+          "cycle_time"
+        ]
+      },
+      {
+        "stage_id": "m-inspection",
+        "description": "Visual inspection, implied by inspection required. Product: BV-2 Bottled Beverage.",
+        "status": 200,
+        "body": {
+          "estimate": {
+            "low": 7.8,
+            "working_value": 15.5,
+            "high": 23.2,
+            "unit": "s",
+            "confidence": "LOW",
+            "method": "LOCAL_HEURISTIC",
+            "basis": "Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+            "model_name": null,
+            "operations_per_unit": 1
+          },
+          "proposal": {
+            "stage_id": "m-inspection",
+            "stage_name": "Visual inspection",
+            "cycle_time": {
+              "low": 7.8,
+              "working_value": 15.5,
+              "high": 23.2,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "capacity": null,
+            "operators": null,
+            "fell_back": false,
+            "provider_note": null
+          },
+          "needs_information": null,
+          "contradiction": null,
+          "fell_back": false,
+          "provider_note": null,
+          "takt_seconds": {
+            "value": 3.2,
+            "source": "CALCULATED",
+            "detail": "57,600 s of production time ÷ 18,000 units/day"
+          }
+        },
+        "accepted_fields": [
+          "cycle_time"
+        ],
+        "accept_status": 200,
+        "applied": [
+          "cycle_time"
+        ]
+      },
+      {
+        "stage_id": "m-packaging",
+        "description": "Packaging, implied by packaging required. Product: BV-2 Bottled Beverage.",
+        "status": 200,
+        "body": {
+          "estimate": {
+            "low": 10.2,
+            "working_value": 19.5,
+            "high": 28.8,
+            "unit": "s",
+            "confidence": "LOW",
+            "method": "LOCAL_HEURISTIC",
+            "basis": "Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+            "model_name": null,
+            "operations_per_unit": 2
+          },
+          "proposal": {
+            "stage_id": "m-packaging",
+            "stage_name": "Packaging",
+            "cycle_time": {
+              "low": 10.2,
+              "working_value": 19.5,
+              "high": 28.8,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 2
+            },
+            "capacity": null,
+            "operators": null,
+            "fell_back": false,
+            "provider_note": null
+          },
+          "needs_information": null,
+          "contradiction": null,
+          "fell_back": false,
+          "provider_note": null,
+          "takt_seconds": {
+            "value": 3.2,
+            "source": "CALCULATED",
+            "detail": "57,600 s of production time ÷ 18,000 units/day"
+          }
+        },
+        "accepted_fields": [
+          "cycle_time"
+        ],
+        "accept_status": 200,
+        "applied": [
+          "cycle_time"
+        ]
+      }
+    ],
+    "readiness_after_estimates": {
+      "status": 200,
+      "body": {
+        "counts": {
+          "customer_facts": 6,
+          "manufacturer_facts": 0,
+          "engineering_estimates": 4,
+          "example_data": 0,
+          "derived": 0,
+          "planning_defaults": 3,
+          "unknown": 21,
+          "engineer_decisions": 0,
+          "documents": 0,
+          "measured": 0,
+          "external_data": 0,
+          "simulated": 0
+        },
+        "simulation_ready": false,
+        "verdict": "NOT YET SIMULATION READY",
+        "unknown_critical": 4,
+        "unknown_commercial": 5,
+        "missing": [
+          "Screw fastening ×1 operators required",
+          "Product labelling operators required",
+          "Visual inspection operators required",
+          "Packaging operators required"
+        ],
+        "takt_seconds": {
+          "value": 3.2,
+          "source": "CALCULATED",
+          "detail": "57,600 s of production time ÷ 18,000 units/day"
+        }
+      }
+    },
+    "plan_after_estimates": {
+      "status": 200,
+      "body": {
+        "inputs": [
+          {
+            "key": "production_target",
+            "label": "Daily production target",
+            "unit": "units/day",
+            "value": 18000.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The demand every result is measured against.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "shifts_per_day",
+            "label": "Shifts per day",
+            "unit": null,
+            "value": 2.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "hours_per_shift",
+            "label": "Hours per shift",
+            "unit": "h",
+            "value": 8.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "operators_available",
+            "label": "Operators available",
+            "unit": "people",
+            "value": 4.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The shared pool the simulation allocates from. This is the whole factory's workforce, not one station's demand.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.cycle_time",
+            "label": "Screw fastening ×1 — cycle time",
+            "unit": "s",
+            "value": 12.4,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "7.4–17.4 s, medium confidence · Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 7.4,
+              "working_value": 12.4,
+              "high": 17.4,
+              "unit": "s",
+              "confidence": "MEDIUM",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.capacity",
+            "label": "Screw fastening ×1 — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.operators_required",
+            "label": "Screw fastening ×1 — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.purchase_cost",
+            "label": "Screw fastening ×1 — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.width",
+            "label": "Screw fastening ×1 — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.length",
+            "label": "Screw fastening ×1 — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.cycle_time",
+            "label": "Product labelling — cycle time",
+            "unit": "s",
+            "value": 14.2,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "8.1–20.4 s, low confidence · Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 8.1,
+              "working_value": 14.2,
+              "high": 20.4,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.capacity",
+            "label": "Product labelling — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.operators_required",
+            "label": "Product labelling — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.purchase_cost",
+            "label": "Product labelling — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.width",
+            "label": "Product labelling — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.length",
+            "label": "Product labelling — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.cycle_time",
+            "label": "Visual inspection — cycle time",
+            "unit": "s",
+            "value": 15.5,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "7.8–23.2 s, low confidence · Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 7.8,
+              "working_value": 15.5,
+              "high": 23.2,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.capacity",
+            "label": "Visual inspection — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.operators_required",
+            "label": "Visual inspection — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.purchase_cost",
+            "label": "Visual inspection — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.width",
+            "label": "Visual inspection — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.length",
+            "label": "Visual inspection — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.cycle_time",
+            "label": "Packaging — cycle time",
+            "unit": "s",
+            "value": 19.5,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "10.2–28.8 s, low confidence · Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 10.2,
+              "working_value": 19.5,
+              "high": 28.8,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 2
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.capacity",
+            "label": "Packaging — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.operators_required",
+            "label": "Packaging — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.purchase_cost",
+            "label": "Packaging — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.width",
+            "label": "Packaging — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.length",
+            "label": "Packaging — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-screwdriving-m-labelling.capacity",
+            "label": "Screw fastening ×1 → Product labelling — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-labelling-m-inspection.capacity",
+            "label": "Product labelling → Visual inspection — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-inspection-m-packaging.capacity",
+            "label": "Visual inspection → Packaging — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "budget",
+            "label": "Capital budget",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "A commercial constraint the customer or the engineer sets. Nothing in the factory model implies it, so Fabrivium never proposes a figure.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_width",
+            "label": "Floor width",
+            "unit": "m",
+            "value": 45.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_length",
+            "label": "Floor length",
+            "unit": "m",
+            "value": 20.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          }
+        ],
+        "computed": [
+          {
+            "key": "available_production_time",
+            "label": "Available production time",
+            "unit": "s/day",
+            "value": 57600.0,
+            "formula": "2 shifts × 8 h × 3600 s",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "required_takt",
+            "label": "Required takt",
+            "unit": "s/unit",
+            "value": 3.2,
+            "formula": "57,600 s ÷ 18,000 units",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "route_processing_time",
+            "label": "Processing time per unit along the route",
+            "unit": "s",
+            "value": 61.6,
+            "formula": "12.4 + 14.2 + 15.5 + 19.5",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "slowest_stage_cycle_time",
+            "label": "Slowest stage cycle time",
+            "unit": "s",
+            "value": 19.5,
+            "formula": "max(12.4, 14.2, 15.5, 19.5)",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          }
+        ],
+        "blocking_unresolved": 4,
+        "ready_to_simulate": false
+      }
+    },
+    "validation_after_estimates": {
+      "status": 200,
+      "body": {
+        "simulation_ready": false,
+        "blocking_gaps": [
+          {
+            "key": "stage.m-screwdriving.operators_required",
+            "label": "Screw fastening ×1 operators required",
+            "severity": "REQUIRED",
+            "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "stage_id": "m-screwdriving"
+          },
+          {
+            "key": "stage.m-labelling.operators_required",
+            "label": "Product labelling operators required",
+            "severity": "REQUIRED",
+            "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "stage_id": "m-labelling"
+          },
+          {
+            "key": "stage.m-inspection.operators_required",
+            "label": "Visual inspection operators required",
+            "severity": "REQUIRED",
+            "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "stage_id": "m-inspection"
+          },
+          {
+            "key": "stage.m-packaging.operators_required",
+            "label": "Packaging operators required",
+            "severity": "REQUIRED",
+            "reason": "The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "stage_id": "m-packaging"
+          }
+        ],
+        "optional_gaps": [
+          {
+            "key": "stage.m-screwdriving.purchase_cost",
+            "label": "Screw fastening ×1 equipment cost",
+            "severity": "OPTIONAL",
+            "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+            "stage_id": "m-screwdriving"
+          },
+          {
+            "key": "stage.m-labelling.purchase_cost",
+            "label": "Product labelling equipment cost",
+            "severity": "OPTIONAL",
+            "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+            "stage_id": "m-labelling"
+          },
+          {
+            "key": "stage.m-inspection.purchase_cost",
+            "label": "Visual inspection equipment cost",
+            "severity": "OPTIONAL",
+            "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+            "stage_id": "m-inspection"
+          },
+          {
+            "key": "stage.m-packaging.purchase_cost",
+            "label": "Packaging equipment cost",
+            "severity": "OPTIONAL",
+            "reason": "Commercial only. The simulation reads no price, and an unknown price stays unknown.",
+            "stage_id": "m-packaging"
+          },
+          {
+            "key": "budget",
+            "label": "Capital budget",
+            "severity": "OPTIONAL",
+            "reason": "Commercial only. Used to constrain options later, never to compute output.",
+            "stage_id": null
+          }
+        ],
+        "errors": []
+      }
+    },
+    "build_attempt_before_engineer_input": {
+      "status": 400,
+      "body": {
+        "detail": "This concept is not ready to simulate. Still required: Screw fastening ×1 operators required, Product labelling operators required, Visual inspection operators required, Packaging operators required"
+      }
+    },
+    "engineer_resolutions": [],
+    "readiness_final": {
+      "status": 200,
+      "body": {
+        "counts": {
+          "customer_facts": 6,
+          "manufacturer_facts": 0,
+          "engineering_estimates": 4,
+          "example_data": 0,
+          "derived": 0,
+          "planning_defaults": 3,
+          "unknown": 21,
+          "engineer_decisions": 0,
+          "documents": 0,
+          "measured": 0,
+          "external_data": 0,
+          "simulated": 0
+        },
+        "simulation_ready": false,
+        "verdict": "NOT YET SIMULATION READY",
+        "unknown_critical": 4,
+        "unknown_commercial": 5,
+        "missing": [
+          "Screw fastening ×1 operators required",
+          "Product labelling operators required",
+          "Visual inspection operators required",
+          "Packaging operators required"
+        ],
+        "takt_seconds": {
+          "value": 3.2,
+          "source": "CALCULATED",
+          "detail": "57,600 s of production time ÷ 18,000 units/day"
+        }
+      }
+    },
+    "plan_final": {
+      "status": 200,
+      "body": {
+        "inputs": [
+          {
+            "key": "production_target",
+            "label": "Daily production target",
+            "unit": "units/day",
+            "value": 18000.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The demand every result is measured against.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "shifts_per_day",
+            "label": "Shifts per day",
+            "unit": null,
+            "value": 2.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "hours_per_shift",
+            "label": "Hours per shift",
+            "unit": "h",
+            "value": 8.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "An operating decision, not a property of the product. It sets how long the line runs, so it cannot be inferred from the target.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "operators_available",
+            "label": "Operators available",
+            "unit": "people",
+            "value": 4.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "The shared pool the simulation allocates from. This is the whole factory's workforce, not one station's demand.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.cycle_time",
+            "label": "Screw fastening ×1 — cycle time",
+            "unit": "s",
+            "value": 12.4,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "7.4–17.4 s, medium confidence · Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 7.4,
+              "working_value": 12.4,
+              "high": 17.4,
+              "unit": "s",
+              "confidence": "MEDIUM",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.capacity",
+            "label": "Screw fastening ×1 — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.operators_required",
+            "label": "Screw fastening ×1 — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.purchase_cost",
+            "label": "Screw fastening ×1 — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.width",
+            "label": "Screw fastening ×1 — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-screwdriving.length",
+            "label": "Screw fastening ×1 — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-screwdriving",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.cycle_time",
+            "label": "Product labelling — cycle time",
+            "unit": "s",
+            "value": 14.2,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "8.1–20.4 s, low confidence · Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 8.1,
+              "working_value": 14.2,
+              "high": 20.4,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.capacity",
+            "label": "Product labelling — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.operators_required",
+            "label": "Product labelling — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.purchase_cost",
+            "label": "Product labelling — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.width",
+            "label": "Product labelling — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-labelling.length",
+            "label": "Product labelling — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-labelling",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.cycle_time",
+            "label": "Visual inspection — cycle time",
+            "unit": "s",
+            "value": 15.5,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "7.8–23.2 s, low confidence · Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 7.8,
+              "working_value": 15.5,
+              "high": 23.2,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 1
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.capacity",
+            "label": "Visual inspection — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.operators_required",
+            "label": "Visual inspection — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.purchase_cost",
+            "label": "Visual inspection — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.width",
+            "label": "Visual inspection — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-inspection.length",
+            "label": "Visual inspection — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-inspection",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.cycle_time",
+            "label": "Packaging — cycle time",
+            "unit": "s",
+            "value": 19.5,
+            "source": "ENGINEERING_ESTIMATE",
+            "detail": "10.2–28.8 s, low confidence · Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "Processing time per unit. The simulation cannot run a stage without it.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": true,
+            "estimate": {
+              "low": 10.2,
+              "working_value": 19.5,
+              "high": 28.8,
+              "unit": "s",
+              "confidence": "LOW",
+              "method": "LOCAL_HEURISTIC",
+              "basis": "Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+              "model_name": null,
+              "operations_per_unit": 2
+            },
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.capacity",
+            "label": "Packaging — capacity",
+            "unit": "units in process",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "HAS_DEFAULT",
+            "consequence": "How many units the station processes at once. Defaults to 1 — one unit at a time — which is the simulator's own convention, not an estimate of this station.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.operators_required",
+            "label": "Packaging — operators",
+            "unit": "people",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "BLOCKS_SIMULATION",
+            "consequence": "People this station occupies while running. The simulator queues work behind the operator pool, so this changes throughput. Enter 0 if the station runs unattended.",
+            "actions": [
+              "ESTIMATE",
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.purchase_cost",
+            "label": "Packaging — equipment cost",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "Commercial only. The simulation reads no price; an unknown price stays unknown and is never counted as zero.",
+            "actions": [
+              "EXTERNAL_DATA",
+              "ENTER_QUOTE",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": true,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.width",
+            "label": "Packaging — width",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "stage.m-packaging.length",
+            "label": "Packaging — length",
+            "unit": "m",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Used to place the station on the floor. Placement does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": "m-packaging",
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-screwdriving-m-labelling.capacity",
+            "label": "Screw fastening ×1 → Product labelling — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-labelling-m-inspection.capacity",
+            "label": "Product labelling → Visual inspection — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "buffer.buf-m-inspection-m-packaging.capacity",
+            "label": "Visual inspection → Packaging — buffer size",
+            "unit": "units",
+            "value": 50.0,
+            "source": "CATALOG_DEFAULT",
+            "detail": "Fabrivium planning default",
+            "necessity": "HAS_DEFAULT",
+            "consequence": "Storage between two stages. Defaults to 50. Whether it matters for this target is a question the simulator can answer — run the buffer sweep rather than assuming a size.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "budget",
+            "label": "Capital budget",
+            "unit": "€",
+            "value": null,
+            "source": "UNKNOWN",
+            "detail": null,
+            "necessity": "COMMERCIAL_ONLY",
+            "consequence": "A commercial constraint the customer or the engineer sets. Nothing in the factory model implies it, so Fabrivium never proposes a figure.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": false,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_width",
+            "label": "Floor width",
+            "unit": "m",
+            "value": 45.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          },
+          {
+            "key": "floor_length",
+            "label": "Floor length",
+            "unit": "m",
+            "value": 20.0,
+            "source": "CUSTOMER",
+            "detail": "Stated by the customer in Product description",
+            "necessity": "AFFECTS_LAYOUT",
+            "consequence": "Bounds where stations may be placed. Does not affect throughput.",
+            "actions": [
+              "ENGINEER_INPUT",
+              "USE_EXAMPLE_DATA",
+              "LEAVE_UNKNOWN"
+            ],
+            "stage_id": null,
+            "quote_required": false,
+            "resolved": true,
+            "estimate": null,
+            "superseded": null
+          }
+        ],
+        "computed": [
+          {
+            "key": "available_production_time",
+            "label": "Available production time",
+            "unit": "s/day",
+            "value": 57600.0,
+            "formula": "2 shifts × 8 h × 3600 s",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "required_takt",
+            "label": "Required takt",
+            "unit": "s/unit",
+            "value": 3.2,
+            "formula": "57,600 s ÷ 18,000 units",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "route_processing_time",
+            "label": "Processing time per unit along the route",
+            "unit": "s",
+            "value": 61.6,
+            "formula": "12.4 + 14.2 + 15.5 + 19.5",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          },
+          {
+            "key": "slowest_stage_cycle_time",
+            "label": "Slowest stage cycle time",
+            "unit": "s",
+            "value": 19.5,
+            "formula": "max(12.4, 14.2, 15.5, 19.5)",
+            "blocked_by": null,
+            "source": "CALCULATED"
+          }
+        ],
+        "blocking_unresolved": 4,
+        "ready_to_simulate": false
+      }
+    },
+    "build": {
+      "status": 400,
+      "body": {
+        "detail": "This concept is not ready to simulate. Still required: Screw fastening ×1 operators required, Product labelling operators required, Visual inspection operators required, Packaging operators required"
+      }
+    }
+  },
+  "final_draft": {
+    "name": "BV-2 Bottled Beverage",
+    "customer_brief": "We need 18,000 bottles per day across 2 shifts of 8 hours. Four operators supervise the line. The available floor area is 45 by 20 meters. The monobloc has not been selected and no equipment cost is available.",
+    "production_target": {
+      "value": 18000.0,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "product_name": "BV-2 Bottled Beverage",
+    "stages": [
+      {
+        "id": "m-screwdriving",
+        "name": "Screw fastening ×1",
+        "process_type": "screwdriving",
+        "cycle_time": {
+          "value": 12.4,
+          "source": "ENGINEERING_ESTIMATE",
+          "detail": "7.4–17.4 s, medium confidence · Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting."
+        },
+        "capacity": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "operators_required": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "width": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "length": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "purchase_cost": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "cycle_time_estimate": {
+          "low": 7.4,
+          "working_value": 12.4,
+          "high": 17.4,
+          "unit": "s",
+          "confidence": "MEDIUM",
+          "method": "LOCAL_HEURISTIC",
+          "basis": "Local engineering heuristic: 6–12 s handling + 1 × 4–9 s per screw + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.",
+          "model_name": null,
+          "operations_per_unit": 1
+        },
+        "revisions": [],
+        "source_operation_id": "op-1-screwdriving"
+      },
+      {
+        "id": "m-labelling",
+        "name": "Product labelling",
+        "process_type": "labelling",
+        "cycle_time": {
+          "value": 14.2,
+          "source": "ENGINEERING_ESTIMATE",
+          "detail": "8.1–20.4 s, low confidence · Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting."
+        },
+        "capacity": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "operators_required": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "width": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "length": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "purchase_cost": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "cycle_time_estimate": {
+          "low": 8.1,
+          "working_value": 14.2,
+          "high": 20.4,
+          "unit": "s",
+          "confidence": "LOW",
+          "method": "LOCAL_HEURISTIC",
+          "basis": "Local engineering heuristic: 6–12 s handling + 1 × 6–14 s per label applied + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Derived from the packaging family, not measured for labelling. Not valid for print-and-apply systems or in-line laser marking. Derived from the packaging family, not measured for labelling. Not valid where the label must be verified, scanned or applied to a curved surface. Check this station against that before accepting.",
+          "model_name": null,
+          "operations_per_unit": 1
+        },
+        "revisions": [],
+        "source_operation_id": "op-2-labelling"
+      },
+      {
+        "id": "m-inspection",
+        "name": "Visual inspection",
+        "process_type": "inspection",
+        "cycle_time": {
+          "value": 15.5,
+          "source": "ENGINEERING_ESTIMATE",
+          "detail": "7.8–23.2 s, low confidence · Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting."
+        },
+        "capacity": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "operators_required": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "width": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "length": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "purchase_cost": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "cycle_time_estimate": {
+          "low": 7.8,
+          "working_value": 15.5,
+          "high": 23.2,
+          "unit": "s",
+          "confidence": "LOW",
+          "method": "LOCAL_HEURISTIC",
+          "basis": "Local engineering heuristic: 5–10 s handling + 1 × 8–22 s per check + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Visual or functional bench inspection. Not valid for burn-in, soak testing or anything with a fixed dwell time. Check this station against that before accepting.",
+          "model_name": null,
+          "operations_per_unit": 1
+        },
+        "revisions": [],
+        "source_operation_id": "op-3-inspection"
+      },
+      {
+        "id": "m-packaging",
+        "name": "Packaging",
+        "process_type": "packaging",
+        "cycle_time": {
+          "value": 19.5,
+          "source": "ENGINEERING_ESTIMATE",
+          "detail": "10.2–28.8 s, low confidence · Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting."
+        },
+        "capacity": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "operators_required": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "width": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "length": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "purchase_cost": {
+          "value": null,
+          "source": "UNKNOWN",
+          "detail": null
+        },
+        "cycle_time_estimate": {
+          "low": 10.2,
+          "working_value": 19.5,
+          "high": 28.8,
+          "unit": "s",
+          "confidence": "LOW",
+          "method": "LOCAL_HEURISTIC",
+          "basis": "Local engineering heuristic: 6–12 s handling + 2 × 6–14 s per packaging step (bagging, insert, carton, seal, label) + automatic factor 0.35–0.6. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Single-unit retail or transit packing. Manual or semi-automatic packing. Not valid for case packers or palletisers. Check this station against that before accepting.",
+          "model_name": null,
+          "operations_per_unit": 2
+        },
+        "revisions": [],
+        "source_operation_id": "op-4-packaging"
+      }
+    ],
+    "buffers": [
+      {
+        "id": "buf-m-screwdriving-m-labelling",
+        "name": "Screw fastening ×1 → Product labelling",
+        "upstream_stage_id": "m-screwdriving",
+        "downstream_stage_id": "m-labelling",
+        "capacity": {
+          "value": 50,
+          "source": "CATALOG_DEFAULT",
+          "detail": "Fabrivium planning default"
+        }
+      },
+      {
+        "id": "buf-m-labelling-m-inspection",
+        "name": "Product labelling → Visual inspection",
+        "upstream_stage_id": "m-labelling",
+        "downstream_stage_id": "m-inspection",
+        "capacity": {
+          "value": 50,
+          "source": "CATALOG_DEFAULT",
+          "detail": "Fabrivium planning default"
+        }
+      },
+      {
+        "id": "buf-m-inspection-m-packaging",
+        "name": "Visual inspection → Packaging",
+        "upstream_stage_id": "m-inspection",
+        "downstream_stage_id": "m-packaging",
+        "capacity": {
+          "value": 50,
+          "source": "CATALOG_DEFAULT",
+          "detail": "Fabrivium planning default"
+        }
+      }
+    ],
+    "shifts_per_day": {
+      "value": 2,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "hours_per_shift": {
+      "value": 8.0,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "operators_available": {
+      "value": 4,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "floor_width": {
+      "value": 45.0,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "floor_length": {
+      "value": 20.0,
+      "source": "CUSTOMER",
+      "detail": "Stated by the customer in Product description"
+    },
+    "budget": {
+      "value": null,
+      "source": "UNKNOWN",
+      "detail": null
+    },
+    "prefer_no_new_machines": true
+  }
+}

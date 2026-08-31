@@ -1,0 +1,56 @@
+LF-3 CONSUMER LIQUID FILLING AND PACKING LINE — PRODUCT SPECIFICATION
+Synthetic case document written for Fabrivium multi-domain validation.
+Document status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.
+
+1. PRODUCT
+
+The LF-3 is a consumer liquid product supplied in an individual container.
+The finished saleable unit is one filled, sealed and labelled container.
+
+The container is 68 mm in diameter and 168 mm tall.
+
+2. MATERIALS
+
+Containers are supplied moulded and arrive on pallets. Seals and labels are
+supplied in bulk. The product liquid is delivered from an upstream batching
+vessel that is outside the scope of this line.
+
+3. COMPONENTS
+
+Each saleable unit consists of:
+
+- one container
+- one seal
+- one identification label
+
+There are no sub-assemblies.
+
+4. PROCESS
+
+Containers are fed to the line from the depalletiser. Each container is
+filled with the product liquid, then sealed. An identification label is
+applied to the container.
+
+5. QUALITY REQUIREMENTS
+
+Every container receives a visual inspection after sealing. Containers
+outside the fill tolerance are rejected from the line.
+
+6. PACKAGING
+
+Inspected containers are packed into cartons for despatch.
+
+7. PRODUCTION REQUIREMENTS
+
+The line shall produce 4,000 units per day across 2 shifts of 8 hours.
+6 operators are available.
+
+8. AUTOMATION
+
+Filling, sealing and labelling are performed by automatic machinery. The
+operators supervise the line and handle changeovers.
+
+9. OPEN ITEMS
+
+No operation cycle time has been established. No equipment has been selected
+and no equipment price is available. No capital budget has been set.

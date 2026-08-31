@@ -1,0 +1,45 @@
+GR-7 BENCH GRINDER GUARD ASSEMBLY — PRODUCT SPECIFICATION
+Synthetic case document written for FactoryMind generalization validation.
+Document status: SYNTHETIC CASE DOCUMENT. Not a customer document.
+
+1. PRODUCT
+
+The GR-7 is a hinged guard assembly fitted to a bench grinder. It is a
+high-volume consumable line item sold both to machine builders and as a
+spare part.
+
+Overall dimensions of the assembled guard are 180 x 140 x 95 mm.
+
+2. MATERIALS
+
+The shroud and the mounting bracket are pressed from steel. The viewing
+window is polycarbonate.
+
+3. COMPONENTS
+
+Each assembly contains:
+
+- one pressed shroud
+- one mounting bracket
+- one viewing window
+- one warning label
+
+4. ASSEMBLY
+
+The viewing window is clipped into the shroud aperture. The mounting
+bracket is offered up to the shroud and located on two dowels.
+
+5. FASTENING
+
+The bracket is fixed to the shroud with four screws driven from the inside
+face.
+
+6. QUALITY REQUIREMENTS
+
+Every assembly receives a visual inspection covering window seating, screw
+presence and the absence of sharp edges.
+
+7. PACKAGING
+
+Each guard is bagged and packed into a shelf carton with a fitting
+instruction. The carton is closed and labelled.

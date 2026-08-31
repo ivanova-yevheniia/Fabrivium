@@ -1,0 +1,478 @@
+[
+  {
+    "case": "A",
+    "product": "LT-8 Gearbox Housing Assembly",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-assembly-m-inspection.capacity=50",
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-screwdriving-m-assembly.capacity=50"
+      ],
+      "CUSTOMER": [
+        "floor_length=14.0",
+        "floor_width=22.0",
+        "hours_per_shift=8.0",
+        "operators_available=6",
+        "production_target=900.0",
+        "shifts_per_day=2"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-assembly.capacity=1",
+        "m-assembly.cycle_time=28.5",
+        "m-assembly.operators_required=1",
+        "m-inspection.capacity=1",
+        "m-inspection.cycle_time=22.5",
+        "m-inspection.operators_required=1",
+        "m-packaging.capacity=1",
+        "m-packaging.cycle_time=29.0",
+        "m-packaging.operators_required=1",
+        "m-screwdriving.capacity=1",
+        "m-screwdriving.cycle_time=87.0",
+        "m-screwdriving.operators_required=1"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "m-assembly.length=None",
+        "m-assembly.purchase_cost=None",
+        "m-assembly.width=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [],
+    "simulation": {
+      "completed_units": 661,
+      "target_units": 900,
+      "demand_met": false,
+      "demand_gap_units": 239.0,
+      "bottleneck": "m-screwdriving"
+    },
+    "arena": {
+      "recommended": "strategy-equipment_expansion",
+      "summary": "3 verified option(s); 3 reach the target, 0 of those are fully priced. Baseline: 661/day against 900.",
+      "families_without_options": [
+        "WORKFORCE_EXPANSION (no evidence supports this lever here)",
+        "BUFFER_FLOW (no evidence supports this lever here)"
+      ],
+      "strategies": [
+        {
+          "id": "strategy-equipment_expansion",
+          "family": "EQUIPMENT_EXPANSION",
+          "goal_met": true,
+          "completed_units": 900,
+          "gap": 0.0,
+          "actions": [
+            "ADD_PARALLEL_MACHINE"
+          ]
+        },
+        {
+          "id": "strategy-shift_expansion",
+          "family": "SHIFT_EXPANSION",
+          "goal_met": true,
+          "completed_units": 900,
+          "gap": 0.0,
+          "actions": [
+            "CHANGE_SHIFT_CONFIGURATION"
+          ]
+        },
+        {
+          "id": "strategy-process_improvement",
+          "family": "PROCESS_IMPROVEMENT",
+          "goal_met": true,
+          "completed_units": 900,
+          "gap": 0.0,
+          "actions": [
+            "CHANGE_MACHINE_CYCLE_TIME"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "case": "B",
+    "product": "FT-9 In-Line Filter Head Assembly",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-assembly-2-m-inspection.capacity=50",
+        "buf-m-assembly-m-screwdriving.capacity=50",
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-screwdriving-m-assembly-2.capacity=50"
+      ],
+      "CUSTOMER": [
+        "production_target=600.0"
+      ],
+      "ENGINEER": [
+        "hours_per_shift=8.0",
+        "operators_available=4",
+        "shifts_per_day=1"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-assembly-2.capacity=1",
+        "m-assembly-2.cycle_time=28.5",
+        "m-assembly-2.operators_required=1",
+        "m-assembly.capacity=1",
+        "m-assembly.cycle_time=38.5",
+        "m-assembly.operators_required=1",
+        "m-inspection.capacity=1",
+        "m-inspection.cycle_time=22.5",
+        "m-inspection.operators_required=1",
+        "m-packaging.capacity=1",
+        "m-packaging.cycle_time=29.0",
+        "m-packaging.operators_required=1",
+        "m-screwdriving.capacity=1",
+        "m-screwdriving.cycle_time=15.5",
+        "m-screwdriving.operators_required=1"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "floor_length=None",
+        "floor_width=None",
+        "m-assembly-2.length=None",
+        "m-assembly-2.purchase_cost=None",
+        "m-assembly-2.width=None",
+        "m-assembly.length=None",
+        "m-assembly.purchase_cost=None",
+        "m-assembly.width=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [],
+    "simulation": {
+      "completed_units": 600,
+      "target_units": 600,
+      "demand_met": true,
+      "demand_gap_units": 0.0,
+      "bottleneck": "m-assembly"
+    },
+    "arena": {
+      "recommended": null,
+      "summary": "No verified strategy was found. Baseline produces 600/day against a target of 600.",
+      "families_without_options": [
+        "EQUIPMENT_EXPANSION (no evidence supports this lever here)",
+        "SHIFT_EXPANSION (no evidence supports this lever here)",
+        "WORKFORCE_EXPANSION (no evidence supports this lever here)",
+        "BUFFER_FLOW (no evidence supports this lever here)",
+        "PROCESS_IMPROVEMENT (no evidence supports this lever here)",
+        "HYBRID (no evidence supports this lever here)"
+      ],
+      "strategies": []
+    }
+  },
+  {
+    "case": "C",
+    "product": "GR-7 Bench Grinder Guard Assembly",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-assembly-m-inspection.capacity=50",
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-screwdriving-m-assembly.capacity=50"
+      ],
+      "CUSTOMER": [
+        "floor_length=12.0",
+        "floor_width=24.0",
+        "hours_per_shift=8.0",
+        "operators_available=4",
+        "production_target=6000.0",
+        "shifts_per_day=1"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-assembly.capacity=1",
+        "m-assembly.cycle_time=28.5",
+        "m-assembly.operators_required=1",
+        "m-inspection.capacity=1",
+        "m-inspection.cycle_time=22.5",
+        "m-inspection.operators_required=1",
+        "m-packaging.capacity=1",
+        "m-packaging.cycle_time=29.0",
+        "m-packaging.operators_required=1",
+        "m-screwdriving.capacity=1",
+        "m-screwdriving.cycle_time=35.0",
+        "m-screwdriving.operators_required=1"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "m-assembly.length=None",
+        "m-assembly.purchase_cost=None",
+        "m-assembly.width=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [
+      "m-screwdriving.cycle_time=35.0 matches a demo cycle time (source=ENGINEERING_ESTIMATE, detail=\"22–48 s, medium confidence · Local engineering heuristic: 6–12 s handling + 4 × 4–9 s per screw. Reference bands are FactoryMind's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.\")"
+    ],
+    "simulation": {
+      "completed_units": 820,
+      "target_units": 6000,
+      "demand_met": false,
+      "demand_gap_units": 5180.0,
+      "bottleneck": "m-screwdriving"
+    },
+    "arena": {
+      "recommended": "strategy-equipment_expansion",
+      "summary": "3 verified option(s); 0 reach the target, 0 of those are fully priced. Baseline: 820/day against 6,000.",
+      "families_without_options": [
+        "SHIFT_EXPANSION (every lever in this family was excluded by the request)",
+        "WORKFORCE_EXPANSION (every lever in this family was excluded by the request)",
+        "BUFFER_FLOW (no evidence supports this lever here)"
+      ],
+      "strategies": [
+        {
+          "id": "strategy-equipment_expansion",
+          "family": "EQUIPMENT_EXPANSION",
+          "goal_met": false,
+          "completed_units": 983,
+          "gap": 5017.0,
+          "actions": [
+            "CHANGE_MACHINE_CAPACITY"
+          ]
+        },
+        {
+          "id": "strategy-process_improvement",
+          "family": "PROCESS_IMPROVEMENT",
+          "goal_met": false,
+          "completed_units": 990,
+          "gap": 5010.0,
+          "actions": [
+            "CHANGE_MACHINE_CYCLE_TIME"
+          ]
+        },
+        {
+          "id": "strategy-hybrid",
+          "family": "HYBRID",
+          "goal_met": false,
+          "completed_units": 1008,
+          "gap": 4992.0,
+          "actions": [
+            "CHANGE_MACHINE_CAPACITY",
+            "CHANGE_MACHINE_CYCLE_TIME"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "case": "CEC",
+    "product": "Compact Electronics Controller (CEC-120)",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-assembly-2-m-screwdriving.capacity=50",
+        "buf-m-assembly-3-m-inspection.capacity=50",
+        "buf-m-assembly-m-assembly-2.capacity=50",
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-screwdriving-m-assembly-3.capacity=50"
+      ],
+      "CUSTOMER": [
+        "floor_length=18.0",
+        "floor_width=30.0",
+        "operators_available=8",
+        "production_target=1900.0"
+      ],
+      "ENGINEER": [
+        "hours_per_shift=8.0",
+        "shifts_per_day=2"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-assembly-2.capacity=1",
+        "m-assembly-2.cycle_time=38.5",
+        "m-assembly-2.operators_required=1",
+        "m-assembly-3.capacity=1",
+        "m-assembly-3.cycle_time=28.5",
+        "m-assembly-3.operators_required=1",
+        "m-assembly.capacity=1",
+        "m-assembly.cycle_time=28.5",
+        "m-assembly.operators_required=1",
+        "m-inspection.capacity=1",
+        "m-inspection.cycle_time=22.5",
+        "m-inspection.operators_required=1",
+        "m-packaging.capacity=1",
+        "m-packaging.cycle_time=29.0",
+        "m-packaging.operators_required=1",
+        "m-screwdriving.capacity=1",
+        "m-screwdriving.cycle_time=48.0",
+        "m-screwdriving.operators_required=1"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "m-assembly-2.length=None",
+        "m-assembly-2.purchase_cost=None",
+        "m-assembly-2.width=None",
+        "m-assembly-3.length=None",
+        "m-assembly-3.purchase_cost=None",
+        "m-assembly-3.width=None",
+        "m-assembly.length=None",
+        "m-assembly.purchase_cost=None",
+        "m-assembly.width=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [],
+    "simulation": {
+      "completed_units": 1196,
+      "target_units": 1900,
+      "demand_met": false,
+      "demand_gap_units": 704.0,
+      "bottleneck": "m-screwdriving"
+    },
+    "arena": {
+      "recommended": "strategy-hybrid-no-equipment",
+      "summary": "4 verified option(s); 2 reach the target, 0 of those are fully priced. Baseline: 1,196/day against 1,900.",
+      "families_without_options": [
+        "WORKFORCE_EXPANSION (no evidence supports this lever here)",
+        "BUFFER_FLOW (no evidence supports this lever here)"
+      ],
+      "strategies": [
+        {
+          "id": "strategy-equipment_expansion",
+          "family": "EQUIPMENT_EXPANSION",
+          "goal_met": true,
+          "completed_units": 1900,
+          "gap": 0.0,
+          "actions": [
+            "ADD_PARALLEL_MACHINE"
+          ]
+        },
+        {
+          "id": "strategy-shift_expansion",
+          "family": "SHIFT_EXPANSION",
+          "goal_met": false,
+          "completed_units": 1796,
+          "gap": 104.0,
+          "actions": [
+            "CHANGE_SHIFT_CONFIGURATION"
+          ]
+        },
+        {
+          "id": "strategy-process_improvement",
+          "family": "PROCESS_IMPROVEMENT",
+          "goal_met": false,
+          "completed_units": 1477,
+          "gap": 423.0,
+          "actions": [
+            "CHANGE_MACHINE_CYCLE_TIME"
+          ]
+        },
+        {
+          "id": "strategy-hybrid-no-equipment",
+          "family": "HYBRID",
+          "goal_met": true,
+          "completed_units": 1900,
+          "gap": 0.0,
+          "actions": [
+            "CHANGE_MACHINE_CAPACITY",
+            "CHANGE_SHIFT_CONFIGURATION"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "case": "D",
+    "product": "DX-4 Single-Use Diagnostic Cassette",
+    "findings": [
+      "NO FINAL CONCEPT — the case stopped before one was built."
+    ]
+  },
+  {
+    "case": "E",
+    "product": "BV-2 Bottled Beverage",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-labelling-m-inspection.capacity=50",
+        "buf-m-screwdriving-m-labelling.capacity=50"
+      ],
+      "CUSTOMER": [
+        "floor_length=20.0",
+        "floor_width=45.0",
+        "hours_per_shift=8.0",
+        "operators_available=4",
+        "production_target=18000.0",
+        "shifts_per_day=2"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-inspection.cycle_time=15.5",
+        "m-labelling.cycle_time=14.2",
+        "m-packaging.cycle_time=19.5",
+        "m-screwdriving.cycle_time=12.4"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "m-inspection.capacity=None",
+        "m-inspection.length=None",
+        "m-inspection.operators_required=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-labelling.capacity=None",
+        "m-labelling.length=None",
+        "m-labelling.operators_required=None",
+        "m-labelling.purchase_cost=None",
+        "m-labelling.width=None",
+        "m-packaging.capacity=None",
+        "m-packaging.length=None",
+        "m-packaging.operators_required=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.capacity=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.operators_required=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [],
+    "simulation": {
+      "completed_units": null,
+      "target_units": null,
+      "demand_met": null,
+      "demand_gap_units": null,
+      "bottleneck": null
+    },
+    "arena": {
+      "recommended": null,
+      "summary": null,
+      "families_without_options": null,
+      "strategies": []
+    }
+  }
+]

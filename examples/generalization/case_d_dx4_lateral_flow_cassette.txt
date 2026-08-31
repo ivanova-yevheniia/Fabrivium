@@ -1,0 +1,73 @@
+DX-4 SINGLE-USE DIAGNOSTIC CASSETTE — PRODUCT SPECIFICATION
+Synthetic case document written for Fabrivium generalization validation.
+Document status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.
+
+This specification describes a single-use in-vitro diagnostic cassette. It
+is issued for manufacturing planning. Where a quantity has not been agreed
+it is stated as open rather than estimated.
+
+1. PRODUCT
+
+The DX-4 is a disposable lateral-flow test cassette for point-of-care use.
+It is supplied sterile-packed as a single unit with a desiccant sachet and
+a printed instruction leaflet.
+
+The cassette measures 78 by 24 by 12 mm.
+
+2. MATERIALS
+
+The upper and lower housing shells are moulded in medical-grade
+polypropylene. The nitrocellulose membrane strip and the absorbent pad are
+supplied pre-cut by the reagent supplier and arrive ready to place.
+
+3. COMPONENTS
+
+Each cassette contains:
+
+- one lower housing shell
+- one nitrocellulose membrane strip
+- one absorbent pad
+- one sample pad
+- one upper housing shell
+- one desiccant sachet
+- one identification label
+
+The three internal pads are placed in a fixed order into the lower shell.
+
+4. JOINING
+
+The upper and lower shells are joined by ultrasonic welding at four weld
+points. No adhesive and no fasteners are used anywhere in the product.
+
+The weld schedule is defined on process sheet DX4-P-011.
+
+5. FUNCTIONAL VERIFICATION
+
+Every cassette is functionally tested before release. The test applies a
+control fluid to the sample pad and reads the control line optically. The
+read is pass or fail; there is no measured value to record.
+
+Cassettes are additionally checked visually for weld integrity.
+
+6. IDENTIFICATION
+
+A unique identification label carrying the lot number and expiry date is
+applied to the exterior of the upper shell. Labelling is required by the
+product's regulatory file and cannot be omitted.
+
+7. PACKAGING
+
+Each cassette is sealed into an individual foil pouch together with the
+desiccant sachet. Pouches are then cartoned in twenty-fives with the
+instruction leaflet.
+
+8. PRODUCTION REQUIREMENTS
+
+The line shall produce 4,000 cassettes per day across 3 shifts of 7.5
+hours. 6 operators are available. The available floor area is 22 by 14
+metres.
+
+9. OPEN ITEMS
+
+The cycle time of the ultrasonic welding operation has not been established;
+the equipment has not been selected. The capital budget has not been set.

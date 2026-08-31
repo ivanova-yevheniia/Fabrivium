@@ -1,0 +1,471 @@
+{
+  "case": "D",
+  "product_name": "DX-4 Single-Use Diagnostic Cassette",
+  "steps": {
+    "describe": {
+      "status": 200,
+      "body": {
+        "understanding": {
+          "product_name": "DX-4 Single-Use Diagnostic Cassette",
+          "description": "DX-4 SINGLE-USE DIAGNOSTIC CASSETTE — PRODUCT SPECIFICATION\nSynthetic case document written for Fabrivium generalization validation.\nDocument status: SYNTHETIC CASE DOCUMENT, ISSUED FOR MANUFACTURE.\n\nThis specification describes a single-use in-vitro diagnostic cassette. It\nis issued for manufacturing planning. Where a quantity has not been agreed\nit is stated as open rather than estimated.\n\n1. PRODUCT\n\nThe DX-4 is a disposable lateral-flow test cassette for point-of-care use.\nIt is supplied sterile-packed as a single unit with a desiccant sachet and\na printed instruction leaflet.\n\nThe cassette measures 78 by 24 by 12 mm.\n\n2. MATERIALS\n\nThe upper and lower housing shells are moulded in medical-grade\npolypropylene. The nitrocellulose membrane strip and the absorbent pad are\nsupplied pre-cut by the reagent supplier and arrive ready to place.\n\n3. COMPONENTS\n\nEach cassette contains:\n\n- one lower housing shell\n- one nitrocellulose membrane strip\n- one absorbent pad\n- one sample pad\n- one upper housing shell\n- one desiccant sachet\n- one identification label\n\nThe three internal pads are placed in a fixed order into the lower shell.\n\n4. JOINING\n\nThe upper and lower shells are joined by ultrasonic welding at four weld\npoints. No adhesive and no fasteners are used anywhere in the product.\n\nThe weld schedule is defined on process sheet DX4-P-011.\n\n5. FUNCTIONAL VERIFICATION\n\nEvery cassette is functionally tested before release. The test applies a\ncontrol fluid to the sample pad and reads the control line optically. The\nread is pass or fail; there is no measured value to record.\n\nCassettes are additionally checked visually for weld integrity.\n\n6. IDENTIFICATION\n\nA unique identification label carrying the lot number and expiry date is\napplied to the exterior of the upper shell. Labelling is required by the\nproduct's regulatory file and cannot be omitted.\n\n7. PACKAGING\n\nEach cassette is sealed into an individual foil pouch together with the\ndesiccant sachet. Pouches are then cartoned in twenty-fives with the\ninstruction leaflet.\n\n8. PRODUCTION REQUIREMENTS\n\nThe line shall produce 4,000 cassettes per day across 3 shifts of 7.5\nhours. 6 operators are available. The available floor area is 22 by 14\nmetres.\n\n9. OPEN ITEMS\n\nThe cycle time of the ultrasonic welding operation has not been established;\nthe equipment has not been selected. The capital budget has not been set.\n",
+          "facts": [
+            {
+              "key": "component.enclosure",
+              "category": "component",
+              "label": "Enclosure",
+              "value": "present",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "HIGH",
+              "evidence": [
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The upper and lower housing shells are moulded in medical-grade"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "- one lower housing shell"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "- one upper housing shell"
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "component.label",
+              "category": "component",
+              "label": "Label",
+              "value": "present",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "HIGH",
+              "evidence": [
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "A unique identification label carrying the lot number and expiry date is"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "Labelling is required by the"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "- one identification label"
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "dimensions.overall",
+              "category": "geometry",
+              "label": "Overall dimensions",
+              "value": "78 × 24 × 12 mm",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "HIGH",
+              "evidence": [
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "The cassette measures 78 by 24 by 12 mm."
+                }
+              ],
+              "alternatives": []
+            },
+            {
+              "key": "requirement.packaging",
+              "category": "requirement",
+              "label": "Packaging required",
+              "value": "stated",
+              "quantity": null,
+              "unit": null,
+              "status": "EXTRACTED",
+              "confidence": "MEDIUM",
+              "evidence": [
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "It is supplied sterile-packed as a single unit with a desiccant sachet and"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "a printed instruction leaflet."
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "instruction leaflet."
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "PACKAGING"
+                }
+              ],
+              "alternatives": []
+            }
+          ],
+          "source_documents": [
+            {
+              "document_id": "a996383a877a46d4",
+              "name": "Product description",
+              "media_type": "text/plain",
+              "pages": null,
+              "ingested_on": "2026-08-30",
+              "pages_without_text": [],
+              "notes": []
+            }
+          ],
+          "information_gaps": [
+            {
+              "key": "material.enclosure",
+              "label": "Enclosure material",
+              "severity": "BLOCKS_EQUIPMENT_SELECTION",
+              "reason": "Material determines which fastening and handling equipment is suitable."
+            }
+          ],
+          "unresolved_statements": [
+            {
+              "statement": "It is issued for manufacturing planning.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "It is issued for manufacturing planning."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "The nitrocellulose membrane strip and the absorbent pad are supplied pre-cut by the reagent supplier and arrive ready to place.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The nitrocellulose membrane strip and the absorbent pad are supplied pre-cut by the reagent supplier and arrive ready to place."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "The three internal pads are placed in a fixed order into the lower shell.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The three internal pads are placed in a fixed order into the lower shell."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "The upper and lower shells are joined by ultrasonic welding at four weld points.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The upper and lower shells are joined by ultrasonic welding at four weld points."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "The weld schedule is defined on process sheet DX4-P-011.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The weld schedule is defined on process sheet DX4-P-011."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Every cassette is functionally tested before release.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Every cassette is functionally tested before release."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Cassettes are additionally checked visually for weld integrity.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Cassettes are additionally checked visually for weld integrity."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            },
+            {
+              "statement": "Each cassette is sealed into an individual foil pouch together with the desiccant sachet.",
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "Each cassette is sealed into an individual foil pouch together with the desiccant sachet."
+              },
+              "reason": "This sentence states work performed on the product, and Fabrivium's structured extraction produced no fact from it. It may be a manufacturing requirement that was not mapped — Fabrivium has not interpreted it, and has not created any operation from it."
+            }
+          ],
+          "source_production_requirements": [
+            {
+              "key": "production.target_per_day",
+              "label": "Required production volume",
+              "value": "4000 units/day",
+              "quantity": 4000.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The line shall produce 4,000 cassettes per day across 3 shifts of 7."
+              }
+            },
+            {
+              "key": "production.operators",
+              "label": "Available production workforce",
+              "value": "6 operators",
+              "quantity": 6.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "6 operators are available."
+              }
+            },
+            {
+              "key": "production.shifts_per_day",
+              "label": "Shifts per day",
+              "value": "3 shifts/day",
+              "quantity": 3.0,
+              "quantity_secondary": null,
+              "evidence": {
+                "document_id": "a996383a877a46d4",
+                "document_name": "Product description",
+                "page": null,
+                "quote": "The line shall produce 4,000 cassettes per day across 3 shifts of 7."
+              }
+            }
+          ],
+          "interpretation_method": "DOCUMENT_EXTRACTION",
+          "model_name": null
+        },
+        "model_used": false,
+        "provider_note": null
+      }
+    },
+    "plan_process": {
+      "status": 200,
+      "body": {
+        "draft": {
+          "product_name": "DX-4 Single-Use Diagnostic Cassette",
+          "operations": [
+            {
+              "id": "op-1-packaging",
+              "process_type": "packaging",
+              "name": "Packaging",
+              "description": "Packaging, implied by packaging required.",
+              "repeated_operations": null,
+              "basis": "The product information states packaging required.",
+              "source_fact_keys": [
+                "requirement.packaging"
+              ],
+              "evidence": [
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "It is supplied sterile-packed as a single unit with a desiccant sachet and"
+                },
+                {
+                  "document_id": "a996383a877a46d4",
+                  "document_name": "Product description",
+                  "page": null,
+                  "quote": "a printed instruction leaflet."
+                }
+              ],
+              "fact_status": "RULE_DERIVED",
+              "confidence": "HIGH",
+              "status": "PROPOSED"
+            }
+          ],
+          "planner": "PROCESS_PLANNING_SKILL",
+          "method": "LOCAL_RULES",
+          "model_name": null,
+          "open_questions": [
+            "Is any inspection required? The source does not say."
+          ]
+        }
+      }
+    },
+    "coverage_before_review": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "fact_key": "component.enclosure",
+            "label": "Enclosure",
+            "value": "present",
+            "status": "UNRESOLVED",
+            "severity": "CRITICAL",
+            "addressed_by": [],
+            "quotes": [
+              "The upper and lower housing shells are moulded in medical-grade",
+              "- one lower housing shell",
+              "- one upper housing shell"
+            ]
+          },
+          {
+            "fact_key": "component.label",
+            "label": "Label",
+            "value": "present",
+            "status": "UNRESOLVED",
+            "severity": "CRITICAL",
+            "addressed_by": [],
+            "quotes": [
+              "A unique identification label carrying the lot number and expiry date is",
+              "Labelling is required by the",
+              "- one identification label"
+            ]
+          },
+          {
+            "fact_key": "dimensions.overall",
+            "label": "Overall dimensions",
+            "value": "78 × 24 × 12 mm",
+            "status": "NOT_A_REQUIREMENT",
+            "severity": "INFORMATIONAL",
+            "addressed_by": [],
+            "quotes": [
+              "The cassette measures 78 by 24 by 12 mm."
+            ]
+          },
+          {
+            "fact_key": "requirement.packaging",
+            "label": "Packaging required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Packaging"
+            ],
+            "quotes": [
+              "It is supplied sterile-packed as a single unit with a desiccant sachet and",
+              "a printed instruction leaflet.",
+              "instruction leaflet.",
+              "PACKAGING"
+            ]
+          }
+        ],
+        "summary": "1 of 3 manufacturing requirements are addressed; 2 unresolved, 2 of them stated explicitly by the source.",
+        "complete": false,
+        "approval_blocked": true,
+        "unresolved_count": 2,
+        "critical_unresolved_count": 2
+      }
+    },
+    "requirement_links": [
+      {
+        "fact_key": "component.enclosure",
+        "action": "LEFT UNRESOLVED"
+      },
+      {
+        "fact_key": "component.label",
+        "action": "LEFT UNRESOLVED"
+      }
+    ],
+    "coverage_after_review": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "fact_key": "component.enclosure",
+            "label": "Enclosure",
+            "value": "present",
+            "status": "UNRESOLVED",
+            "severity": "CRITICAL",
+            "addressed_by": [],
+            "quotes": [
+              "The upper and lower housing shells are moulded in medical-grade",
+              "- one lower housing shell",
+              "- one upper housing shell"
+            ]
+          },
+          {
+            "fact_key": "component.label",
+            "label": "Label",
+            "value": "present",
+            "status": "UNRESOLVED",
+            "severity": "CRITICAL",
+            "addressed_by": [],
+            "quotes": [
+              "A unique identification label carrying the lot number and expiry date is",
+              "Labelling is required by the",
+              "- one identification label"
+            ]
+          },
+          {
+            "fact_key": "dimensions.overall",
+            "label": "Overall dimensions",
+            "value": "78 × 24 × 12 mm",
+            "status": "NOT_A_REQUIREMENT",
+            "severity": "INFORMATIONAL",
+            "addressed_by": [],
+            "quotes": [
+              "The cassette measures 78 by 24 by 12 mm."
+            ]
+          },
+          {
+            "fact_key": "requirement.packaging",
+            "label": "Packaging required",
+            "value": "stated",
+            "status": "ADDRESSED",
+            "severity": "CRITICAL",
+            "addressed_by": [
+              "Packaging"
+            ],
+            "quotes": [
+              "It is supplied sterile-packed as a single unit with a desiccant sachet and",
+              "a printed instruction leaflet.",
+              "instruction leaflet.",
+              "PACKAGING"
+            ]
+          }
+        ],
+        "summary": "1 of 3 manufacturing requirements are addressed; 2 unresolved, 2 of them stated explicitly by the source.",
+        "complete": false,
+        "approval_blocked": true,
+        "unresolved_count": 2,
+        "critical_unresolved_count": 2
+      }
+    },
+    "build_concept": {
+      "status": 400,
+      "body": {
+        "detail": "The source states requirements that no operation answers: Enclosure, Label. Add or link an operation, or record explicitly that they are out of scope."
+      }
+    }
+  }
+}

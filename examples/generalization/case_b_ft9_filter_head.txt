@@ -1,0 +1,51 @@
+FT-9 IN-LINE FILTER HEAD ASSEMBLY — PRELIMINARY PRODUCT SPECIFICATION
+Synthetic case document written for FactoryMind generalization validation.
+Document status: SYNTHETIC CASE DOCUMENT, PRELIMINARY RELEASE.
+
+This specification is issued at concept stage. Several manufacturing
+quantities are deliberately not yet fixed and are called out below as open.
+
+1. PRODUCT
+
+The FT-9 is an in-line filter head for a low-pressure coolant circuit. It
+carries a replaceable cartridge and mounts to a machine frame by two
+brackets.
+
+Overall dimensions are not yet frozen. The envelope study is still open.
+
+2. MATERIALS
+
+Material selection for the body is still under review. Two candidates are
+being evaluated by engineering and neither has been released.
+
+3. COMPONENTS
+
+Each assembly contains:
+
+- one body
+- one cover
+- one filter cartridge seat
+- one sealing ring
+- one identification label
+
+4. FASTENING
+
+The cover is secured with screws that engage bosses in the body. The screw
+count, thread and tightening torque are defined on assembly drawing
+FT9-A-002, which is not released with this specification.
+
+5. CONNECTIONS
+
+The pressure sensor is attached with cables. The number of cables depends
+on the sensor variant chosen and is not fixed at this stage.
+
+6. QUALITY REQUIREMENTS
+
+Each assembly is leak tested on the line and the seal seat is verified
+before release. The acceptance limit for the leak test has not been agreed
+with the customer.
+
+7. PACKAGING
+
+Finished assemblies are packed individually together with a fitting
+instruction.
