@@ -1,0 +1,145 @@
+{
+  "name": "Electronics Assembly Line",
+  "width": 50.0,
+  "length": 20.0,
+  "shifts_per_day": 2,
+  "hours_per_shift": 8.0,
+  "operators_available": 8,
+  "budget": 500000.0,
+  "machines": [
+    {
+      "id": "m-assembly",
+      "name": "Assembly Station",
+      "process_type": "assembly",
+      "cycle_time": 35.0,
+      "setup_time": 300.0,
+      "capacity": 1,
+      "failure_rate": 0.02,
+      "mean_repair_time": 0.5,
+      "operators_required": 2,
+      "purchase_cost": 120000.0,
+      "position_x": 5.0,
+      "position_y": 5.0,
+      "width": 3.0,
+      "length": 2.0
+    },
+    {
+      "id": "m-screwdriving",
+      "name": "Screwdriving Station",
+      "process_type": "screwdriving",
+      "cycle_time": 52.0,
+      "setup_time": 180.0,
+      "capacity": 1,
+      "failure_rate": 0.01,
+      "mean_repair_time": 0.25,
+      "operators_required": 2,
+      "purchase_cost": 85000.0,
+      "position_x": 12.0,
+      "position_y": 5.0,
+      "width": 2.5,
+      "length": 2.0,
+      "asset": {
+        "asset_type": "LIBRARY",
+        "status": "AVAILABLE",
+        "asset_uri": "/assets/factory/stations/screwdriving.glb",
+        "file_format": "GLB",
+        "source_uri": null,
+        "manufacturer": null,
+        "model_number": null,
+        "license_name": "CC0",
+        "attribution": "Kenney Factory Kit (kenney.nl)",
+        "notes": "Generic screwdriving-cell stand-in from the local CC0 asset pack. Not this exact unit."
+      }
+    },
+    {
+      "id": "m-inspection",
+      "name": "Inspection Station",
+      "process_type": "inspection",
+      "cycle_time": 30.0,
+      "setup_time": 60.0,
+      "capacity": 1,
+      "failure_rate": 0.005,
+      "mean_repair_time": 0.25,
+      "operators_required": 2,
+      "purchase_cost": 60000.0,
+      "position_x": 19.0,
+      "position_y": 5.0,
+      "width": 2.0,
+      "length": 2.0
+    },
+    {
+      "id": "m-packaging",
+      "name": "Packaging Station",
+      "process_type": "packaging",
+      "cycle_time": 25.0,
+      "setup_time": 120.0,
+      "capacity": 1,
+      "failure_rate": 0.01,
+      "mean_repair_time": 0.5,
+      "operators_required": 2,
+      "purchase_cost": 45000.0,
+      "position_x": 26.0,
+      "position_y": 5.0,
+      "width": 2.5,
+      "length": 2.0
+    }
+  ],
+  "products": [
+    {
+      "id": "p-electronics-widget",
+      "name": "Electronics Widget",
+      "demand_per_day": 1200.0,
+      "route": [
+        {
+          "name": "Assembly",
+          "machine_id": "m-assembly",
+          "cycle_time": 35.0
+        },
+        {
+          "name": "Screwdriving",
+          "machine_id": "m-screwdriving",
+          "cycle_time": 52.0
+        },
+        {
+          "name": "Inspection",
+          "machine_id": "m-inspection",
+          "cycle_time": 30.0
+        },
+        {
+          "name": "Packaging",
+          "machine_id": "m-packaging",
+          "cycle_time": 25.0
+        }
+      ]
+    }
+  ],
+  "buffers": [
+    {
+      "id": "buf-1",
+      "name": "Pre-Screwdriving Buffer",
+      "capacity": 50,
+      "upstream_machine_id": "m-assembly",
+      "downstream_machine_id": "m-screwdriving",
+      "position_x": 8.5,
+      "position_y": 5.0
+    },
+    {
+      "id": "buf-2",
+      "name": "Pre-Inspection Buffer",
+      "capacity": 50,
+      "upstream_machine_id": "m-screwdriving",
+      "downstream_machine_id": "m-inspection",
+      "position_x": 15.5,
+      "position_y": 5.0
+    },
+    {
+      "id": "buf-3",
+      "name": "Pre-Packaging Buffer",
+      "capacity": 50,
+      "upstream_machine_id": "m-inspection",
+      "downstream_machine_id": "m-packaging",
+      "position_x": 22.5,
+      "position_y": 5.0
+    }
+  ]
+}

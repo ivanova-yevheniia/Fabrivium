@@ -1,0 +1,52 @@
+{
+  "catalog": "Customer's approved supplier list",
+  "verified_on": "2026-08-23",
+  "note": "A third KIND of source running through the same catalogue interface: a list of models the demo customer's procurement function has already approved, together with the supplier they buy them through. The MODEL and its SPECIFICATIONS below are real and cite the supplier's own published document. The approval itself is example data belonging to the bundled demo customer. No price is recorded: an approved supplier still quotes per order under the frame agreement, and inventing a negotiated figure for a real company's product would be exactly the fabrication this file exists to avoid.",
+  "candidates": [
+    {
+      "candidate_id": "approved-herma-h400",
+      "manufacturer": "HERMA GmbH",
+      "model": "H400 Series label applicator",
+      "category": "Wipe-on self-adhesive label applicator, servo driven, modular",
+      "provides": ["LABEL_APPLICATION"],
+      "product_scope": "Labelling unit — applied to product handling that already exists, or built into a handling system by the supplier. Approved for purchase through Weber Packaging Solutions; the approval covers the commercial relationship, not this station's engineering.",
+      "description": "Modular wipe-on pressure-sensitive label applicator built around one servo drive unit, with the controller and operating display built in. Published labelling speed up to 130 ft/min standard and up to 590 ft/min optional, label widths up to 6.3 in standard and 12.6 in optional, accuracy +/- 0.01 in when product handling is controlled, universal 100-240 V AC 50-60 Hz, IP66.",
+      "weight_kg": {
+        "value": 15.9,
+        "unit": "kg",
+        "source_id": "weber-herma-h400-sheet",
+        "evidence": "SOURCE_DERIVED",
+        "basis": "The supplier publishes 'approx. 35 lbs' for the standard unit; 35 lb x 0.45359 = 15.9 kg."
+      },
+      "interfaces": ["Built-in controller and operating display", "PLC connection"],
+      "interfaces_source_id": "weber-herma-h400-sheet",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.weberpackaging.com/pdfs/herma-h400-label-applicator.pdf",
+      "caveats": [
+        "The weight is a unit conversion of the supplier's 'approx. 35 lbs', and the supplier already qualifies it as approximate. With the unwind/rewind option it rises to approx. 66 lbs (30.0 kg).",
+        "No labels-per-minute figure is published, only a web speed in feet per minute. Seconds per label therefore cannot be derived without the label pitch, and no cycle time is recorded here.",
+        "No overall dimensions are published, so the installed envelope cannot be checked against the station's footprint.",
+        "The published accuracy of +/- 0.01 in holds only 'when product handling is controlled' — it is a statement about the handling system as much as about the applicator.",
+        "This is a wipe-on applicator. Tamp, tamp-blow and air-blow application need a custom application head, which is a different configuration and a different price."
+      ],
+      "sources": ["weber-herma-h400-sheet", "demo-customer-approved-suppliers"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "weber-herma-h400-sheet",
+      "url": "https://www.weberpackaging.com/pdfs/herma-h400-label-applicator.pdf",
+      "source_type": "DISTRIBUTOR_PAGE",
+      "title": "Weber Packaging Solutions, HERMA H400 Label Applicator product sheet",
+      "retrieved_at": "2026-08-23"
+    },
+    {
+      "source_id": "demo-customer-approved-suppliers",
+      "url": "internal://demo-customer/procurement/approved-suppliers",
+      "source_type": "APPROVED_SUPPLIER_LIST",
+      "title": "Demo customer approved supplier list (example data)",
+      "retrieved_at": "2026-08-23"
+    }
+  ]
+}

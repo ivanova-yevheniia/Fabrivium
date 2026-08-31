@@ -1,0 +1,56 @@
+{
+  "factory_width": 50.0,
+  "factory_length": 20.0,
+  "placements": [
+    {
+      "machine_id": "m-assembly",
+      "x": 5.0,
+      "y": 5.0,
+      "z": 0.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "machine_id": "m-screwdriving",
+      "x": 12.0,
+      "y": 5.0,
+      "z": 0.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "machine_id": "m-inspection",
+      "x": 19.0,
+      "y": 5.0,
+      "z": 0.0,
+      "rotation_deg": 0.0
+    },
+    {
+      "machine_id": "m-packaging",
+      "x": 26.0,
+      "y": 5.0,
+      "z": 0.0,
+      "rotation_deg": 0.0
+    }
+  ],
+  "reserved_zones": [
+    {
+      "id": "reserved-tools",
+      "name": "Tooling Storage",
+      "x": 32.0,
+      "y": 1.0,
+      "width": 10.0,
+      "length": 6.0,
+      "zone_type": "RESERVED"
+    }
+  ],
+  "aisle_zones": [
+    {
+      "id": "aisle-main",
+      "name": "Main Aisle",
+      "x": 0.0,
+      "y": 9.0,
+      "width": 50.0,
+      "length": 4.0,
+      "zone_type": "AISLE"
+    }
+  ]
+}

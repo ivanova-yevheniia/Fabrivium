@@ -1,0 +1,95 @@
+{
+  "process_category": "inspection",
+  "capability": "VISUAL_INSPECTION",
+  "verified_on": "2026-08-23",
+  "note": "Values were read out of the cited manufacturer documents on the retrieval date. Nothing here is inferred, averaged or estimated: a field the manufacturer does not publish is absent from this file rather than present with a placeholder. In particular NO candidate carries a cycle time, because no vision manufacturer publishes one — a frame rate is how fast the sensor can acquire an image, not how long an inspection takes.",
+  "candidates": [
+    {
+      "candidate_id": "omron-fhv7x-m032-c",
+      "manufacturer": "OMRON Corporation",
+      "model": "FHV7X-M032-C (Smart Camera, 3.2 MP monochrome, C-mount)",
+      "category": "All-in-one smart camera with on-board inspection and measurement toolset",
+      "provides": ["VISUAL_INSPECTION"],
+      "product_scope": "Smart camera — one component of an inspection station. The station also needs a lens, lighting, a mounting frame, a part fixture and a reject path, none of which are in this product.",
+      "description": "All-in-one smart camera carrying the FH-series inspection functions on board. Effective pixels 2,048 x 1,536 (3.2 MP monochrome), image acquisition 55 fps (18.0 ms), supply 21.6-26.4 VDC, ambient 0 to +40 C.",
+      "width_mm": {"value": 68.5, "unit": "mm", "source_id": "omron-fhv7-q265"},
+      "length_mm": {"value": 55.5, "unit": "mm", "source_id": "omron-fhv7-q265"},
+      "height_mm": {"value": 110.0, "unit": "mm", "source_id": "omron-fhv7-q265"},
+      "weight_kg": {"value": 0.67, "unit": "kg", "source_id": "omron-fhv7-q265"},
+      "interfaces": [
+        "Ethernet 1000BASE-T (TCP/UDP)",
+        "RS-232C",
+        "EtherNet/IP",
+        "PROFINET",
+        "EtherCAT (requires the FHV-SDU30 interface unit)"
+      ],
+      "interfaces_source_id": "omron-fhv7-page",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://files.omron.eu/downloads/latest/datasheet/en/q265_fhv7_series_datasheet_en.pdf",
+      "caveats": [
+        "The published 55 fps / 18.0 ms is image ACQUISITION time for this sensor. It is not an inspection cycle time: the number of measurement items, the algorithm and the part handling all add to it, so the station's cycle has to be established with the application.",
+        "The published 110 x 68.5 x 55.5 mm is the camera body only. An inspection station also needs a lens, lighting, a mount, a fixture and a reject path.",
+        "IP40 as supplied. IP67 only with a lighting module or waterproof hood fitted, which are ordered separately.",
+        "Current consumption is 0.60 A without lighting modules and up to 4.2 A with them, which changes what the station's supply has to provide.",
+        "The weight is the camera alone and excludes the lens, which is ordered separately."
+      ],
+      "sources": ["omron-fhv7-q265", "omron-fhv7-page"]
+    },
+    {
+      "candidate_id": "sick-inspectorp65x-v2d652p",
+      "manufacturer": "SICK AG",
+      "model": "InspectorP65x V2D652P-2MCXXA6 (part no. 1082303)",
+      "category": "2D machine vision sensor with a programmable inspection toolset",
+      "provides": ["VISUAL_INSPECTION"],
+      "product_scope": "Vision sensor — one component of an inspection station. The lens and the optics protection hood are ordered separately, and the station also needs lighting, a fixture and a reject path.",
+      "description": "2D snapshot machine vision sensor, CMOS monochrome, 2,048 x 1,088 px (2.1 MP) at 70 Hz, global shutter, adjustable focus, C-mount. Supply 24 V DC +/- 20 %, typ. 20 W. Enclosure IP65, ambient operating temperature 0 C to +50 C.",
+      "width_mm": {"value": 90.0, "unit": "mm", "source_id": "sick-v2d652p-datasheet"},
+      "length_mm": {"value": 142.0, "unit": "mm", "source_id": "sick-v2d652p-datasheet"},
+      "height_mm": {"value": 46.0, "unit": "mm", "source_id": "sick-v2d652p-datasheet"},
+      "weight_kg": {"value": 0.635, "unit": "kg", "source_id": "sick-v2d652p-datasheet"},
+      "interfaces": [
+        "Ethernet TCP/IP (10/100/1,000 Mbit/s)",
+        "RS-232",
+        "RS-422",
+        "EtherNet/IP",
+        "PROFINET (single port; dual port via the CDF600-2 connection module)",
+        "CAN"
+      ],
+      "interfaces_source_id": "sick-v2d652p-datasheet",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.sick.com/media/pdf/9/49/249/dataSheet_V2D652P-2MCXXA6_1082303_en.pdf",
+      "caveats": [
+        "SICK publishes the 142 x 90 x 46 mm explicitly as the housing only, without lens and optics protection hood.",
+        "The published 70 Hz is the sensor's frame rate, not an inspection cycle time.",
+        "The lens is not included and is ordered separately as an accessory; so is the illumination.",
+        "The included Quality Inspection licence covers part of the toolset. Productive use of the complete toolset needs the Intelligent Inspection upgrade licence, which is a separate item."
+      ],
+      "sources": ["sick-v2d652p-datasheet"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "omron-fhv7-q265",
+      "url": "https://files.omron.eu/downloads/latest/datasheet/en/q265_fhv7_series_datasheet_en.pdf",
+      "source_type": "MANUFACTURER_DATASHEET",
+      "title": "OMRON Smart Camera FHV7 Series datasheet, Cat. No. Q265-E1-19",
+      "retrieved_at": "2026-08-23"
+    },
+    {
+      "source_id": "omron-fhv7-page",
+      "url": "https://industrial.omron.eu/en/products/fhv7",
+      "source_type": "MANUFACTURER_PAGE",
+      "title": "OMRON FHV7 smart camera product page",
+      "retrieved_at": "2026-08-23"
+    },
+    {
+      "source_id": "sick-v2d652p-datasheet",
+      "url": "https://www.sick.com/media/pdf/9/49/249/dataSheet_V2D652P-2MCXXA6_1082303_en.pdf",
+      "source_type": "MANUFACTURER_DATASHEET",
+      "title": "SICK data sheet V2D652P-2MCXXA6, InspectorP64x/InspectorP65x 2D machine vision",
+      "retrieved_at": "2026-08-23"
+    }
+  ]
+}

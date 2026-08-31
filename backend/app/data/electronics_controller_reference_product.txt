@@ -1,0 +1,52 @@
+COMPACT ELECTRONICS CONTROLLER — PRODUCT SPECIFICATION
+Reference document for Fabrivium demonstration purposes.
+Document status: EXAMPLE / REFERENCE DATA. Not a customer document.
+
+1. PRODUCT OVERVIEW
+
+The product is a compact electronics controller supplied in a moulded
+plastic enclosure. It is a low-voltage indoor device intended for panel or
+surface mounting.
+
+Overall dimensions of the assembled unit are 120 x 80 x 40 mm.
+
+2. MATERIALS
+
+The enclosure base and lid are moulded in ABS. No metal housing parts are
+used.
+
+3. COMPONENTS
+
+Each unit contains:
+
+- one populated printed circuit board (PCB)
+- one enclosure base
+- one enclosure lid
+- one product label
+
+The PCB is supplied pre-tested by the electronics supplier and is placed
+into the enclosure base during final assembly.
+
+4. INTERNAL CONNECTIONS
+
+Two cables connect the PCB to the external terminals. Both cables use
+pre-crimped connectors and are attached by hand during assembly.
+
+5. FASTENING
+
+The enclosure lid is secured with six screws. The screws engage moulded
+bosses in the enclosure base.
+
+Screw specification is defined in a separate fastener drawing which is not
+included with this document.
+
+6. QUALITY REQUIREMENTS
+
+Every unit receives a visual inspection before packaging. The inspection
+checks that the lid is fully closed, that both cable connectors are seated,
+and that the enclosure shows no visible moulding or handling defects.
+
+7. PACKAGING
+
+Each finished unit is placed in a protective bag, then into a cardboard box
+together with an instruction leaflet. The box is closed and labelled.

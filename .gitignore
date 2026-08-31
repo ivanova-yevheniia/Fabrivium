@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------------------
+# Secrets — NEVER commit these.
+#
+# backend/.env holds the real IBM Cloud API key used by the Phase 7B
+# watsonx provider. Only backend/.env.example (placeholders only) is
+# tracked.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Engineer project files — user data, written by the project store.
+# The store's location is overridable with FACTORYMIND_PROJECT_DIR.
+projects/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.local
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Browser-QA tooling artifacts (Playwright MCP console logs / page snapshots).
+# Transient output from automated QA runs, not project content.
+.playwright-mcp/
+
+# Siemens handoff artefacts: real, large, and regenerated on demand.
+exports/
+
+
+
+# A scratch request payload captured while debugging a browser session.
+explore-request.json
+
+
+
+# presentation: rendered video masters are build outputs, not sources
+presentation/exports/
+presentation/finale/renders/
+
+
+demo/recording/
+presentation/final/
+presentation/finale/
+presentation/intro/
+presentation/stills/
+presentation/node_modules/
+
+
+/fabrivium-*.png
+
+

@@ -1,0 +1,184 @@
+{
+  "case_id": "cec-120-competition",
+  "name": "CEC-120 COMPETITION CASE",
+  "schema_version": 1,
+
+  "what_this_is": [
+    "The complete set of inputs needed to reproduce the CEC-120 case exactly as",
+    "the submitted film shows it. One file, so that the inputs live in one place",
+    "instead of being restated in a script.",
+    "",
+    "THE SHAPE OF A REPRODUCTION:",
+    "    source document  +  engineer decisions  ->  production API  ->  result",
+    "",
+    "Everything under `inputs` is on the left of that arrow: a document somebody",
+    "wrote, and decisions a person made. Nothing under `inputs` is a result.",
+    "",
+    "`expected_results` is on the RIGHT of the arrow and is NEVER fed back in.",
+    "It exists so a reproduction can be compared against the film, and it is",
+    "read only after the run has finished. If a figure there and a figure the",
+    "pipeline computes ever disagree, the pipeline is right and this file is",
+    "out of date."
+  ],
+
+  "source_of_truth": {
+    "manifest": "demo/recording/CEC120_CANONICAL_INPUT_MANIFEST.md",
+    "golden_run_backup": "demo/recording/golden_run_backup/c3c53435948d4b48.json",
+    "golden_run_sha256": "850d7377307b5980989404d02ec4ad9677a4d52edbf7b48b5e1b75901fd43dcf",
+    "provenance_note": "docs/FABRIVIUM_CEC_CASE_PROVENANCE.md"
+  },
+
+  "inputs": {
+    "source_document": "examples/customer_docs/Compact_Electronics_Controller_Product_Specification.pdf",
+
+    "product_name": "Compact Electronics Controller (CEC-120)",
+
+    "production_requirements_brief": "We need a new electronics assembly line. The product goes through assembly, screwdriving, inspection and packaging. We need about 1,900 units per day. The available production area is 30 by 18 meters. We have eight operators. We would prefer not to buy unnecessary equipment.",
+
+    "improvement_request": "We need 1900 units/day. Avoid buying new machines if possible.",
+
+    "_note_on_the_brief": [
+      "The target, floor area and headcount inside the brief are the CUSTOMER's",
+      "own words, typed by the operator exactly as the document states them.",
+      "They are inputs, not expected results: the pipeline re-attributes them to",
+      "CUSTOMER because the source states them, and only the shift pattern",
+      "becomes ENGINEER."
+    ],
+
+    "coverage_links": {
+      "_why": [
+        "The rule table has no rule that turns 'the enclosure is moulded in ABS'",
+        "or 'a product identification label' into a station, and Fabrivium",
+        "refuses to invent one. An engineer says which operation handles each,",
+        "and the decision is recorded against that operation.",
+        "",
+        "These links resolve coverage. They set no cycle time and change no",
+        "simulation input, so they cannot move a throughput figure."
+      ],
+      "component.enclosure": "PCB placement",
+      "component.label": "Packaging"
+    },
+
+    "station_automation": {
+      "_why": [
+        "How the engineer described each station to the estimator. Only one",
+        "station is not MANUAL, and it is the single most consequential input in",
+        "this file.",
+        "",
+        "Screw fastening is ASSISTED — a driver on a balancer rather than a hand",
+        "screwdriver — which the estimator prices at 39.8 s against 48.0 s for",
+        "the same six screws done by hand. At 48 s screwdriving is the slowest",
+        "station on the line and becomes the constraint; at 39.8 s it is not, and",
+        "the constraint sits on the two cable connections where the film shows",
+        "it. Omitting this line reproduces a 1,196/day baseline, which is a",
+        "correct answer to a different question."
+      ],
+      "m-screwdriving": "ASSISTED"
+    },
+
+    "engineer_decisions": [
+      {
+        "key": "shifts_per_day",
+        "value": 2,
+        "provenance": "ENGINEER",
+        "reason": "Not stated in the brief; this line runs two shifts."
+      },
+      {
+        "key": "hours_per_shift",
+        "value": 8,
+        "provenance": "ENGINEER",
+        "reason": "Not stated in the brief; this line runs 8-hour shifts."
+      },
+      {
+        "key": "stage.m-assembly-2.cycle_time",
+        "value": 40,
+        "provenance": "ENGINEER",
+        "overrides_estimate_seconds": 38.5,
+        "reason": "Engineer override of Fabrivium's 38.5 s estimate for the two cable connections.",
+        "_why_not_a_starting_value": [
+          "The film shows the estimate produced first and the override typed",
+          "after it, in that order. Starting the station at 40 s would erase the",
+          "override and quietly promote an engineer's judgement into a source",
+          "fact — which is the exact failure the provenance model exists to",
+          "prevent."
+        ]
+      }
+    ],
+
+    "commercial_inputs": [
+      {
+        "typed": "An extra shift costs EUR 18k/day.",
+        "gap_type": "SHIFT_COST",
+        "category": "OPEX_PER_DAY",
+        "amount_eur_per_day": 18000,
+        "_when": [
+          "Entered AFTER the strategies exist, so the recommended plan is seen",
+          "moving from 'nothing priced yet' to cost-complete. Pre-seeding it",
+          "would remove the moment that makes the cost claim checkable.",
+          "",
+          "Not applied by scripts/golden_journey_run.py, which stops at the",
+          "strategy arena. Recorded here because it is an input to the case and",
+          "belongs with the others."
+        ]
+      }
+    ]
+  },
+
+  "expected_results": {
+    "_this_is_not_an_input": [
+      "Read only AFTER a run, to compare against the film. Never fed into the",
+      "pipeline, never used to seed a project, never restored.",
+      "",
+      "Deliberately not asserted by scripts/golden_journey_run.py either: a",
+      "script that failed when the number moved would be a script that tempts",
+      "someone to move it back. The reproduction prints both and lets a person",
+      "read the difference."
+    ],
+    "baseline_units_per_day": 1435,
+    "target_units_per_day": 1900,
+    "gap_units_per_day": 465,
+    "bottleneck_station_id": "m-assembly-2",
+    "bottleneck_station_name": "Cable connection ×2",
+    "delivered_units_per_day": 1900,
+    "modeled_capacity_units_per_day": 2155,
+    "capacity_headroom_percent": 13,
+    "simulations_run": 23,
+    "strategies_retained": 3,
+    "recommended_plan": {
+      "label": "Plan B",
+      "title": "Run the line for longer",
+      "family": "SHIFT_EXPANSION",
+      "shifts_added": 1,
+      "machines_added": 0,
+      "known_capex_eur": 0,
+      "opex_eur_per_day_when_cost_supplied": 18000
+    },
+    "route": [
+      "PCB placement",
+      "Cable connection ×2",
+      "Enclosure closure",
+      "Screw fastening ×6",
+      "Product labelling",
+      "Visual inspection",
+      "Packaging"
+    ],
+    "accepted_cycle_times_seconds": {
+      "_note": "Estimator output, plus the one engineer override. Listed so a reproduction can be diffed station by station rather than only on the headline.",
+      "m-assembly": 28.5,
+      "m-assembly-2": 40.0,
+      "m-assembly-3": 28.5,
+      "m-screwdriving": 39.8,
+      "m-labelling": 19.0,
+      "m-inspection": 22.5,
+      "m-packaging": 29.0
+    }
+  },
+
+  "how_to_reproduce": [
+    "cd backend && uvicorn app.main:app        # a live server, not TestClient",
+    "cd backend && python scripts/golden_journey_run.py",
+    "",
+    "The script reads this file for every input above and prints each computed",
+    "figure next to its expected_results counterpart."
+  ]
+}

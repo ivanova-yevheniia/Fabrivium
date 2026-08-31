@@ -1,0 +1,39 @@
+{
+  "catalog": "Customer's existing equipment",
+  "verified_on": "2026-08-23",
+  "note": "EXAMPLE DATA belonging to the bundled demo customer, standing in for an extract from their own asset register. It is NOT manufacturer-published data and is not presentable as such: the source type is INTERNAL_ASSET_RECORD and its identifier is not a web document. Its purpose is to exercise the catalogue interface with a second KIND of source, and to carry the one price in Fabrivium that is legitimately zero — a machine the customer already owns costs nothing to buy. Every other value here is deliberately absent, because an asset register records what was bought and where it is, not a datasheet.",
+  "candidates": [
+    {
+      "candidate_id": "cec-asset-0142-vision",
+      "manufacturer": "OMRON Corporation",
+      "model": "FHV7X-M016-C (asset AST-0142, currently installed on line 2)",
+      "category": "Smart camera the customer already owns",
+      "provides": ["VISUAL_INSPECTION"],
+      "product_scope": "Equipment the customer already owns. Reuse depends on line 2 releasing it and on requalification for this product; the record behind it is their asset register, not a manufacturer publication.",
+      "description": "Recorded in the customer's asset register as an installed inspection camera on line 2. The register carries the asset's identity and its book position, not its technical specification.",
+      "price": {
+        "value": 0.0,
+        "unit": "EUR",
+        "source_id": "cec-asset-register"
+      },
+      "price_status": "PUBLISHED",
+      "cad_available": null,
+      "caveats": [
+        "The purchase price of 0 EUR means the machine is already owned. It is NOT an estimate and NOT a missing value. It excludes removal from line 2, relocation, re-commissioning, requalification for this product, and any new lens, lighting or fixture.",
+        "Line 2 is using this camera. Reusing it here is a decision about line 2's capacity, and this record cannot make it.",
+        "The asset register records no dimensions, no cycle time and no interface list. Those have to come from the manufacturer's documentation for this model before the station can be checked against them.",
+        "The model code recorded in the register is a 1.6 MP variant. Whether that resolution suits this product's inspection is an engineering question the concept does not yet answer."
+      ],
+      "sources": ["cec-asset-register"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "cec-asset-register",
+      "url": "internal://demo-customer/asset-register/AST-0142",
+      "source_type": "INTERNAL_ASSET_RECORD",
+      "title": "Demo customer asset register, entry AST-0142 (example data)",
+      "retrieved_at": "2026-08-23"
+    }
+  ]
+}

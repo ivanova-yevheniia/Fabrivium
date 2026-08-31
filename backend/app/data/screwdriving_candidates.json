@@ -1,0 +1,218 @@
+{
+  "process_category": "screwdriving",
+  "verified_on": "2026-08-21",
+  "note": "Values were read out of the cited manufacturer documents on the retrieval date. Nothing here is inferred, averaged or estimated: a field the manufacturer does not publish is absent from this file rather than present with a placeholder.",
+  "candidates": [
+    {
+      "candidate_id": "weber-ser-30",
+      "manufacturer": "WEBER Schraubautomaten GmbH",
+      "model": "SER Series 30",
+      "category": "Fixtured screwdriving system with automatic feeding",
+      "provides": [
+        "SCREW_FASTENING"
+      ],
+      "product_scope": "Screwdriving unit — mounted into a station or onto a robot; not a complete standalone cell",
+      "description": "Fixtured screwdriver with external feed stroke via slide or robot. Published head diameter 9-24 mm, bit stroke and axial force vary with supply pressure.",
+      "torque_min_nm": {
+        "value": 3.0,
+        "unit": "Nm",
+        "source_id": "weber-ser-seb"
+      },
+      "torque_max_nm": {
+        "value": 30.0,
+        "unit": "Nm",
+        "source_id": "weber-ser-seb"
+      },
+      "speed_max_rpm": {
+        "value": 1500.0,
+        "unit": "rpm",
+        "source_id": "weber-ser-seb"
+      },
+      "weight_kg": {
+        "value": 9.0,
+        "unit": "kg",
+        "source_id": "weber-ser-seb"
+      },
+      "interfaces": [
+        "C30S control system"
+      ],
+      "interfaces_source_id": "weber-ser-seb",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.weber-online.com/en/fixtured-screwdriving-systems/fixtured-screwdrivers-ser-seb/",
+      "caveats": [
+        "WEBER publishes the weight as approximate (\"~9 kg\").",
+        "No overall dimensions are published, so the installed envelope cannot be checked from the datasheet.",
+        "Drive is pneumatic or EC motor; the choice changes the supporting infrastructure the station needs."
+      ],
+      "sources": [
+        "weber-ser-seb"
+      ]
+    },
+    {
+      "candidate_id": "kolver-kds-nt120ca",
+      "manufacturer": "Kolver S.r.l.",
+      "model": "KDS-NT120CA (K-DUCER series, code 165151)",
+      "category": "Transducerised fixture-mount screwdriver for automation",
+      "provides": [
+        "SCREW_FASTENING"
+      ],
+      "product_scope": "Screwdriver spindle — integrated into a station together with a feeder, fixture and controller",
+      "description": "K-DUCER transducerised screwdriver for automated applications, working with a KDU control unit. Torque and angle controlled.",
+      "torque_min_nm": {
+        "value": 0.2,
+        "unit": "Nm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "torque_max_nm": {
+        "value": 1.2,
+        "unit": "Nm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "speed_max_rpm": {
+        "value": 430.0,
+        "unit": "rpm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "length_mm": {
+        "value": 221.0,
+        "unit": "mm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "width_mm": {
+        "value": 27.0,
+        "unit": "mm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "weight_kg": {
+        "value": 0.3,
+        "unit": "kg",
+        "source_id": "kolver-ca-catalog"
+      },
+      "interfaces": [
+        "Modbus TCP",
+        "Open Protocol"
+      ],
+      "interfaces_source_id": "kolver-ca-catalog",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://kolver.com/upl/EN_Catalog_CA.pdf",
+      "caveats": [
+        "The published 221 x 27 mm is the tool body, not a floor footprint: a complete station also needs a feeder, fixture, frame and controller.",
+        "Torque range 0.2-1.2 Nm is far below the SER 30's; whether it suits the joint is an engineering decision the concept does not yet specify."
+      ],
+      "sources": [
+        "kolver-ca-catalog"
+      ]
+    },
+    {
+      "candidate_id": "kolver-kbl30fr-ca",
+      "manufacturer": "Kolver S.r.l.",
+      "model": "KBL30FR/CA (code 190030/CA)",
+      "category": "Brushless clutch fixture-mount screwdriver for automation",
+      "provides": [
+        "SCREW_FASTENING"
+      ],
+      "product_scope": "Screwdriver spindle — integrated into a station together with a feeder, fixture and controller",
+      "description": "Brushless clutch screwdriver in an aluminium housing for installation on robots and automatic machines, driven by an EDU1BL/SG control unit.",
+      "torque_min_nm": {
+        "value": 0.7,
+        "unit": "Nm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "torque_max_nm": {
+        "value": 3.0,
+        "unit": "Nm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "speed_max_rpm": {
+        "value": 1150.0,
+        "unit": "rpm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "length_mm": {
+        "value": 264.0,
+        "unit": "mm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "width_mm": {
+        "value": 40.0,
+        "unit": "mm",
+        "source_id": "kolver-ca-catalog"
+      },
+      "weight_kg": {
+        "value": 0.75,
+        "unit": "kg",
+        "source_id": "kolver-ca-catalog"
+      },
+      "interfaces": [
+        "EDU1BL/SG controller I/O signals (start, stop, error)"
+      ],
+      "interfaces_source_id": "kolver-ca-catalog",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://kolver.com/upl/EN_Catalog_CA.pdf",
+      "caveats": [
+        "The published 264 x 40 mm is the tool body, not a floor footprint.",
+        "Requires an EDU1BL/SG control unit, which is a separate item."
+      ],
+      "sources": [
+        "kolver-ca-catalog"
+      ]
+    },
+    {
+      "candidate_id": "deprag-dcam",
+      "manufacturer": "DEPRAG SCHULZ GMBH u. CO",
+      "model": "DCAM (DEPRAG Compact Assembly Module)",
+      "category": "Standardised assembly cell",
+      "provides": [
+        "SCREW_FASTENING"
+      ],
+      "product_scope": "Complete assembly cell — the closest match to a whole station, configured per application",
+      "description": "Modular assembly platform with freely programmable axes, equipped with DEPRAG screwdriving function modules and MINIMAT spindles. Loaded manually by an operator or by an automatic feeding system.",
+      "interfaces": [],
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.deprag.com/fileadmin/bilder_content/emedia/broschueren_pics/emedia_Automation/D3370/D3370en.pdf",
+      "caveats": [
+        "The D3370E brochure carries no technical data table: no dimensions, cycle time, weight, power or interface figures are published.",
+        "The brochure claims \"short cycle times\" in prose. That is marketing language, not a datasheet figure, and has deliberately not been converted into a number.",
+        "The cell is configured per application, so its specifications only exist once DEPRAG has quoted a specific configuration."
+      ],
+      "sources": [
+        "deprag-dcam-page",
+        "deprag-dcam-brochure"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "weber-ser-seb",
+      "url": "https://www.weber-online.com/en/fixtured-screwdriving-systems/fixtured-screwdrivers-ser-seb/",
+      "source_type": "MANUFACTURER_PAGE",
+      "title": "WEBER Schraubautomaten — Fixtured screwdriver SER/SEB with automatic feeding",
+      "retrieved_at": "2026-08-21"
+    },
+    {
+      "source_id": "kolver-ca-catalog",
+      "url": "https://kolver.com/upl/EN_Catalog_CA.pdf",
+      "source_type": "MANUFACTURER_DATASHEET",
+      "title": "Kolver — Screwdrivers for Automation catalogue (EN_Catalog_CA)",
+      "retrieved_at": "2026-08-21"
+    },
+    {
+      "source_id": "deprag-dcam-page",
+      "url": "https://www.deprag.com/en/automation/automatic-screwdriving-machines.html",
+      "source_type": "MANUFACTURER_PAGE",
+      "title": "DEPRAG — Automatic screwdriving machines",
+      "retrieved_at": "2026-08-21"
+    },
+    {
+      "source_id": "deprag-dcam-brochure",
+      "url": "https://www.deprag.com/fileadmin/bilder_content/emedia/broschueren_pics/emedia_Automation/D3370/D3370en.pdf",
+      "source_type": "MANUFACTURER_DATASHEET",
+      "title": "DEPRAG — DCAM Standardised Assembly Cells (D3370E, 10.2022)",
+      "retrieved_at": "2026-08-21"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "process_category": "labelling",
+  "capability": "LABEL_APPLICATION",
+  "verified_on": "2026-08-23",
+  "note": "Values were read out of the cited manufacturer documents on the retrieval date. Three cycle times in this file are SOURCE_DERIVED rather than published: the manufacturers publish a maximum throughput in labels or packs per minute, and 60 / that figure is seconds per label. The arithmetic is written into each value's basis, and every one of them is a BEST CASE under the conditions the manufacturer attaches to the maximum. They are not manufacturer cycle times and must never be shown as such.",
+  "candidates": [
+    {
+      "candidate_id": "herma-500",
+      "manufacturer": "HERMA GmbH",
+      "model": "HERMA 500 label applicator",
+      "category": "Self-adhesive label applicator (dispensing unit)",
+      "provides": ["LABEL_APPLICATION"],
+      "product_scope": "Labelling unit — mounted onto an existing conveyor or transfer system. The transport, the product sensor mounting and the frame are not part of this product.",
+      "description": "Modular self-adhesive label applicator. Published labelling speed 0-30/50/80/150/200 m/min, label widths 80/160/240/320 mm, roll diameters 300/400/500/600 mm, supply 100-240 V AC 400 W, IP66, operating temperature 0-40 C, 4.3-inch colour touchscreen.",
+      "cycle_time_seconds": {
+        "value": 0.03,
+        "unit": "s",
+        "source_id": "herma-500-page",
+        "evidence": "SOURCE_DERIVED",
+        "basis": "HERMA publishes a maximum of 2,000 labels a minute; 60 / 2,000 = 0.03 s per label at that maximum."
+      },
+      "interfaces": [
+        "I/O interface",
+        "Industrial Ethernet",
+        "OPC UA",
+        "CAN bus",
+        "Web interface",
+        "Master encoder input",
+        "Start signal"
+      ],
+      "interfaces_source_id": "herma-500-page",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.herma.com/machines/products/label-applicators/herma-500/",
+      "caveats": [
+        "The 200 m/min and 2,000 labels/min figures are published as maxima in synchronisation with the production line. The achievable rate depends on label length, label pitch and the transport, so the derived 0.03 s per label is a best case and not a station cycle time.",
+        "HERMA publishes no overall dimensions and no weight for the applicator on this page, so the installed envelope cannot be checked against the station's footprint from it.",
+        "No dispensing accuracy is published on this page.",
+        "The applicator dispenses onto a moving product; it does not transport the product itself."
+      ],
+      "sources": ["herma-500-page"]
+    },
+    {
+      "candidate_id": "weber-legi-air-4050e",
+      "manufacturer": "Weber Marking Systems GmbH",
+      "model": "Legi-Air 4050E",
+      "category": "Print-and-apply label printer-applicator",
+      "provides": ["LABEL_APPLICATION"],
+      "product_scope": "Complete print-and-apply labelling unit including printer, applicator and stand — the closest match in this file to a whole labelling station. The product transport is still separate.",
+      "description": "Modular print-and-apply system. Published label sizes min. 12.5 x 7 mm to max. 160 x 210 mm, output up to 240 labels/min, print speed up to 400 mm/s, application stroke 50-1,200 mm depending on applicator, modes Tamp-Blow / Tamp-On / Wipe-On, supply 92-263 V 50-60 Hz 5 A, compressed air 6 bar per DIN ISO 8573-1.",
+      "cycle_time_seconds": {
+        "value": 0.25,
+        "unit": "s",
+        "source_id": "weber-legiair-4050e-page",
+        "evidence": "SOURCE_DERIVED",
+        "basis": "Weber publishes an output of up to 240 labels/min; 60 / 240 = 0.25 s per label at that maximum."
+      },
+      "width_mm": {"value": 701.0, "unit": "mm", "source_id": "weber-legiair-4050e-page"},
+      "length_mm": {"value": 836.0, "unit": "mm", "source_id": "weber-legiair-4050e-page"},
+      "height_mm": {"value": 682.0, "unit": "mm", "source_id": "weber-legiair-4050e-page"},
+      "weight_kg": {"value": 75.0, "unit": "kg", "source_id": "weber-legiair-4050e-page"},
+      "interfaces": ["USB", "RS232", "Applicator port", "Ethernet IPv4"],
+      "interfaces_source_id": "weber-legiair-4050e-page",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://www.weber-marking.com/ocs/en-int/legi-air-4050e-907-c-9207-p/",
+      "caveats": [
+        "The 240 labels/min output is published as depending on label size, text change and dispense stroke, so the derived 0.25 s per label is a best case.",
+        "Weber publishes the weight as 75 kg 'depending on the version', and the 682 x 701 x 836 mm as the unit's own envelope — the swing of the application stroke needs clearance beyond it.",
+        "Label size is limited to 12.5 x 7 mm at minimum and 160 x 210 mm at maximum. A label outside that range needs a different applicator.",
+        "Requires compressed air at 6 bar (DIN ISO 8573-1). A station without an air supply cannot use this unit.",
+        "More than 1,500 applicator variants exist; the stroke, the mode and therefore the achievable rate depend on which one is configured."
+      ],
+      "sources": ["weber-legiair-4050e-page"]
+    },
+    {
+      "candidate_id": "videojet-9560-tamp",
+      "manufacturer": "Videojet Technologies Inc.",
+      "model": "9560 with Tamp Applicator",
+      "category": "Print-and-apply case labeller with pneumatic telescopic tamp",
+      "provides": ["LABEL_APPLICATION"],
+      "product_scope": "Complete print-and-apply labelling unit, mounted beside a conveyor. The conveyor and the pack transport are not included.",
+      "description": "Thermal transfer print-and-apply labeller with a pneumatic telescopic tamp and automatic pack detection. Published print speed 40-500 mm/sec, print resolution 300 dpi (200 dpi emulation), printheads 53/76/107 mm, label width 50-115 mm, label length 50-150 mm, roll capacity up to 400 mm spool, supply 90-260 V AC (115 W at 50 packs per minute), compressed air 6 bar, operating temperature 5-40 C.",
+      "cycle_time_seconds": {
+        "value": 1.0,
+        "unit": "s",
+        "source_id": "videojet-9560-tamp-ss",
+        "evidence": "SOURCE_DERIVED",
+        "basis": "Videojet publishes a throughput of up to 60 packs per minute; 60 / 60 = 1.0 s per pack at that maximum."
+      },
+      "weight_kg": {"value": 48.0, "unit": "kg", "source_id": "videojet-9560-tamp-ss"},
+      "interfaces": [
+        "Ethernet",
+        "Power-over-Ethernet",
+        "RS232",
+        "USB",
+        "Configurable I/O (24 V, PNP and volt-free)",
+        "EtherNet/IP",
+        "PROFINET"
+      ],
+      "interfaces_source_id": "videojet-9560-tamp-ss",
+      "price_status": "QUOTE_REQUIRED",
+      "cad_available": null,
+      "documentation_url": "https://global.videojet.com/wp-content/uploads/dam/pdf/MEA/Specification-Sheet/ss-9560-tamp-mea.pdf",
+      "caveats": [
+        "The 60 packs/min throughput is published as depending on label size and telescopic stroke, with a recommended maximum conveyor speed of 30 m/min. The derived 1.0 s per pack is therefore a best case.",
+        "Label size is limited to 50-115 mm wide and 50-150 mm long, dependent on the printhead version.",
+        "The 48 kg is published as a maximum excluding ribbon and labels.",
+        "Videojet gives the overall width and depth only as a dimensional drawing. The sheet states 820 mm height for the 160 mm model, which is a different variant from this one, so no envelope is recorded here and the footprint cannot be checked.",
+        "Requires compressed air at 6 bar, uncontaminated.",
+        "This is a case and pack labeller. Whether it suits a small electronics product is an engineering decision this concept does not yet specify."
+      ],
+      "sources": ["videojet-9560-tamp-ss"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "herma-500-page",
+      "url": "https://www.herma.com/machines/products/label-applicators/herma-500/",
+      "source_type": "MANUFACTURER_PAGE",
+      "title": "HERMA 500 label applicator product page",
+      "retrieved_at": "2026-08-23"
+    },
+    {
+      "source_id": "weber-legiair-4050e-page",
+      "url": "https://www.weber-marking.com/ocs/en-int/legi-air-4050e-907-c-9207-p/",
+      "source_type": "MANUFACTURER_PAGE",
+      "title": "Weber Marking Systems Legi-Air 4050E product page",
+      "retrieved_at": "2026-08-23"
+    },
+    {
+      "source_id": "videojet-9560-tamp-ss",
+      "url": "https://global.videojet.com/wp-content/uploads/dam/pdf/MEA/Specification-Sheet/ss-9560-tamp-mea.pdf",
+      "source_type": "MANUFACTURER_DATASHEET",
+      "title": "Videojet 9560 with Tamp Applicator specification sheet, part no. SL000734 (ss-9560-tamp-mea-0724)",
+      "retrieved_at": "2026-08-23"
+    }
+  ]
+}
