@@ -458,7 +458,7 @@ Not implemented. What would have to be built:
 | Precedence model | Which knowledge wins, and how the answer's provenance says so |
 | Package validation | Beyond well-formedness — currency, conflict, scope |
 | Authoring path | How an organisation writes a package without writing Python |
-| Company policy layer | Hard rules evaluated deterministically (`FACTORYMIND_SKILL_ARCHITECTURE.md` §3 — still not implemented) |
+| Company policy layer | Hard rules evaluated deterministically — still not implemented |
 | Standard reference import | With the §7 guarantees intact |
 
 What an organisation would eventually reuse across projects: process
@@ -501,7 +501,7 @@ What changed, exhaustively:
 | `backend/app/knowledge/**` (13 new files) | **New** — imported by nothing on any engineering path |
 | `backend/tests/test_engineering_knowledge_base.py` | **New** — test only |
 | `backend/app/main.py` | **Additive** — two `GET` endpoints appended, plus two lines in the module docstring. No existing endpoint, model or function was touched. |
-| `docs/FABRIVIUM_ENGINEERING_KNOWLEDGE_BASE.md`, `FACTORYMIND_SKILL_ARCHITECTURE.md` | **Documentation** |
+| `docs/FABRIVIUM_ENGINEERING_KNOWLEDGE_BASE.md` | **Documentation** |
 
 What was **not** changed:
 
@@ -545,8 +545,7 @@ holds by relationship rather than by pinned constants. It passes unchanged.
 
 ## Related documents
 
-* `FACTORYMIND_SKILL_ARCHITECTURE.md` — the five extension types; §5 *Knowledge source* and the *company skill* section are what this foundation formalises
-* `docs/SKILL_FRAMEWORK_ARCHITECTURE.md` — engineering **capabilities** (`app.skills`), the other sense of the word
-* `docs/SKILL_PROVENANCE_MODEL.md` — the provenance vocabularies this layer borrows
-* `docs/FACTORYMIND_PRODUCT_POSITIONING.md` — where Fabrivium sits beside Plant Simulation
+* `docs/FABRIVIUM_CLAIM_MATRIX.md` — binding public wording and status limits
+* `docs/FABRIVIUM_LIMITATIONS_AND_ROADMAP.md` — implemented scope and roadmap
 * `docs/SIMULATION_SCOPE_AND_LIMITATIONS.md` — what the simulator deliberately leaves out
+* `docs/SIEMENS_HANDOFF_VERIFICATION.md` — bounded Plant Simulation handoff evidence

@@ -193,9 +193,8 @@ Cross-simulator comparison is performed on scenarios where the workforce
 constraint is **demonstrably non-binding**, with Fabrivium itself reporting
 `operations_delayed_by_operators = 0`. Workforce-constrained scenarios are
 reported as a **predicted mismatch of known cause and pre-stated magnitude** —
-not as parity, and not quietly omitted. The prediction was registered in
-[`CROSS_SIMULATOR_VALIDATION_PLAN.md`](CROSS_SIMULATOR_VALIDATION_PLAN.md)
-before any model was executed in Plant Simulation.
+not as parity, and not quietly omitted. The comparison rule and tolerance were
+fixed before any model was executed in Plant Simulation.
 
 ---
 
@@ -221,8 +220,7 @@ before any model was executed in Plant Simulation.
   those matter.
 * **The live proof is the German locale, on Plant Simulation 2404.**
 
-Executed results, per-scenario, against a preregistered tolerance:
-[cross-simulator validation report](CROSS_SIMULATOR_VALIDATION_REPORT.md).
+Executed results and their bounded interpretation are recorded in this document.
 What reaches the model at all:
 [Siemens handoff verification](SIEMENS_HANDOFF_VERIFICATION.md).
 

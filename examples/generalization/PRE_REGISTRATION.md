@@ -1,9 +1,10 @@
 # Generalization validation — pre-registration
 
 Written **before** any of the three cases was run through FactoryMind.
-Nothing in this file was edited after the first run; every deviation between
-what is predicted here and what actually happened is reported as a finding in
-`docs/GENERALIZATION_VALIDATION_REPORT.md` rather than corrected here.
+Nothing in this file was edited after the first run; deviations remain visible
+in `examples/generalization/results/case_{a,b,c}.json` and are not corrected
+here. Current public interpretation is bounded by
+`docs/FABRIVIUM_CLAIM_MATRIX.md`.
 
 Baseline: commit `5a9fe53` / tag `competition-strong-finalist-v1`, plus the
 uncommitted estimate-contract work already present in the tree at the start of

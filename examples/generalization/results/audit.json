@@ -474,5 +474,178 @@
       "families_without_options": null,
       "strategies": []
     }
+  },
+  {
+    "case": "M",
+    "product": "AC-6 Compact Electromechanical Actuator",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-assembly-m-screwdriving.capacity=50",
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-labelling-m-inspection.capacity=50",
+        "buf-m-screwdriving-m-labelling.capacity=50"
+      ],
+      "CUSTOMER": [
+        "hours_per_shift=8.0",
+        "operators_available=5",
+        "production_target=420.0",
+        "shifts_per_day=1"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-assembly.capacity=1",
+        "m-assembly.cycle_time=28.5",
+        "m-assembly.operators_required=1",
+        "m-inspection.capacity=1",
+        "m-inspection.cycle_time=22.5",
+        "m-inspection.operators_required=1",
+        "m-labelling.capacity=1",
+        "m-labelling.cycle_time=19.0",
+        "m-labelling.operators_required=1",
+        "m-packaging.capacity=1",
+        "m-packaging.cycle_time=29.0",
+        "m-packaging.operators_required=1",
+        "m-screwdriving.capacity=1",
+        "m-screwdriving.cycle_time=35.0",
+        "m-screwdriving.operators_required=1"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "floor_length=None",
+        "floor_width=None",
+        "m-assembly.length=None",
+        "m-assembly.purchase_cost=None",
+        "m-assembly.width=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-labelling.length=None",
+        "m-labelling.purchase_cost=None",
+        "m-labelling.width=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None",
+        "m-screwdriving.length=None",
+        "m-screwdriving.purchase_cost=None",
+        "m-screwdriving.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [
+      "m-screwdriving.cycle_time=35.0 matches a demo cycle time (source=ENGINEERING_ESTIMATE, detail=\"22–48 s, medium confidence · Local engineering heuristic: 6–12 s handling + 4 × 4–9 s per screw. Reference bands are Fabrivium's own stated assumptions, anchored to the Electronics Assembly Demo Dataset; they are not an industry standard. They apply to: Fixtured bench screwdriving. Self-tapping or machine screws into plastic or thin sheet. Not valid for high-torque joints. Check this station against that before accepting.\")"
+    ],
+    "simulation": {
+      "completed_units": 420,
+      "target_units": 420,
+      "demand_met": true,
+      "demand_gap_units": 0.0,
+      "bottleneck": "m-screwdriving"
+    },
+    "arena": {
+      "recommended": null,
+      "summary": "No verified strategy was found. Baseline produces 420/day against a target of 420.",
+      "families_without_options": [
+        "EQUIPMENT_EXPANSION (no evidence supports this lever here)",
+        "SHIFT_EXPANSION (no evidence supports this lever here)",
+        "WORKFORCE_EXPANSION (no evidence supports this lever here)",
+        "BUFFER_FLOW (no evidence supports this lever here)",
+        "PROCESS_IMPROVEMENT (no evidence supports this lever here)",
+        "HYBRID (no evidence supports this lever here)"
+      ],
+      "strategies": []
+    }
+  },
+  {
+    "case": "P",
+    "product": "LF-3 Consumer Liquid Product",
+    "findings": [],
+    "provenance": {
+      "CATALOG_DEFAULT": [
+        "buf-m-inspection-m-packaging.capacity=50",
+        "buf-m-labelling-m-inspection.capacity=50"
+      ],
+      "CUSTOMER": [
+        "hours_per_shift=8.0",
+        "operators_available=6",
+        "production_target=4000.0",
+        "shifts_per_day=2"
+      ],
+      "ENGINEER": [
+        "m-inspection.operators_required=1",
+        "m-labelling.operators_required=1",
+        "m-packaging.operators_required=1"
+      ],
+      "ENGINEERING_ESTIMATE": [
+        "m-inspection.cycle_time=15.5",
+        "m-labelling.cycle_time=14.2",
+        "m-packaging.cycle_time=19.5"
+      ],
+      "UNKNOWN": [
+        "budget=None",
+        "floor_length=None",
+        "floor_width=None",
+        "m-inspection.capacity=None",
+        "m-inspection.length=None",
+        "m-inspection.purchase_cost=None",
+        "m-inspection.width=None",
+        "m-labelling.capacity=None",
+        "m-labelling.length=None",
+        "m-labelling.purchase_cost=None",
+        "m-labelling.width=None",
+        "m-packaging.capacity=None",
+        "m-packaging.length=None",
+        "m-packaging.purchase_cost=None",
+        "m-packaging.width=None"
+      ]
+    },
+    "leaks": [],
+    "value_coincidences": [],
+    "simulation": {
+      "completed_units": 2952,
+      "target_units": 4000,
+      "demand_met": false,
+      "demand_gap_units": 1048.0,
+      "bottleneck": "m-packaging"
+    },
+    "arena": {
+      "recommended": "strategy-shift_expansion",
+      "summary": "3 verified option(s); 2 reach the target, 0 of those are fully priced. Baseline: 2,952/day against 4,000.",
+      "families_without_options": [
+        "WORKFORCE_EXPANSION (no evidence supports this lever here)",
+        "BUFFER_FLOW (no evidence supports this lever here)"
+      ],
+      "strategies": [
+        {
+          "id": "strategy-equipment_expansion",
+          "family": "EQUIPMENT_EXPANSION",
+          "goal_met": true,
+          "completed_units": 4000,
+          "gap": 0.0,
+          "actions": [
+            "ADD_PARALLEL_MACHINE"
+          ]
+        },
+        {
+          "id": "strategy-shift_expansion",
+          "family": "SHIFT_EXPANSION",
+          "goal_met": true,
+          "completed_units": 4000,
+          "gap": 0.0,
+          "actions": [
+            "CHANGE_SHIFT_CONFIGURATION"
+          ]
+        },
+        {
+          "id": "strategy-process_improvement",
+          "family": "PROCESS_IMPROVEMENT",
+          "goal_met": false,
+          "completed_units": 3645,
+          "gap": 355.0,
+          "actions": [
+            "CHANGE_MACHINE_CYCLE_TIME"
+          ]
+        }
+      ]
+    }
   }
 ]
